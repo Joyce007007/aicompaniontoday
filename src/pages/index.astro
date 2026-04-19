@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="AI Companion Today — Independent Guide to AI Companion Apps" description="Honest, methodology-driven guides and reviews of AI companion apps across 7 verticals: companion, mental-health, seniors, language, productivity, romance and gaming.">
+  <section class="py-20 max-w-4xl mx-auto px-6 text-center">
+    <h1 class="text-5xl font-bold text-primary mb-6 tracking-tight font-sans">The honest guide to AI companion apps</h1>
+    <p class="text-xl text-ink leading-relaxed mb-8">Independent reviews and comparisons across companion, mental-health, seniors, language, productivity, romance and gaming AI apps. Real testing, published methodology, no paid placements in rankings.</p>
+    <div class="flex gap-4 justify-center">
+      <a href="/best/ai-companion-apps" class="inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans">See 2026 Picks</a>
+      <a href="/methodology" class="inline-block border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white font-sans">How we test</a>
+    </div>
+  </section>
+
+  <section class="bg-surface-alt py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-primary mb-10 text-center font-sans">Seven verticals, one editorial standard</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          {id:'companion', title:'AI Companion Apps', icon:'🤖', tam:'$120M', lead:'Virtual friends, personalised chat, emotional support AI.'},
+          {id:'mental-health', title:'AI Mental Health', icon:'🧠', tam:'$1.5B', lead:'Therapy-inspired AI. Not a substitute for professional care.'},
+          {id:'seniors', title:'AI for Seniors', icon:'👵', tam:'$2T AgeTech', lead:'Companion robots and voice assistants for 65+.'},
+          {id:'language', title:'AI Language Tutor', icon:'💬', tam:'$500M', lead:'Conversation-first language learning with AI coaches.'},
+          {id:'productivity', title:'AI Writing & Coaching', icon:'✍️', tam:'Exploding', lead:'Professional AI for writing, coding, productivity.'},
+          {id:'gaming', title:'AI Gaming Companions', icon:'🎮', tam:'Emerging', lead:'NPCs, narrators and AI coaches for gamers.'}
+        ].map(v => (
+          <a href={`/vertical/${v.id}`} class="block p-6 bg-white border border-surface-border rounded-xl hover:border-accent hover:shadow-lg transition">
+            <div class="flex items-start justify-between mb-3">
+              <div class="text-3xl">{v.icon}</div>
+              <span class="text-xs text-ink-muted font-sans">{v.tam}</span>
+            </div>
+            <div class="font-bold text-primary text-lg mb-2 font-sans">{v.title}</div>
+            <div class="text-sm text-ink-muted leading-relaxed">{v.lead}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-4xl mx-auto px-6">
+    <div class="bg-white border-2 border-surface-border rounded-2xl p-8 text-center">
+      <h2 class="text-2xl font-bold text-primary mb-4 font-sans">Reviewed by The AICT Editorial Team</h2>
+      <p class="text-ink leading-relaxed mb-6">Every guide and review on AI Companion Today is produced under the editorial responsibility of our team, based on public features, pricing documentation, third-party reviews and direct testing where applicable. We never fabricate ratings or testimonials.</p>
+      <div class="flex flex-wrap gap-4 justify-center text-sm text-ink-muted font-sans">
+        <div>📝 Hands-on testing 14-30 days</div>
+        <div>🔬 Published methodology</div>
+        <div>🛡️ Independent rankings</div>
+        <div>💰 Real-money spend per test</div>
+      </div>
+    </div>
+  </section>
+</Base>
