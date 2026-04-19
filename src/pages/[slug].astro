@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { getAllPosts, getAllPages } from '../lib/ghost.js';
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  const pages = await getAllPages();
+  return [
+    ...posts.map(p => ({ params: { slug: p.slug }, props: { content: p, type: 'post' } })),
+    ...pages.map(p => ({ params: { slug: p.slug }, props: { content: p, type: 'page' } }))
+  ];
+}
+
+const { content, type } = Astro.props;
+const isYMYL = (content.tags || []).some(t => t.slug === 'ymyl' || t.slug === 'mental-health');
+---
+<Base title={`${content.title} — AI Companion Today`} description={content.custom_excerpt || content.excerpt || content.title} canonical={`https://aicompaniontoday.com/${content.slug}`}>
+  {isYMYL && (
+    <div class="bg-danger text-white text-center py-2 text-sm">
+      <strong>In crisis?</strong> Call 988 (US) or 3114 (France). AI chatbots are not a substitute for professional care.
+    </div>
+  )}
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <div class="flex flex-wrap gap-2 mb-4">
+      {(content.tags || []).map(t => <span class="text-xs bg-surface-alt text-ink-muted px-2 py-1 rounded font-sans">{t.name}</span>)}
+    </div>
+    <h1 class="text-4xl font-bold text-primary mb-4 tracking-tight font-sans">{content.title}</h1>
+    <div class="text-sm text-ink-muted mb-6 font-sans">
+      {type === 'post' && (
+        <span>Published {new Date(content.published_at).toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'})} &middot; By The AICT Editorial Team</span>
+      )}
+    </div>
+    <div class="prose prose-lg max-w-none" set:html={content.html} />
+    <hr class="my-12 border-surface-border">
+    <div class="text-sm text-ink-muted font-sans">
+      <p><strong>Affiliate disclosure:</strong> AI Companion Today may earn a commission when readers sign up via our tracked links, at no extra cost. Rankings are never influenced by commission size. <a href="/advertising-disclosure" class="text-accent">Read more</a>.</p>
+    </div>
+  </article>
+</Base>

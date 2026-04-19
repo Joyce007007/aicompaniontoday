@@ -1,37 +1,30 @@
 ---
-interface Props { title: string; description: string; canonical?: string; noindex?: boolean; crisisBanner?: boolean; }
-const { title, description, canonical, noindex = false, crisisBanner = false } = Astro.props;
+interface Props { title: string; description: string; canonical?: string; }
+const { title, description, canonical } = Astro.props;
 import '../styles/globals.css';
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
-<meta name="description" content={description} />
-{canonical && <link rel="canonical" href={canonical} />}
-{noindex && <meta name="robots" content="noindex, nofollow" />}
-<meta property="og:type" content="website" />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet" />
+<meta name="description" content={description}>
+{canonical && <link rel="canonical" href={canonical}>}
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body class="min-h-screen flex flex-col">
-  {crisisBanner && (
-    <div class="bg-danger text-white text-center py-2 text-sm">
-      <strong>In crisis?</strong> Call 988 (US) or 3114 (France) for free confidential support. AI chatbots are not a substitute for professional care.
-    </div>
-  )}
-  <header class="border-b border-surface-border bg-white sticky top-0 z-20 backdrop-blur">
+  <header class="border-b border-surface-border bg-white sticky top-0 z-20">
     <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/" class="text-xl font-bold text-primary tracking-tight">AI Companion Today</a>
       <div class="hidden md:flex gap-6 text-sm font-sans">
-        <a href="/best/ai-companion-apps" class="text-ink hover:text-accent">Best Picks</a>
-        <a href="/compare/" class="text-ink hover:text-accent">Compare</a>
-        <a href="/guides/" class="text-ink hover:text-accent">Guides</a>
-        <a href="/news/" class="text-ink hover:text-accent">News</a>
+        <a href="/best-ai-companion-apps-2026" class="text-ink hover:text-accent">Best Companions</a>
+        <a href="/best-ai-language-tutor-2026" class="text-ink hover:text-accent">Language</a>
+        <a href="/best-ai-mental-health-2026" class="text-ink hover:text-accent">Mental Health</a>
         <a href="/methodology" class="text-ink-muted hover:text-accent">Methodology</a>
+        <a href="/about" class="text-ink-muted hover:text-accent">About</a>
       </div>
     </nav>
   </header>
@@ -41,6 +34,7 @@ import '../styles/globals.css';
       <a href="/about" class="hover:text-accent">About</a>
       <a href="/contact" class="hover:text-accent">Contact</a>
       <a href="/privacy" class="hover:text-accent">Privacy</a>
+      <a href="/terms" class="hover:text-accent">Terms</a>
       <a href="/advertising-disclosure" class="hover:text-accent">Advertising Disclosure</a>
       <a href="/methodology" class="hover:text-accent">Methodology</a>
       <a href="/disclaimer-mental-health" class="hover:text-accent">Mental Health Disclaimer</a>
