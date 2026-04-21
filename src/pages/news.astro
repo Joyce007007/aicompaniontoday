@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import SchemaOrg from '../components/SchemaOrg.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import { getAllPosts } from '../lib/ghost.js';
+import { getCompanionNews } from '../lib/ai-news.js';
+
+const posts = await getAllPosts();
+const news = await getCompanionNews(20);
+
+// Filter Ghost posts tagged "news" or "report" if any
+const newsPosts = posts.filter(p => (p.tags || []).some(t => ['news', 'report', 'study'].includes(t.slug)));
+
+const breadcrumbItems = [
+  { name: 'Home', url: 'https://aicompaniontoday.com/' },
+  { name: 'News', url: 'https://aicompaniontoday.com/news/' }
+];
+---
+<Base title="AI Companion News & Reports | AI Companion Today" description="Daily AI companion news from TechCrunch, The Verge, VentureBeat, MIT Tech Review and AI Business. Plus our monthly State of AI Companion reports." canonical="https://aicompaniontoday.com/news/">
+  <SchemaOrg type="BreadcrumbList" data={{ items: breadcrumbItems }} />
+
+  <section class="py-12 max-w-6xl mx-auto px-6">
+    <nav class="text-xs text-ink-muted mb-6 font-sans"><a href="/" class="hover:text-accent">Home</a> › <span class="text-ink">News</span></nav>
+    <h1 class="text-5xl font-bold text-primary mb-4 tracking-tight font-sans">AI Companion News</h1>
+    <p class="text-xl text-ink leading-relaxed mb-4 max-w-3xl">Curated daily news about AI companion apps, mental-health AI, AgeTech, language tutors and productivity assistants. Sourced from leading technology publications and filtered for relevance to our seven verticals.</p>
+    <p class="text-sm text-ink-muted font-sans">Last build: {new Date().toLocaleString('en-US', {year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit', timeZoneName:'short'})}</p>
+  </section>
+
+  {newsPosts.length > 0 && (
+    <section class="py-8 max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-primary mb-6 font-sans">AICT original reports</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {newsPosts.map(p => (
+          <a href={`/${p.slug}/`} class="block p-6 bg-white border border-primary rounded-xl hover:shadow-lg transition">
+            <span class="text-xs bg-primary text-white px-2 py-1 rounded font-sans">AICT report</span>
+            <h3 class="font-bold text-primary text-lg mt-3 mb-2 font-sans">{p.title}</h3>
+            <p class="text-sm text-ink-muted leading-relaxed mb-3">{p.custom_excerpt || p.excerpt}</p>
+            <time class="text-xs text-ink-subtle font-sans">{new Date(p.published_at).toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'})}</time>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="py-8 max-w-6xl mx-auto px-6">
+    <h2 class="text-2xl font-bold text-primary mb-6 font-sans">From leading AI publications</h2>
+    {news.length === 0 ? (
+      <p class="text-ink-muted">No news available. Check back after the next rebuild.</p>
+    ) : (
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {news.map(item => (
+          <a href={item.url} target="_blank" rel="noopener" class="block p-5 bg-white border border-surface-border rounded-xl hover:border-accent transition">
+            <div class="text-xs text-accent font-semibold font-sans mb-2">{item.source}</div>
+            <h3 class="font-bold text-primary text-base mb-2 leading-snug font-sans">{item.title}</h3>
+            {item.summary && <p class="text-sm text-ink-muted leading-relaxed font-sans">{item.summary}…</p>}
+            {item.date && <time class="text-xs text-ink-subtle font-sans block mt-3">{new Date(item.date).toLocaleDateString('en-US', {year:'numeric',month:'short',day:'numeric'})}</time>}
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+
+  <NewsletterForm />
+</Base>

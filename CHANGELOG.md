@@ -9,6 +9,36 @@ Versions are stored in `/var/backups/aict/v<version>/` on the VPS and tagged in 
 
 ---
 
+## v19.0 — 21/04/2026 11:46 UTC
+
+**Schema per-post + /news/ hub + /partner/ page + State of AI Companion 2026 report + daily rebuild cron**
+
+New features:
+- **Schema.org per-post** — `[slug].astro` now emits `Article` (for posts) + `BreadcrumbList` schemas in addition to sitewide `Organization` + `WebSite`. Matcher CTA block on every post. Newsletter form (compact) at bottom of every post and page.
+- **/news/ hub** — curated live AI companion news (via RSS from TechCrunch, The Verge, VentureBeat, MIT Tech Review, AI Business) + Ghost posts tagged `report` or `study`. Breadcrumb schema.
+- **/partner/ page** — sponsored placements pitch page: audience profile, 5 placement formats (sponsored review, newsletter placement, category takeover, affiliate network inclusion, matcher quiz integration), editorial firewall, contact email.
+- **State of AI Companion 2026** — 1,400-word inaugural market report published in Ghost (tags: Report, News, Study). Covers 7 verticals, regulatory posture, revenue concentration, buyer questions. Surfaces on /news/ as "AICT original reports".
+- **Daily Astro rebuild cron** — `/root/scripts/aict_astro_rebuild.sh` runs at 04:30 UTC daily so RSS news section stays fresh without manual intervention.
+
+Files added:
+- `src/pages/news.astro`
+- `src/pages/partner.astro`
+- `/root/scripts/aict_astro_rebuild.sh`
+- Ghost post: `/state-of-ai-companion-2026/`
+
+Files modified:
+- `src/pages/[slug].astro` (Article+Breadcrumb schema, matcher CTA, newsletter form)
+
+Audit green:
+- 10 new pages tested HTTP 200
+- Schema.org on /best-ai-companion-apps-2026/: Article, BreadcrumbList, ListItem, Organization, SearchAction, WebSite
+- /state-of-ai-companion-2026/ 200 with Replika/Woebot/FDA mentions
+- Newsletter form present on best-of posts (2 refs)
+- /go 302 on candy/gal_sofia/evadav_push
+- 0 leak Jocelyn on 18 pages
+- 2jagency.com intact (200)
+- New cron: daily 04:30 UTC rebuild to refresh RSS news
+
 ## v18.0 — 21/04/2026 11:32 UTC
 
 **Matcher quiz + LLM citations + newsletter + versioning system**

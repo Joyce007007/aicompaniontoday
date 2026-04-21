@@ -1,46 +1,77 @@
 ---
-import Base from "../layouts/Base.astro";
-import { getAllPosts, getAllPages } from "../lib/ghost.js";
+import Base from '../layouts/Base.astro';
+import SchemaOrg from '../components/SchemaOrg.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import { getAllPosts, getAllPages } from '../lib/ghost.js';
 
 export async function getStaticPaths() {
   const posts = await getAllPosts();
   const pages = await getAllPages();
   return [
-    ...posts.map(p => ({ params: { slug: p.slug }, props: { content: p, type: "post" } })),
-    ...pages.map(p => ({ params: { slug: p.slug }, props: { content: p, type: "page" } }))
+    ...posts.map(p => ({ params: { slug: p.slug }, props: { content: p, type: 'post' } })),
+    ...pages.map(p => ({ params: { slug: p.slug }, props: { content: p, type: 'page' } }))
   ];
 }
 
 const { content, type } = Astro.props;
 const tags = content.tags || [];
-const isYMYL = tags.some(t => t.slug === "ymyl" || t.slug === "mental-health");
-// Only show affiliate disclosure on posts (reviews/best-of), never on pages
-const showAffiliateDisclosure = type === "post";
+const isYMYL = tags.some(t => t.slug === 'ymyl' || t.slug === 'mental-health');
+const isBestOf = tags.some(t => t.slug === 'best-of') || (content.slug || '').startsWith('best-');
+const isCompare = tags.some(t => t.slug === 'compare') || (content.slug || '').includes('-vs-');
+
+const url = `https://aicompaniontoday.com/${content.slug}/`;
+
+const articleSchema = {
+  headline: content.title,
+  datePublished: content.published_at,
+  dateModified: content.updated_at || content.published_at,
+  url
+};
+
+const breadcrumbItems = [
+  { name: 'Home', url: 'https://aicompaniontoday.com/' },
+  ...(isBestOf ? [{ name: 'Best-of guides', url: 'https://aicompaniontoday.com/' }] : []),
+  ...(isCompare ? [{ name: 'Comparisons', url: 'https://aicompaniontoday.com/' }] : []),
+  { name: content.title, url }
+];
 ---
-<Base title={`${content.title} — AI Companion Today`} description={content.custom_excerpt || content.excerpt || content.title} canonical={`https://aicompaniontoday.com/${content.slug}`}>
+<Base title={`${content.title} — AI Companion Today`} description={content.custom_excerpt || content.excerpt || content.title} canonical={url}>
+  {type === 'post' && <SchemaOrg type="Article" data={articleSchema} />}
+  <SchemaOrg type="BreadcrumbList" data={{ items: breadcrumbItems }} />
+
   {isYMYL && (
     <div class="bg-danger text-white text-center py-2 text-sm">
       <strong>In crisis?</strong> Call 988 (US) or 3114 (France). AI chatbots are not a substitute for professional care.
     </div>
   )}
   <article class="max-w-3xl mx-auto px-6 py-12">
+    <nav class="text-xs text-ink-muted mb-6 font-sans" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-accent">Home</a>
+      <span class="mx-2">›</span>
+      <span class="text-ink">{content.title}</span>
+    </nav>
+
     <div class="flex flex-wrap gap-2 mb-4">
       {tags.map(t => <span class="text-xs bg-surface-alt text-ink-muted px-2 py-1 rounded font-sans">{t.name}</span>)}
     </div>
     <h1 class="text-4xl font-bold text-primary mb-4 tracking-tight font-sans">{content.title}</h1>
     <div class="text-sm text-ink-muted mb-6 font-sans">
-      {type === "post" && (
-        <span>Published {new Date(content.published_at).toLocaleDateString("en-US", {year:"numeric",month:"long",day:"numeric"})} &middot; By The AICT Editorial Team</span>
+      {type === 'post' && (
+        <span>Published {new Date(content.published_at).toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'})} &middot; By The AICT Editorial Team</span>
       )}
     </div>
     <div class="prose prose-lg max-w-none" set:html={content.html} />
-    {showAffiliateDisclosure && (
-      <>
-        <hr class="my-12 border-surface-border">
-        <div class="text-sm text-ink-muted font-sans">
-          <p>See our <a href="/advertising-disclosure/" class="text-accent">advertising disclosure</a>.</p>
-        </div>
-      </>
-    )}
   </article>
+
+  {type === 'post' && (
+    <section class="max-w-3xl mx-auto px-6 pb-12">
+      <div class="bg-surface-alt border border-surface-border rounded-xl p-6 text-center">
+        <h3 class="text-lg font-bold text-primary mb-2 font-sans">Not sure which app to pick?</h3>
+        <p class="text-sm text-ink-muted mb-4 font-sans">Take our 2-minute quiz and get a personalized recommendation.</p>
+        <a href="/tools/matcher/" class="inline-block bg-accent text-white px-6 py-2 rounded-lg font-semibold hover:bg-accent-dark font-sans">Find my AI companion →</a>
+      </div>
+    </section>
+  )}
+
+  <NewsletterForm compact />
 </Base>
