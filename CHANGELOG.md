@@ -1,7 +1,41 @@
 
 ## v21.0 — 21/04/2026 15:50 UTC
 
-**Mode adaptatif : execution autonome vers revenu**
+**M
+## v22.0 — 21/04/2026 15:50 UTC
+
+**Mode exécution full: 6 silos 2jagency + AICT monétisation bundle + article factory cron**
+
+2jagency pivot 6 silos SEO:
+- /security/ (Privacy+VPN), /wellness/ (Supplements), /africa/ (Jumia), /latam/ (Mercado Libre), /brasil/ (iGaming 18+), /tools/ (SaaS B2B)
+- Chaque silo: landing page SEO complète avec Schema ItemList+BreadcrumbList, 3-7 products featured, CTA /go tracked
+- Homepage refondue avec nav 6-silo
+- Sitemap régénéré 33 URLs
+
+AICT monétisation bundle:
+- /premium-guide/ landing €19 Gumroad-ready
+- Push notifications EVADAV injectées Base.astro
+- /partner/ upgradé avec pricing public (€200/€500/€2000 par placement)
+- Outreach templates direct deals (Kindroid, Nomi, Candy, Replika) dans /root/outreach/
+- Article factory auto-publish Ghost: 20 money-keywords queue, cron daily 09:00 UTC
+- 1ère auto-publication OK: candy-ai-honest-review-2026 live
+
+Backup:
+- Tag v21.1 pre-v22 checkpoint
+- /var/backups/aict/v21.1/ snapshot
+- /var/backups/twoj/pre-silos-<ts>/ snapshot
+- Restic hors-cycle tag pre-v22-2026-04-21
+
+Crons new:
+- 0 9 * * * aict_article_factory.py (publish 1 post/day)
+
+Pending Joyce action:
+- Google Workspace sur 2jagency.com (AICT_WORKSPACE_SETUP.txt on desktop)
+- Signup 7 networks (AICT_SIGNUP_TEMPLATE.txt on desktop)
+- Gumroad signup pour activer /premium-guide/
+- Reddit/Quora comptes dédiés (requires phone verif)
+
+ode adaptatif : execution autonome vers revenu**
 
 Content explosion:
 - 11 new AICT posts published via Ghost Admin API. Total posts Ghost: 17. Total Astro pages: 35.
