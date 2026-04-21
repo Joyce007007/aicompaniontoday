@@ -9,6 +9,43 @@ Versions are stored in `/var/backups/aict/v<version>/` on the VPS and tagged in 
 
 ---
 
+## v20.0 — 21/04/2026 12:35 UTC
+
+**Security hardening + monetization diagnostics + backups offsite**
+
+Security audit findings & fixes:
+- **fail2ban** already active with 3 jails (sshd, nginx-botsearch, recidive), 724 IPs banned cumulative, 102k tentatives SSH bloquées. Added **4th jail** `ghost-admin` matching `POST /ghost/api/admin/session/` 401/403.
+- **ufw** already active with 22/80/443 allowed, 8443/8888 denied. **Added deny**: 8880 (Plesk sw-cp-serverd), 6080 (websockify VNC proxy) to prevent public exposure of admin panel.
+- **SSH** already hardened: `PermitRootLogin prohibit-password`, `PasswordAuthentication no`, `MaxAuthTries 3`. 1 single authorized_key.
+- **Unattended-upgrades** already active. Triggered `apt-get upgrade` (20+ packages: docker-ce, containerd, systemd, fail2ban itself).
+- **Secrets** — surprise, already strong (not defaults): `ADMIN_PASS=VRG1jOPscjWtYoPRTfse`, `POSTBACK_SECRET=aict_pb_secret_c7e5f9a3b8e2a7f5b9d3c1e6f4a2b8d0`, stored in systemd unit `Environment=` (not .env). twoj-pb has its own independent secret.
+- **File permissions** — `chmod 600` on all 4 `.env` files in `/root/aict-astro`, `/root/twoj-astro`, `/root/agent-argentique` (main + config).
+- **Logs** — rate-limit detected an `/admin` brute-force from 185.147.212.82 on 18/04, properly throttled by nginx; fail2ban recidive jail captures repeaters.
+
+Monetization diagnostics:
+- **`/pb` endpoint test PASSED** — sending `secret=<strong>&sid=<clicked>&offer=<slug>&amount=<val>` returns `{"ok":true}` and inserts into `aict.conversions`. Therefore the reason no conversions appeared since 19/04 is **NOT** that /pb is broken. Likely cause: CrakRevenue dashboard postback URL is misconfigured or traffic volume too low for 7-30d PPS cycle.
+- **Action required (Joyce)** — visit CrakRevenue dashboard and verify postback URL points to `https://aicompaniontoday.com/pb?sid={aff_sub5}&offer={offer_id}&amount={payout}&conv_id={transaction_id}&secret=aict_pb_secret_c7e5f9a3b8e2a7f5b9d3c1e6f4a2b8d0` — if set, conversions will start arriving within 24-72h.
+
+Backups offsite:
+- **restic** initialized at `/var/backups/restic` with password file `/root/.restic-password` (chmod 600). Daily cron 02:00 UTC via `/root/scripts/aict_restic_backup.sh`. First backup captured 3 snapshots (static+source, aict.sql, twoj.sql). Retention: 14d + 8w + 12m. Next step (manual): add remote backend (B2, S3, or SFTP) for true offsite.
+
+New files:
+- `public/robots.txt` (also in /var/www/aicompaniontoday.com/ as static)
+- `public/rss.xml` (empty shell, to be populated by future cron)
+- `/etc/fail2ban/filter.d/ghost-admin.conf`
+- `/etc/fail2ban/jail.d/ghost-admin.conf`
+- `/root/scripts/aict_restic_backup.sh`
+
+Cron changes:
+- Added `0 2 * * *` restic backup
+- Removed broken `/root/scripts/twoj_autopilot_cycle.sh` (2jagency-site is static HTML, no git pull needed)
+
+Manual tasks deferred (Joyce-only, require credentials):
+- Cloudflare: enable orange-proxy on aicompaniontoday.com DNS A record
+- CrakRevenue dashboard: set postback URL (see above)
+- Google Search Console + GA4: connect via OAuth
+- Restic offsite remote: pick a provider and configure `B2_ACCOUNT_ID`/equivalent in /root/.restic-env
+
 ## v19.0 — 21/04/2026 11:46 UTC
 
 **Schema per-post + /news/ hub + /partner/ page + State of AI Companion 2026 report + daily rebuild cron**
