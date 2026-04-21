@@ -6,7 +6,8 @@ import '../styles/globals.css';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content={description}>
 {canonical && <link rel="canonical" href={canonical}>}
@@ -16,30 +17,43 @@ import '../styles/globals.css';
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body class="min-h-screen flex flex-col">
-  <header class="border-b border-surface-border bg-white sticky top-0 z-20">
-    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold text-primary tracking-tight">AI Companion Today</a>
-      <div class="hidden md:flex gap-6 text-sm font-sans">
-        <a href="/best-ai-companion-apps-2026" class="text-ink hover:text-accent">Best Companions</a>
-        <a href="/best-ai-language-tutor-2026" class="text-ink hover:text-accent">Language</a>
-        <a href="/best-ai-mental-health-2026" class="text-ink hover:text-accent">Mental Health</a>
-        <a href="/methodology" class="text-ink-muted hover:text-accent">Methodology</a>
-        <a href="/about" class="text-ink-muted hover:text-accent">About</a>
-      </div>
-    </nav>
-  </header>
-  <main class="flex-1"><slot /></main>
-  <footer class="border-t border-surface-border bg-surface-alt mt-16">
-    <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-ink-muted font-sans flex flex-wrap gap-4">
-      <a href="/about" class="hover:text-accent">About</a>
-      <a href="/contact" class="hover:text-accent">Contact</a>
-      <a href="/privacy" class="hover:text-accent">Privacy</a>
-      <a href="/terms" class="hover:text-accent">Terms</a>
-      <a href="/advertising-disclosure" class="hover:text-accent">Advertising Disclosure</a>
-      <a href="/methodology" class="hover:text-accent">Methodology</a>
-      <a href="/disclaimer-mental-health" class="hover:text-accent">Mental Health Disclaimer</a>
-      <span class="ml-auto">© 2026 AI Companion Today</span>
+<div id="google_translate_element" style="position:fixed;top:8px;right:12px;z-index:50"></div>
+<script type="text/javascript">
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'fr,es,de,it,pt,nl,pl,ru,ja,zh-CN,zh-TW,ko,ar,tr,hi,vi,th,id,sv,da,fi,cs,ro,hu',layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:true},'google_translate_element');}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+
+<header class="border-b border-surface-border bg-white sticky top-0 z-20">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold text-primary tracking-tight">AI Companion Today</a>
+    <div class="hidden md:flex gap-5 text-sm font-sans">
+      <a href="/companion/" class="text-ink hover:text-accent">Companion</a>
+      <a href="/language/" class="text-ink hover:text-accent">Language</a>
+      <a href="/mental-health/" class="text-ink hover:text-accent">Mental Health</a>
+      <a href="/seniors/" class="text-ink hover:text-accent">Seniors</a>
+      <a href="/productivity/" class="text-ink hover:text-accent">Productivity</a>
+      <a href="/romance/" class="text-ink hover:text-accent">Romance</a>
+      <a href="/gaming/" class="text-ink-muted hover:text-accent">Gaming</a>
+      <a href="/methodology/" class="text-ink-muted hover:text-accent">Methodology</a>
     </div>
-  </footer>
+  </nav>
+</header>
+
+<main class="flex-1">
+<slot />
+</main>
+
+<footer class="border-t border-surface-border bg-surface-alt mt-16">
+  <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-ink-muted font-sans flex flex-wrap gap-4">
+    <a href="/about/" class="hover:text-accent">About</a>
+    <a href="/contact/" class="hover:text-accent">Contact</a>
+    <a href="/privacy/" class="hover:text-accent">Privacy</a>
+    <a href="/terms/" class="hover:text-accent">Terms</a>
+    <a href="/advertising-disclosure/" class="hover:text-accent">Advertising Disclosure</a>
+    <a href="/methodology/" class="hover:text-accent">Methodology</a>
+    <a href="/disclaimer-mental-health/" class="hover:text-accent">Mental Health Disclaimer</a>
+    <span class="ml-auto">© 2026 AI Companion Today</span>
+  </div>
+</footer>
 </body>
 </html>

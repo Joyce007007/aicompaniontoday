@@ -1,0 +1,201 @@
+---
+const personas = [
+  { n: 1, key: 'sofia',    name: 'Sofia',    age: 24, origin: 'Latina',       tab: 'latina' },
+  { n: 2, key: 'anna',     name: 'Anna',     age: 26, origin: 'Slavic',       tab: 'european' },
+  { n: 3, key: 'kat',      name: 'Kat',      age: 23, origin: 'German',       tab: 'european' },
+  { n: 4, key: 'lea',      name: 'Léa',      age: 25, origin: 'French',       tab: 'european' },
+  { n: 5, key: 'maria',    name: 'Maria',    age: 28, origin: 'Spanish',      tab: 'latina' },
+  { n: 6, key: 'emma',     name: 'Emma',     age: 27, origin: 'Australian',   tab: 'english' },
+  { n: 7, key: 'nina',     name: 'Nina',     age: 26, origin: 'Ukrainian',    tab: 'european' },
+  { n: 8, key: 'julia',    name: 'Julia',    age: 26, origin: 'Brazilian',    tab: 'latina' },
+  { n: 9, key: 'vera',     name: 'Vera',     age: 23, origin: 'Czech',        tab: 'european' },
+  { n: 10, key: 'tara',    name: 'Tara',     age: 28, origin: 'Persian',      tab: 'middle-east' },
+  { n: 11, key: 'mei',     name: 'Mei',      age: 24, origin: 'Chinese',      tab: 'asian' },
+  { n: 12, key: 'yuki',    name: 'Yuki',     age: 22, origin: 'Japanese',     tab: 'asian' },
+  { n: 13, key: 'priya',   name: 'Priya',    age: 23, origin: 'Indian',       tab: 'asian' },
+  { n: 14, key: 'kavya',   name: 'Kavya',    age: 24, origin: 'Indian',       tab: 'asian' },
+  { n: 15, key: 'yasmina', name: 'Yasmina',  age: 25, origin: 'Moroccan',     tab: 'middle-east' },
+  { n: 16, key: 'layla',   name: 'Layla',    age: 24, origin: 'Arabic',       tab: 'middle-east' },
+  { n: 17, key: 'chloe',   name: 'Chloé',    age: 21, origin: 'British',      tab: 'english' },
+  { n: 18, key: 'isla',    name: 'Isla',     age: 24, origin: 'Scottish',     tab: 'english' },
+  { n: 19, key: 'hanna',   name: 'Hanna',    age: 23, origin: 'Finnish',      tab: 'european' },
+  { n: 20, key: 'astrid',  name: 'Astrid',   age: 25, origin: 'Swedish',      tab: 'european' },
+  { n: 21, key: 'amber',   name: 'Amber',    age: 24, origin: 'American',     tab: 'english' },
+  { n: 22, key: 'scarlett',name: 'Scarlett', age: 27, origin: 'Irish',        tab: 'english' },
+  { n: 23, key: 'jade',    name: 'Jade',     age: 22, origin: 'Asian-American', tab: 'asian' },
+  { n: 24, key: 'camille', name: 'Camille',  age: 23, origin: 'French',       tab: 'european' },
+  { n: 25, key: 'zara',    name: 'Zara',     age: 26, origin: 'Pakistani',    tab: 'middle-east' },
+  { n: 26, key: 'aria',    name: 'Aria',     age: 22, origin: 'Italian',      tab: 'european' },
+  { n: 27, key: 'raven',   name: 'Raven',    age: 25, origin: 'American',     tab: 'english' },
+  { n: 28, key: 'selene',  name: 'Selene',   age: 22, origin: 'Greek',        tab: 'european' }
+];
+
+const tabs = [
+  { id: 'all',          label: 'All companions' },
+  { id: 'latina',       label: 'Latin American' },
+  { id: 'european',     label: 'European' },
+  { id: 'asian',        label: 'Asian' },
+  { id: 'english',      label: 'English-speaking' },
+  { id: 'middle-east',  label: 'Middle East' }
+];
+
+const img = (n, key) => `/creatives_ai/banner_${String(n).padStart(2,'0')}_${key}.png`;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noimageindex">
+<title>AI Companions — Virtual Partners & Interactive Chat | AI Companion Today</title>
+<meta name="description" content="Meet 28 AI virtual partners across cultures and personalities. Photorealistic AI companions with interactive conversation, voice, and roleplay.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/_astro/ghost.BzncRHLH.css">
+<style>
+.card-img{aspect-ratio:492/328;background:#f1f5f9;object-fit:cover;width:100%;display:block}
+.persona-card{position:relative;overflow:hidden;border-radius:12px;border:1px solid #e2e8f0;background:#fff;transition:transform .15s ease,box-shadow .15s ease}
+.persona-card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(15,23,42,.12);border-color:#c2410c}
+.persona-meta{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(to top,rgba(15,23,42,.92) 0%,rgba(15,23,42,.4) 70%,transparent 100%);color:#fff}
+.persona-name{font-family:Inter,sans-serif;font-weight:700;font-size:1.1rem}
+.persona-sub{font-family:Inter,sans-serif;font-size:.75rem;opacity:.85;margin-top:2px}
+.persona-badge{position:absolute;top:10px;right:10px;background:#c2410c;color:#fff;font-size:.7rem;padding:3px 8px;border-radius:999px;font-family:Inter,sans-serif;font-weight:600}
+.tab-btn{padding:8px 18px;border-radius:999px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-family:Inter,sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .15s}
+.tab-btn.active{background:#1e293b;color:#fff;border-color:#1e293b}
+.tab-btn:hover:not(.active){border-color:#c2410c;color:#c2410c}
+</style>
+</head>
+<body class="min-h-screen flex flex-col bg-surface-alt">
+<div id="google_translate_element" style="position:fixed;top:8px;right:12px;z-index:60"></div>
+<script type="text/javascript">
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'fr,es,de,it,pt,nl,pl,ru,ja,zh-CN,ko,ar,tr,hi,vi,th,id,sv,cs,ro,hu',layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:true},'google_translate_element');}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+
+<header class="border-b border-surface-border bg-white sticky top-0 z-20">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold text-primary tracking-tight">AI Companion Today</a>
+    <div class="hidden md:flex gap-6 text-sm font-sans">
+      <a href="/" class="text-ink hover:text-accent">Home</a>
+      <a href="/companion/" class="text-ink hover:text-accent">Companion</a>
+      <a href="/romance/" class="text-accent font-semibold">Romance</a>
+      <a href="/methodology/" class="text-ink-muted hover:text-accent">Methodology</a>
+      <a href="/about/" class="text-ink-muted hover:text-accent">About</a>
+    </div>
+  </nav>
+</header>
+
+<main class="flex-1 max-w-6xl mx-auto px-6 py-10">
+  <section class="mb-10 max-w-3xl">
+    <h1 class="text-4xl font-bold text-primary mb-4 tracking-tight font-sans">Meet your AI virtual partner</h1>
+    <p class="text-lg text-ink leading-relaxed mb-4">Photorealistic AI companions with memory, voice and personality. Built on the newest generation of large language models, today's AI partners remember your conversations, adapt to your mood, and hold their own across text, voice and image interactions. Choose from 28 characters spanning cultures, languages and styles — each one continuously fine-tuned against user feedback.</p>
+    <p class="text-base text-ink-muted leading-relaxed">Select a companion below to start a free conversation on our partner platform. Premium tiers unlock voice calls, private photo requests, roleplay scenarios, and persistent memory. No credit card required to try.</p>
+  </section>
+
+  <section class="mb-6">
+    <div class="flex flex-wrap gap-2" id="tabBar">
+      {tabs.map((t, i) => (
+        <button class={`tab-btn ${i === 0 ? 'active' : ''}`} data-tab={t.id}>{t.label}</button>
+      ))}
+    </div>
+  </section>
+
+  <section id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+    {personas.map(p => (
+      <a href={`/go?offer=gal_${p.key}&sid=persona_${p.key}`}
+         rel="nofollow sponsored noopener"
+         class="persona-card block"
+         data-tab={p.tab}>
+        <img class="card-img" src={img(p.n, p.key)} alt={`${p.name} — ${p.origin} AI companion`} loading="lazy" />
+        <span class="persona-badge">Chat now →</span>
+        <div class="persona-meta">
+          <div class="persona-name">{p.name}, {p.age}</div>
+          <div class="persona-sub">{p.origin} · online now</div>
+        </div>
+      </a>
+    ))}
+  </section>
+
+  <section class="mb-12 bg-white border border-surface-border rounded-xl p-8">
+    <h2 class="text-2xl font-bold text-primary mb-4 font-sans">What our partner platforms offer</h2>
+    <ul class="space-y-3 text-ink">
+      <li><strong>Realistic characters</strong> — photorealistic avatars trained on thousands of creative references. Each character has a distinct backstory, personality profile, and preferred conversation style.</li>
+      <li><strong>Voice interaction</strong> — hear your companion speak in natural, emotion-aware voices. Voice calls on premium tiers; text-to-speech on free tier.</li>
+      <li><strong>Private image generation</strong> — request custom scenes and outfits. All generated content stays private to your conversation.</li>
+      <li><strong>Persistent memory</strong> — your AI partner remembers previous chats, pet names, inside jokes, and emotional context across sessions.</li>
+      <li><strong>Roleplay and scenarios</strong> — guided roleplay packs cover date night, travel, storytelling and thousands of community-shared prompts.</li>
+      <li><strong>Safe and private</strong> — conversations are end-to-end encrypted; no data is shared with advertisers.</li>
+    </ul>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a href="/go?offer=candy-t1&sid=romance_cta_candy" rel="nofollow sponsored noopener" class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans">Try Candy.ai free →</a>
+      <a href="/go?offer=secrets&sid=romance_cta_secrets" rel="nofollow sponsored noopener" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 font-sans">Try Secrets.ai →</a>
+      <a href="/go?offer=golove&sid=romance_cta_golove" rel="nofollow sponsored noopener" class="inline-block border border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white font-sans">Try GoLove.ai →</a>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold text-primary mb-6 font-sans">Top-rated AI companion platforms</h2>
+    <div class="overflow-x-auto bg-white border border-surface-border rounded-xl">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-alt">
+          <tr class="text-left">
+            <th class="py-3 px-4 font-sans">Platform</th>
+            <th class="py-3 px-4 font-sans">Model</th>
+            <th class="py-3 px-4 font-sans">Starting price</th>
+            <th class="py-3 px-4 font-sans">Visit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-surface-border"><td class="py-3 px-4 font-sans font-semibold">Candy.ai <span class="text-xs text-accent ml-1">★ Editor's pick</span></td><td class="py-3 px-4 text-ink-muted font-sans">GPT-4 class + custom</td><td class="py-3 px-4 font-sans">$12.99/mo</td><td class="py-3 px-4"><a class="text-accent font-sans hover:underline" rel="nofollow sponsored noopener" href="/go?offer=candy-t1&sid=tbl_candy">Visit →</a></td></tr>
+          <tr class="border-t border-surface-border"><td class="py-3 px-4 font-sans font-semibold">Secrets.ai <span class="text-xs text-warning ml-1">Hot</span></td><td class="py-3 px-4 text-ink-muted font-sans">Proprietary</td><td class="py-3 px-4 font-sans">$14.90/mo</td><td class="py-3 px-4"><a class="text-accent font-sans hover:underline" rel="nofollow sponsored noopener" href="/go?offer=secrets&sid=tbl_secrets">Visit →</a></td></tr>
+          <tr class="border-t border-surface-border"><td class="py-3 px-4 font-sans font-semibold">GoLove.ai</td><td class="py-3 px-4 text-ink-muted font-sans">Multimodal</td><td class="py-3 px-4 font-sans">$9.99/mo</td><td class="py-3 px-4"><a class="text-accent font-sans hover:underline" rel="nofollow sponsored noopener" href="/go?offer=golove&sid=tbl_golove">Visit →</a></td></tr>
+          <tr class="border-t border-surface-border"><td class="py-3 px-4 font-sans font-semibold">DarLink.ai</td><td class="py-3 px-4 text-ink-muted font-sans">Roleplay-focused</td><td class="py-3 px-4 font-sans">$11.99/mo</td><td class="py-3 px-4"><a class="text-accent font-sans hover:underline" rel="nofollow sponsored noopener" href="/go?offer=darlink&sid=tbl_darlink">Visit →</a></td></tr>
+          <tr class="border-t border-surface-border"><td class="py-3 px-4 font-sans font-semibold">Get-Harder</td><td class="py-3 px-4 text-ink-muted font-sans">Fantasy-focused</td><td class="py-3 px-4 font-sans">$9.99/mo</td><td class="py-3 px-4"><a class="text-accent font-sans hover:underline" rel="nofollow sponsored noopener" href="/go?offer=getharder&sid=tbl_getharder">Visit →</a></td></tr>
+          <tr class="border-t border-surface-border"><td class="py-3 px-4 font-sans font-semibold">ourdream.ai</td><td class="py-3 px-4 text-ink-muted font-sans">Fantasy + image gen</td><td class="py-3 px-4 font-sans">$14.99/mo</td><td class="py-3 px-4"><a class="text-accent font-sans hover:underline" rel="nofollow sponsored noopener" href="/go?offer=ourdream&sid=tbl_ourdream">Visit →</a></td></tr>
+          <tr class="border-t border-surface-border"><td class="py-3 px-4 font-sans font-semibold">DreamBF.ai</td><td class="py-3 px-4 text-ink-muted font-sans">Boyfriend AI</td><td class="py-3 px-4 font-sans">$12.99/mo</td><td class="py-3 px-4"><a class="text-accent font-sans hover:underline" rel="nofollow sponsored noopener" href="/go?offer=dreambf&sid=tbl_dreambf">Visit →</a></td></tr>
+          <tr class="border-t border-surface-border"><td class="py-3 px-4 font-sans font-semibold">Dreamgf.ai</td><td class="py-3 px-4 text-ink-muted font-sans">Girlfriend AI</td><td class="py-3 px-4 font-sans">$9.99/mo</td><td class="py-3 px-4"><a class="text-accent font-sans hover:underline" rel="nofollow sponsored noopener" href="/go?offer=dreamgf&sid=tbl_dreamgf">Visit →</a></td></tr>
+          <tr class="border-t border-surface-border"><td class="py-3 px-4 font-sans font-semibold">Fanfinity</td><td class="py-3 px-4 text-ink-muted font-sans">Creator roleplay</td><td class="py-3 px-4 font-sans">$19.99/mo</td><td class="py-3 px-4"><a class="text-accent font-sans hover:underline" rel="nofollow sponsored noopener" href="/go?offer=fanfinity&sid=tbl_fanfinity">Visit →</a></td></tr>
+          <tr class="border-t border-surface-border"><td class="py-3 px-4 font-sans font-semibold">Xtease.ai</td><td class="py-3 px-4 text-ink-muted font-sans">Interactive story</td><td class="py-3 px-4 font-sans">$14.99/mo</td><td class="py-3 px-4"><a class="text-accent font-sans hover:underline" rel="nofollow sponsored noopener" href="/go?offer=xtease&sid=tbl_xtease">Visit →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <a href="/go?offer=smartlink&sid=romance_cta_smartlink" rel="nofollow sponsored noopener" class="block bg-primary text-white p-8 rounded-xl text-center hover:opacity-95 transition">
+      <h3 class="text-2xl font-bold font-sans mb-2">Not sure which companion to pick?</h3>
+      <p class="text-base opacity-90 font-sans mb-4">Let us match you instantly based on your preferences.</p>
+      <span class="inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold font-sans">Get my match →</span>
+    </a>
+  </section>
+
+</main>
+
+<footer class="border-t border-surface-border bg-white mt-16">
+  <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-ink-muted font-sans flex flex-wrap gap-4">
+    <a href="/about/" class="hover:text-accent">About</a>
+    <a href="/contact/" class="hover:text-accent">Contact</a>
+    <a href="/privacy/" class="hover:text-accent">Privacy</a>
+    <a href="/terms/" class="hover:text-accent">Terms</a>
+    <span class="ml-auto">© 2026 AI Companion Today</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const tabBar=document.getElementById('tabBar');
+  const grid=document.getElementById('grid');
+  tabBar.addEventListener('click',function(e){
+    const btn=e.target.closest('button[data-tab]');
+    if(!btn)return;
+    tabBar.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter=btn.getAttribute('data-tab');
+    grid.querySelectorAll('a[data-tab]').forEach(card=>{
+      const cardTab=card.getAttribute('data-tab');
+      card.style.display=(filter==='all'||cardTab===filter)?'':'none';
+    });
+  });
+})();
+</script>
+</body>
+</html>

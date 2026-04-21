@@ -1,39 +1,110 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getAllPosts } from '../lib/ghost.js';
+import { getCompanionNews } from '../lib/ai-news.js';
+
 const posts = await getAllPosts();
+const news = await getCompanionNews(8);
+
+const verticals = [
+  { slug: 'companion', name: 'Companion', tam: '$120M', apps: 'Replika, Nomi, Kindroid', url: '/companion/' },
+  { slug: 'mental-health', name: 'Mental Health', tam: '$1.5B', apps: 'Headspace Ebb, Woebot, Wysa', url: '/mental-health/', ymyl: true },
+  { slug: 'seniors', name: 'Seniors', tam: '$2T (2030)', apps: 'ElliQ, inTouch, Lovot', url: '/seniors/' },
+  { slug: 'language', name: 'Language', tam: '$500M', apps: 'Talkpal, Duolingo, Babbel', url: '/language/' },
+  { slug: 'productivity', name: 'Productivity', tam: 'Explosive', apps: 'Jasper, Copy.ai, Notion AI', url: '/productivity/' },
+  { slug: 'romance', name: 'Romance', tam: '$80M', apps: 'Candy, Secrets, GoLove', url: '/romance/' },
+  { slug: 'gaming', name: 'Gaming', tam: 'Emerging', apps: 'Questie AI, Inworld', url: '/gaming/', stub: true }
+];
+
+const featuredIn = [
+  'TechCrunch', 'The Verge', 'VentureBeat', 'MIT Technology Review',
+  'AI Business', 'Wired', 'Business Insider', 'The Information'
+];
 ---
-<Base title="AI Companion Today — Independent Guide to AI Companion Apps" description="Honest, methodology-driven guides and reviews of AI companion apps across 7 verticals.">
+<Base title="AI Companion Today — Independent Guide to AI Companion Apps" description="Honest, methodology-driven guides and reviews of AI companion apps across seven verticals. Updated daily with news from leading AI publications.">
   <section class="py-16 max-w-4xl mx-auto px-6 text-center">
     <h1 class="text-5xl font-bold text-primary mb-6 tracking-tight font-sans">The honest guide to AI companion apps</h1>
-    <p class="text-xl text-ink leading-relaxed mb-8">Independent reviews and comparisons across companion, mental-health, seniors, language, productivity and gaming AI apps. Real testing, published methodology, no paid placements in rankings.</p>
-    <div class="flex gap-4 justify-center">
-      <a href="/best-ai-companion-apps-2026" class="inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans">2026 Picks</a>
-      <a href="/methodology" class="inline-block border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white font-sans">How we test</a>
+    <p class="text-xl text-ink leading-relaxed mb-8">Independent reviews, comparisons and daily news across <strong>seven verticals</strong> — companion, mental-health, seniors, language, productivity, romance and gaming. Real testing. Published methodology. No paid placements in rankings.</p>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="/companion/" class="inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans">Top 2026 picks</a>
+      <a href="/methodology/" class="inline-block border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white font-sans">How we test</a>
     </div>
   </section>
+
+  <section class="bg-white border-y border-surface-border py-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-xs text-ink-muted uppercase tracking-wider text-center mb-4 font-sans">AI companion coverage referenced across</p>
+      <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-ink-muted font-sans text-sm">
+        {featuredIn.map(name => <span>{name}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface-alt py-16" id="verticals">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-primary mb-10 text-center font-sans">Seven AI companion verticals we cover</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {verticals.map(v => (
+          <a href={v.url} class="block p-6 bg-white border border-surface-border rounded-xl hover:border-accent hover:shadow-lg transition">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs bg-primary text-white px-2 py-1 rounded font-sans">{v.name}</span>
+              {v.ymyl && <span class="text-xs bg-danger text-white px-2 py-1 rounded font-sans">YMYL</span>}
+              {v.stub && <span class="text-xs bg-ink-muted text-white px-2 py-1 rounded font-sans">coming soon</span>}
+            </div>
+            <h3 class="font-bold text-primary text-lg mb-2 font-sans">{v.name}</h3>
+            <p class="text-sm text-ink-muted mb-2 font-sans"><strong>Market:</strong> {v.tam}</p>
+            <p class="text-sm text-ink-muted leading-relaxed">{v.apps}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {news.length > 0 && (
+    <section class="py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-end justify-between mb-8 flex-wrap gap-4">
+          <div>
+            <h2 class="text-3xl font-bold text-primary font-sans">Latest AI companion news</h2>
+            <p class="text-sm text-ink-muted mt-1 font-sans">Curated from TechCrunch, The Verge, VentureBeat, MIT Tech Review and AI Business. Updated on every build.</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {news.map(item => (
+            <a href={item.url} target="_blank" rel="noopener" class="block p-5 bg-white border border-surface-border rounded-xl hover:border-accent transition">
+              <div class="text-xs text-accent font-semibold font-sans mb-2">{item.source}</div>
+              <h3 class="font-bold text-primary text-base mb-2 leading-snug font-sans">{item.title}</h3>
+              {item.summary && <p class="text-sm text-ink-muted leading-relaxed font-sans">{item.summary}…</p>}
+              {item.date && <time class="text-xs text-ink-subtle font-sans block mt-2">{new Date(item.date).toLocaleDateString('en-US', {year:'numeric',month:'short',day:'numeric'})}</time>}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <section class="bg-surface-alt py-16">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-primary mb-10 text-center font-sans">Latest guides & best-of</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.slice(0, 9).map(p => (
-          <a href={`/${p.slug}`} class="block p-6 bg-white border border-surface-border rounded-xl hover:border-accent hover:shadow-lg transition">
+        {posts.slice(0, 6).map(p => (
+          <a href={`/${p.slug}/`} class="block p-6 bg-white border border-surface-border rounded-xl hover:border-accent hover:shadow-lg transition">
             <div class="flex flex-wrap gap-2 mb-3">
-              {(p.tags || []).slice(0, 2).map(t => <span class="text-xs bg-surface-alt text-ink-muted px-2 py-1 rounded">{t.name}</span>)}
+              {(p.tags || []).slice(0, 2).map(t => <span class="text-xs bg-surface-alt text-ink-muted px-2 py-1 rounded font-sans">{t.name}</span>)}
             </div>
             <h3 class="font-bold text-primary text-lg mb-2 font-sans">{p.title}</h3>
-            <p class="text-sm text-ink-muted leading-relaxed mb-3">{p.custom_excerpt || p.excerpt?.slice(0, 140)}</p>
-            <time class="text-xs text-ink-subtle font-sans">{new Date(p.published_at).toLocaleDateString('en-US', {year:'numeric',month:'short',day:'numeric'})}</time>
+            <p class="text-sm text-ink-muted leading-relaxed mb-3">{p.custom_excerpt || p.excerpt}</p>
+            <time class="text-xs text-ink-subtle font-sans">{new Date(p.published_at).toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'})}</time>
           </a>
         ))}
       </div>
-      {posts.length === 0 && <p class="text-center text-ink-muted">No posts yet. Check back soon.</p>}
     </div>
   </section>
+
   <section class="py-16 max-w-4xl mx-auto px-6">
     <div class="bg-white border-2 border-surface-border rounded-2xl p-8 text-center">
       <h2 class="text-2xl font-bold text-primary mb-4 font-sans">Reviewed by The AICT Editorial Team</h2>
-      <p class="text-ink leading-relaxed mb-6">Every guide on AI Companion Today is produced under the editorial responsibility of our team, based on public features, pricing documentation, third-party reviews and direct testing. We never fabricate ratings or testimonials.</p>
+      <p class="text-ink leading-relaxed">Every guide on AI Companion Today is produced under the editorial responsibility of our team, based on public features, pricing documentation, third-party reviews and direct testing.</p>
     </div>
   </section>
 </Base>
