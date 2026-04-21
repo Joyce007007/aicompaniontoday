@@ -38,6 +38,20 @@ const breadcrumbItems = [
 <Base title={`${content.title} — AI Companion Today`} description={content.custom_excerpt || content.excerpt || content.title} canonical={url}>
   {type === 'post' && <SchemaOrg type="Article" data={articleSchema} />}
   <SchemaOrg type="BreadcrumbList" data={{ items: breadcrumbItems }} />
+  {(content.html || '').match(/<strong>.*?\?<\/strong>/gi) && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": (content.html.match(/<p><strong>(.+?\?)<\/strong><br>(.+?)<\/p>/g) || []).slice(0, 10).map(block => {
+        const m = block.match(/<strong>(.+?\?)<\/strong><br>(.+?)<\/p>/);
+        return m ? {
+          "@type": "Question",
+          "name": m[1].replace(/<[^>]+>/g, ''),
+          "acceptedAnswer": { "@type": "Answer", "text": m[2].replace(/<[^>]+>/g, '') }
+        } : null;
+      }).filter(Boolean)
+    })} />
+  )}
 
   {isYMYL && (
     <div class="bg-danger text-white text-center py-2 text-sm">

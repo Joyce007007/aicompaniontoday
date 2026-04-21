@@ -1,0 +1,15 @@
+---
+export interface Props { asin: string; title?: string; tag?: string; }
+const { asin, title = "Product on Amazon", tag = "PLACEHOLDER-20" } = Astro.props;
+const url = `https://www.amazon.com/dp/${asin}/?tag=${tag}`;
+---
+<a href={url} rel="nofollow sponsored noopener" class="amazon-box">
+  <span class="amazon-title">{title}</span>
+  <span class="amazon-cta">View on Amazon →</span>
+</a>
+<style>
+.amazon-box{display:inline-block;background:#FF9900;color:#111;padding:10px 16px;border-radius:6px;text-decoration:none;font-weight:600;font-family:Inter,system-ui,sans-serif;transition:background .2s}
+.amazon-box:hover{background:#e68a00}
+.amazon-title{display:block;font-size:13px}
+.amazon-cta{display:block;font-size:11px;opacity:.8}
+</style>

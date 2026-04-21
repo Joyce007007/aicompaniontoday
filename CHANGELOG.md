@@ -2,6 +2,22 @@
 ## v21.0 — 21/04/2026 15:50 UTC
 
 **M
+## v22.1 — 21/04/2026 16:20 UTC
+
+**Patches finaux: silos mapping + FAQ schema auto + Amazon component**
+
+2jagency mapping extension:
+- 21 new slugs for silo products: Jumia (5 geos), Mercado Libre (4 geos), Brasil iGaming (7 casas SECAP), hide-mn-vpn, secure-my-email, witopia, abelssoft, abelssoft-utilities
+- Total mapping: 44 slugs (up from 23)
+- Backup: go_mapping.json.bak-v22
+- 2jagency-go.service disabled (obsolete, twoj-pb port 8003 handles all /go)
+
+AICT patches:
+- AmazonBox Astro component ready for when Joyce signs up Amazon Associates
+- FAQPage Schema.org auto-detection on [slug].astro (parses Q/A from HTML)
+- _classify_source helper in aict_pb.py (classifies revenue by Amazon/Gumroad/EVADAV/Sponsored/Direct/Reddit/Quora/Pinterest/Google Ads/CrakRevenue/Other)
+
+
 ## v22.0 — 21/04/2026 15:50 UTC
 
 **Mode exécution full: 6 silos 2jagency + AICT monétisation bundle + article factory cron**
