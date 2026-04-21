@@ -1,9 +1,8 @@
 ---
 interface Props { title: string; description: string; canonical?: string; }
 const { title, description, canonical } = Astro.props;
+import '../styles/globals.css';
 import SchemaOrg from '../components/SchemaOrg.astro';
-const GA4_ID = import.meta.env.GA4_ID || '';
-const GSC_VERIFY = import.meta.env.GSC_VERIFY || '';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -20,18 +19,6 @@ const GSC_VERIFY = import.meta.env.GSC_VERIFY || '';
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 <SchemaOrg type="Organization" />
 <SchemaOrg type="WebSite" />
-{GSC_VERIFY && <meta name="google-site-verification" content={GSC_VERIFY} />}
-{GA4_ID && (
-  <>
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
-    <script is:inline define:vars={{GA4_ID}}>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
-      gtag("config", GA4_ID, {anonymize_ip: true});
-    </script>
-  </>
-)}
 </head>
 <body class="min-h-screen flex flex-col">
 <div id="google_translate_element" style="position:fixed;top:8px;right:12px;z-index:50"></div>
