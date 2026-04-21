@@ -1,0 +1,228 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="AI Companion Matcher — Find Your Perfect AI Companion in 2 Minutes" description="Answer 7 quick questions and we'll match you with the AI companion app that fits your needs, budget and style. No email required." canonical="https://aicompaniontoday.com/tools/matcher/">
+  <section class="py-12 max-w-3xl mx-auto px-6">
+    <div class="text-center mb-10">
+      <span class="text-xs bg-accent text-white px-3 py-1 rounded-full font-sans font-semibold uppercase tracking-wider">Free tool · 2 min</span>
+      <h1 class="text-4xl font-bold text-primary mt-4 mb-3 tracking-tight font-sans">AI Companion Matcher</h1>
+      <p class="text-lg text-ink leading-relaxed">Answer 7 quick questions. We'll recommend the AI companion app that fits your needs, budget and style. No sign-up required.</p>
+    </div>
+
+    <div id="quiz" class="bg-white border border-surface-border rounded-xl p-8 shadow-sm">
+      <div class="flex items-center justify-between mb-6 text-xs text-ink-muted font-sans">
+        <span id="progressLabel">Question 1 of 7</span>
+        <span id="progressPct">14%</span>
+      </div>
+      <div class="w-full bg-surface-alt rounded-full h-2 mb-8">
+        <div id="progressBar" class="bg-accent h-2 rounded-full transition-all" style="width:14%"></div>
+      </div>
+      <div id="questionArea"></div>
+      <div class="flex justify-between mt-8 pt-6 border-t border-surface-border">
+        <button id="backBtn" class="text-sm text-ink-muted hover:text-primary font-sans disabled:opacity-30" disabled>← Back</button>
+        <button id="nextBtn" class="bg-accent text-white px-6 py-2 rounded-lg font-semibold hover:bg-accent-dark font-sans disabled:opacity-50" disabled>Next →</button>
+      </div>
+    </div>
+
+    <div id="result" class="hidden"></div>
+
+    <p class="text-xs text-ink-muted mt-8 text-center font-sans">Affiliate disclosure: we earn a commission when you sign up through our tracked links. Our rankings are never influenced by commission size. <a href="/advertising-disclosure/" class="underline hover:text-accent">Learn more</a>.</p>
+  </section>
+</Base>
+
+<script is:inline>
+(function(){
+  const QUESTIONS = [
+    { id: 'goal', title: 'What do you want your AI companion for?', options: [
+      { v: 'friend', label: 'Virtual friend / daily companion' },
+      { v: 'mental', label: 'Mental-health support & journaling' },
+      { v: 'language', label: 'Learn a new language' },
+      { v: 'work', label: 'Boost productivity at work' },
+      { v: 'romance', label: 'Romantic / adult companion' },
+      { v: 'senior', label: 'Someone to talk to (for me or an elder)' }
+    ]},
+    { id: 'budget', title: 'What is your monthly budget?', options: [
+      { v: 'free', label: 'Free only' },
+      { v: 'low',  label: '$5 to $15 / month' },
+      { v: 'mid',  label: '$15 to $30 / month' },
+      { v: 'high', label: '$30+ / month (willing to pay for quality)' }
+    ]},
+    { id: 'voice', title: 'How important is voice / audio interaction?', options: [
+      { v: 'must', label: 'Must have — I want to talk, not just type' },
+      { v: 'nice', label: 'Nice to have' },
+      { v: 'no',   label: 'Not important — text is fine' }
+    ]},
+    { id: 'device', title: 'Where will you use it most?', options: [
+      { v: 'mobile',  label: 'Mostly on my phone' },
+      { v: 'desktop', label: 'Mostly on desktop' },
+      { v: 'both',    label: 'Both equally' }
+    ]},
+    { id: 'privacy', title: 'How much does privacy matter?', options: [
+      { v: 'max',    label: 'Maximum — prefer end-to-end encryption' },
+      { v: 'normal', label: 'Standard — just a trusted brand' },
+      { v: 'low',    label: 'Not a priority' }
+    ]},
+    { id: 'style', title: 'What chat style do you prefer?', options: [
+      { v: 'realistic', label: 'Realistic, adult-like conversations' },
+      { v: 'playful',   label: 'Playful, casual, fun' },
+      { v: 'clinical',  label: 'Structured, therapy-grade' },
+      { v: 'creative',  label: 'Creative, roleplay-heavy' }
+    ]},
+    { id: 'age', title: 'Are you over 18?', options: [
+      { v: 'yes', label: 'Yes' },
+      { v: 'no',  label: 'No (we will skip adult options)' }
+    ]}
+  ];
+
+  const APPS = [
+    { slug: 'replika',       name: 'Replika',       url: '/companion/', vertical: 'friend', prof: {free:1,low:1}, voice:1, style:'playful',  privacy:'normal', adult:false },
+    { slug: 'nomi',          name: 'Nomi',          url: '/companion/', vertical: 'friend', prof: {low:1,mid:1}, voice:1, style:'realistic', privacy:'normal', adult:false },
+    { slug: 'kindroid',      name: 'Kindroid',      url: '/companion/', vertical: 'friend', prof: {low:1,mid:1,high:1}, voice:1, style:'realistic', privacy:'max', adult:false },
+    { slug: 'woebot',        name: 'Woebot',        url: '/mental-health/', vertical: 'mental', prof: {free:1,low:1}, voice:0, style:'clinical', privacy:'max', adult:false },
+    { slug: 'wysa',          name: 'Wysa',          url: '/mental-health/', vertical: 'mental', prof: {free:1,low:1,mid:1}, voice:0, style:'clinical', privacy:'max', adult:false },
+    { slug: 'youper',        name: 'Youper',        url: '/mental-health/', vertical: 'mental', prof: {low:1,mid:1}, voice:0, style:'clinical', privacy:'normal', adult:false },
+    { slug: 'talkpal',       name: 'Talkpal',       url: '/language/', vertical: 'language', prof: {low:1,mid:1}, voice:1, style:'playful', privacy:'normal', adult:false },
+    { slug: 'duolingo-max',  name: 'Duolingo Max',  url: '/language/', vertical: 'language', prof: {mid:1,high:1}, voice:1, style:'playful', privacy:'normal', adult:false },
+    { slug: 'jasper',        name: 'Jasper',        url: '/productivity/', vertical: 'work', prof: {mid:1,high:1}, voice:0, style:'clinical', privacy:'normal', adult:false },
+    { slug: 'copy-ai',       name: 'Copy.ai',       url: '/productivity/', vertical: 'work', prof: {free:1,low:1,mid:1}, voice:0, style:'clinical', privacy:'normal', adult:false },
+    { slug: 'claude-pro',    name: 'Claude Pro',    url: '/productivity/', vertical: 'work', prof: {mid:1,high:1}, voice:0, style:'clinical', privacy:'max', adult:false },
+    { slug: 'elliq',         name: 'ElliQ',         url: '/seniors/', vertical: 'senior', prof: {high:1}, voice:1, style:'playful', privacy:'max', adult:false },
+    { slug: 'candy-t1',      name: 'Candy.ai',      url: '/romance/', vertical: 'romance', prof: {low:1,mid:1}, voice:1, style:'realistic', privacy:'normal', adult:true,  go: true },
+    { slug: 'secrets',       name: 'Secrets.ai',    url: '/romance/', vertical: 'romance', prof: {mid:1,high:1}, voice:1, style:'realistic', privacy:'normal', adult:true, go: true },
+    { slug: 'golove',        name: 'GoLove.ai',     url: '/romance/', vertical: 'romance', prof: {low:1,mid:1}, voice:1, style:'creative', privacy:'normal', adult:true,  go: true },
+    { slug: 'darlink',       name: 'DarLink.ai',    url: '/romance/', vertical: 'romance', prof: {low:1,mid:1}, voice:0, style:'creative', privacy:'normal', adult:true, go: true },
+    { slug: 'smartlink',     name: 'Best match for you', url: '/romance/', vertical: 'romance', prof: {free:1,low:1,mid:1,high:1}, voice:1, style:'realistic', privacy:'normal', adult:true, go: true }
+  ];
+
+  function score(app, a) {
+    let s = 0;
+    if (app.vertical === a.goal) s += 100;
+    if (app.prof[a.budget]) s += 40;
+    if (a.voice === 'must' && app.voice === 1) s += 25;
+    if (a.voice === 'no' && app.voice === 0) s += 10;
+    if (app.style === a.style) s += 20;
+    if (a.privacy === 'max' && app.privacy === 'max') s += 20;
+    if (a.age === 'no' && app.adult) s -= 1000;
+    if (a.goal === 'romance' && a.age === 'no') s -= 1000;
+    return s;
+  }
+
+  function bestMatch(a) {
+    return APPS.map(app => ({ app, s: score(app, a) }))
+      .sort((x, y) => y.s - x.s).slice(0, 3).map(r => r.app);
+  }
+
+  let idx = 0;
+  const answers = {};
+  const qArea = document.getElementById('questionArea');
+  const nextBtn = document.getElementById('nextBtn');
+  const backBtn = document.getElementById('backBtn');
+  const progressBar = document.getElementById('progressBar');
+  const progressLabel = document.getElementById('progressLabel');
+  const progressPct = document.getElementById('progressPct');
+  const resultDiv = document.getElementById('result');
+  const quizDiv = document.getElementById('quiz');
+
+  function clearNode(n) { while (n.firstChild) n.removeChild(n.firstChild); }
+
+  function render() {
+    const q = QUESTIONS[idx];
+    clearNode(qArea);
+    const h = document.createElement('h2');
+    h.className = 'text-xl font-bold text-primary mb-5 font-sans';
+    h.textContent = q.title;
+    qArea.appendChild(h);
+
+    const list = document.createElement('div');
+    list.className = 'space-y-2';
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'w-full text-left px-4 py-3 border border-surface-border rounded-lg hover:border-accent hover:bg-surface-alt font-sans text-ink';
+      btn.textContent = opt.label;
+      btn.dataset.v = opt.v;
+      if (answers[q.id] === opt.v) btn.classList.add('border-accent', 'bg-surface-alt', 'ring-2', 'ring-accent');
+      btn.addEventListener('click', () => {
+        answers[q.id] = opt.v;
+        list.querySelectorAll('button').forEach(b => b.classList.remove('border-accent', 'bg-surface-alt', 'ring-2', 'ring-accent'));
+        btn.classList.add('border-accent', 'bg-surface-alt', 'ring-2', 'ring-accent');
+        nextBtn.disabled = false;
+      });
+      list.appendChild(btn);
+    });
+    qArea.appendChild(list);
+
+    const pct = Math.round(((idx + 1) / QUESTIONS.length) * 100);
+    progressBar.style.width = pct + '%';
+    progressLabel.textContent = 'Question ' + (idx + 1) + ' of ' + QUESTIONS.length;
+    progressPct.textContent = pct + '%';
+
+    backBtn.disabled = idx === 0;
+    nextBtn.disabled = !answers[q.id];
+    nextBtn.textContent = idx === QUESTIONS.length - 1 ? 'Get my match →' : 'Next →';
+  }
+
+  function showResult() {
+    const matches = bestMatch(answers);
+    quizDiv.classList.add('hidden');
+    resultDiv.classList.remove('hidden');
+    clearNode(resultDiv);
+
+    const wrap = document.createElement('div');
+    wrap.className = 'bg-white border border-surface-border rounded-xl p-8 shadow-sm';
+
+    const badge = document.createElement('span');
+    badge.className = 'text-xs bg-accent text-white px-3 py-1 rounded-full font-sans font-semibold uppercase tracking-wider';
+    badge.textContent = 'Your top match';
+    wrap.appendChild(badge);
+
+    const h = document.createElement('h2');
+    h.className = 'text-3xl font-bold text-primary mt-3 mb-4 font-sans';
+    h.textContent = matches[0].name;
+    wrap.appendChild(h);
+
+    const p = document.createElement('p');
+    p.className = 'text-ink leading-relaxed mb-6';
+    p.textContent = 'Based on your goal (' + answers.goal + '), budget (' + answers.budget + ') and style preferences, ' + matches[0].name + ' is the best fit. Click below to try it for free.';
+    wrap.appendChild(p);
+
+    const cta = document.createElement('a');
+    cta.className = 'inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans';
+    cta.href = matches[0].go ? '/go?offer=' + matches[0].slug + '&sid=matcher_' + matches[0].slug : matches[0].url;
+    cta.rel = 'nofollow sponsored noopener';
+    cta.textContent = 'Try ' + matches[0].name + ' →';
+    wrap.appendChild(cta);
+
+    const altH = document.createElement('h3');
+    altH.className = 'text-lg font-bold text-primary mt-10 mb-3 font-sans';
+    altH.textContent = 'Also worth considering';
+    wrap.appendChild(altH);
+
+    const alts = document.createElement('div');
+    alts.className = 'space-y-2';
+    matches.slice(1).forEach(m => {
+      const a = document.createElement('a');
+      a.className = 'block p-4 border border-surface-border rounded-lg hover:border-accent font-sans text-ink';
+      a.href = m.go ? '/go?offer=' + m.slug + '&sid=matcher_alt_' + m.slug : m.url;
+      a.rel = 'nofollow sponsored noopener';
+      a.textContent = m.name + ' — ' + m.vertical;
+      alts.appendChild(a);
+    });
+    wrap.appendChild(alts);
+
+    const again = document.createElement('button');
+    again.className = 'mt-8 text-sm text-ink-muted hover:text-primary font-sans';
+    again.textContent = '← Start over';
+    again.addEventListener('click', () => { location.reload(); });
+    wrap.appendChild(again);
+
+    resultDiv.appendChild(wrap);
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (idx < QUESTIONS.length - 1) { idx++; render(); }
+    else { showResult(); }
+  });
+  backBtn.addEventListener('click', () => { if (idx > 0) { idx--; render(); } });
+  render();
+})();
+</script>

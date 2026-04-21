@@ -2,6 +2,7 @@
 interface Props { title: string; description: string; canonical?: string; }
 const { title, description, canonical } = Astro.props;
 import '../styles/globals.css';
+import SchemaOrg from '../components/SchemaOrg.astro';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,10 @@ import '../styles/globals.css';
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:type" content="website">
+<link rel="alternate" type="application/rss+xml" title="AI Companion Today" href="/rss.xml">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+<SchemaOrg type="Organization" />
+<SchemaOrg type="WebSite" />
 </head>
 <body class="min-h-screen flex flex-col">
 <div id="google_translate_element" style="position:fixed;top:8px;right:12px;z-index:50"></div>
@@ -33,7 +37,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
       <a href="/seniors/" class="text-ink hover:text-accent">Seniors</a>
       <a href="/productivity/" class="text-ink hover:text-accent">Productivity</a>
       <a href="/romance/" class="text-ink hover:text-accent">Romance</a>
-      <a href="/gaming/" class="text-ink-muted hover:text-accent">Gaming</a>
+      <a href="/tools/matcher/" class="text-accent font-semibold">Matcher</a>
       <a href="/methodology/" class="text-ink-muted hover:text-accent">Methodology</a>
     </div>
   </nav>
@@ -52,6 +56,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
     <a href="/advertising-disclosure/" class="hover:text-accent">Advertising Disclosure</a>
     <a href="/methodology/" class="hover:text-accent">Methodology</a>
     <a href="/disclaimer-mental-health/" class="hover:text-accent">Mental Health Disclaimer</a>
+    <a href="/tools/matcher/" class="hover:text-accent">AI Matcher</a>
     <span class="ml-auto">© 2026 AI Companion Today</span>
   </div>
 </footer>

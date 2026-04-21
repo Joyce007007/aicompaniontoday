@@ -9,6 +9,48 @@ Versions are stored in `/var/backups/aict/v<version>/` on the VPS and tagged in 
 
 ---
 
+## v18.0 — 21/04/2026 11:32 UTC
+
+**Matcher quiz + LLM citations + newsletter + versioning system**
+
+New features:
+- **AI Companion Matcher** (`/tools/matcher/`) — 7-question client-side quiz, scores 17 apps across 6 goals/4 budgets/3 styles, renders top match + 2 alternatives with /go tracked CTA. SaaS hook for exit-ready positioning.
+- **llms.txt** — markdown summary at `/llms.txt` for LLM crawlers (ChatGPT, Claude, Perplexity, Gemini) with brand summary, vertical taxonomy, primary URLs, attribution rules, and key citable facts.
+- **/api/facts.json** — 29 quantified facts for LLM grounded-answer citations (Replika users, Woebot FDA, ElliQ NYS program, Duolingo Max GPT-4, etc.) with source + citation_url per fact.
+- **Schema.org JSON-LD** — Organization + WebSite (with SearchAction) sitewide via Base.astro; ItemList schema on homepage; reusable `<SchemaOrg>` component for posts.
+- **Newsletter form** — reusable `<NewsletterForm>` component on homepage; POST to existing FastAPI `/api/newsletter` endpoint (rate-limited, persists to `aict.newsletter_subscribers`).
+- **Versioning system** — `/root/scripts/aict_release.sh` helper for future versions; CHANGELOG.md in repo; prod backups under `/var/backups/aict/vX.Y/`; git tags pushed to GitHub.
+- **Nav updated** — Matcher CTA added to main navigation and footer.
+
+Bug fixes:
+- Nginx legacy `try_files` rules for `/reviews/`, `/guides/`, `/compare/`, `/best/`, `/news/`, `/tools/`, `/fr/` were intercepting Astro subdirectories with 404 — removed.
+- Nginx `try_files $uri $uri/ $uri.html` updated to `try_files $uri $uri/index.html $uri/ $uri.html` to serve Astro directory index files.
+- Static serve for `/api/facts.json` and `/llms.txt` added before the `/api/` FastAPI proxy block, so they serve from disk rather than hitting uvicorn.
+
+Files added:
+- `src/pages/tools/matcher.astro`
+- `src/components/SchemaOrg.astro`
+- `src/components/NewsletterForm.astro`
+- `public/llms.txt`
+- `public/api/facts.json`
+- `CHANGELOG.md`
+
+Files modified:
+- `src/layouts/Base.astro` (Schema.org + Matcher nav link)
+- `src/pages/index.astro` (Matcher CTA banner + Newsletter form + ItemList schema)
+- `/etc/nginx/sites-enabled/aicompaniontoday.com` (legacy try_files removed, /api/facts.json + /llms.txt static serves, Astro-friendly try_files)
+
+Audit green:
+- 14 pages HTTP 200
+- /api/facts.json returns 29 facts
+- /llms.txt returns 63 lines
+- Schema.org JSON-LD: Organization, WebSite, ItemList, ListItem, Product, SearchAction present
+- Newsletter POST /api/newsletter returns {"ok":true}
+- /go 302 on 5 slugs tested (candy, gal_sofia, gal_amber, secrets, evadav_push)
+- 0 leak Jocelyn on 15 pages
+- 2jagency.com intact (200) + /ghost/ (200)
+
+
 ## v17.5 — 19/04/2026 06:05 UTC
 
 **/romance/ refondu + Google Translate + RSS news**

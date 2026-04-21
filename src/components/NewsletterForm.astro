@@ -1,0 +1,52 @@
+---
+export interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+---
+<section class={compact ? "py-8 bg-surface-alt" : "py-16 bg-surface-alt"}>
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="bg-white border border-surface-border rounded-xl p-8 text-center">
+      <h2 class={compact ? "text-xl font-bold text-primary mb-2 font-sans" : "text-2xl font-bold text-primary mb-3 font-sans"}>Weekly AI companion updates</h2>
+      <p class="text-ink-muted mb-6 font-sans">New guide releases, app launches and our monthly "State of AI Companion" report — straight to your inbox. No spam. Unsubscribe anytime.</p>
+      <form id="newsletterForm" action="/api/newsletter" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+        <input type="email" name="email" required placeholder="you@example.com" class="flex-1 px-4 py-3 border border-surface-border rounded-lg font-sans text-ink focus:outline-none focus:border-accent" />
+        <input type="hidden" name="source" value="home" />
+        <button type="submit" class="bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans whitespace-nowrap">Subscribe</button>
+      </form>
+      <div id="newsletterMsg" class="mt-3 text-sm font-sans"></div>
+      <p class="text-xs text-ink-subtle mt-4 font-sans">By subscribing you accept our <a href="/privacy/" class="underline">privacy policy</a>.</p>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function(){
+  const form = document.getElementById('newsletterForm');
+  if (!form) return;
+  const msg = document.getElementById('newsletterMsg');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    msg.textContent = 'Submitting...';
+    msg.className = 'mt-3 text-sm font-sans text-ink-muted';
+    try {
+      const payload = { email: data.get('email'), source_page: data.get('source') || 'home' };
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) {
+        msg.textContent = 'Thanks! Please check your inbox.';
+        msg.className = 'mt-3 text-sm font-sans text-green-700';
+        form.reset();
+      } else {
+        msg.textContent = 'Could not subscribe. Try again later.';
+        msg.className = 'mt-3 text-sm font-sans text-danger';
+      }
+    } catch (e) {
+      msg.textContent = 'Network error. Try again.';
+      msg.className = 'mt-3 text-sm font-sans text-danger';
+    }
+  });
+})();
+</script>

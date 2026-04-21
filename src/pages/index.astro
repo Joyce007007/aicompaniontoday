@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import SchemaOrg from '../components/SchemaOrg.astro';
 import { getAllPosts } from '../lib/ghost.js';
 import { getCompanionNews } from '../lib/ai-news.js';
 
@@ -16,17 +18,21 @@ const verticals = [
   { slug: 'gaming', name: 'Gaming', tam: 'Emerging', apps: 'Questie AI, Inworld', url: '/gaming/', stub: true }
 ];
 
-const featuredIn = [
-  'TechCrunch', 'The Verge', 'VentureBeat', 'MIT Technology Review',
-  'AI Business', 'Wired', 'Business Insider', 'The Information'
-];
+const featuredIn = ['TechCrunch', 'The Verge', 'VentureBeat', 'MIT Technology Review', 'AI Business', 'Wired', 'Business Insider', 'The Information'];
+
+const itemListData = {
+  name: 'AI companion verticals',
+  items: verticals.map(v => ({ name: v.name, url: 'https://aicompaniontoday.com' + v.url }))
+};
 ---
 <Base title="AI Companion Today — Independent Guide to AI Companion Apps" description="Honest, methodology-driven guides and reviews of AI companion apps across seven verticals. Updated daily with news from leading AI publications.">
+  <SchemaOrg type="ItemList" data={itemListData} />
+
   <section class="py-16 max-w-4xl mx-auto px-6 text-center">
     <h1 class="text-5xl font-bold text-primary mb-6 tracking-tight font-sans">The honest guide to AI companion apps</h1>
     <p class="text-xl text-ink leading-relaxed mb-8">Independent reviews, comparisons and daily news across <strong>seven verticals</strong> — companion, mental-health, seniors, language, productivity, romance and gaming. Real testing. Published methodology. No paid placements in rankings.</p>
     <div class="flex gap-4 justify-center flex-wrap">
-      <a href="/companion/" class="inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans">Top 2026 picks</a>
+      <a href="/tools/matcher/" class="inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans">Find my AI companion →</a>
       <a href="/methodology/" class="inline-block border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white font-sans">How we test</a>
     </div>
   </section>
@@ -57,6 +63,15 @@ const featuredIn = [
           </a>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-r from-primary to-slate-700 text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="text-xs bg-accent text-white px-3 py-1 rounded-full font-sans font-semibold uppercase tracking-wider">Free tool · 2 min</span>
+      <h2 class="text-3xl font-bold mt-4 mb-3 font-sans">Not sure which AI companion is right for you?</h2>
+      <p class="text-lg opacity-90 mb-6 font-sans">Answer 7 quick questions and we'll match you with the best AI app for your goal, budget and style. No email required.</p>
+      <a href="/tools/matcher/" class="inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans">Take the quiz →</a>
     </div>
   </section>
 
@@ -100,6 +115,8 @@ const featuredIn = [
       </div>
     </div>
   </section>
+
+  <NewsletterForm />
 
   <section class="py-16 max-w-4xl mx-auto px-6">
     <div class="bg-white border-2 border-surface-border rounded-2xl p-8 text-center">
