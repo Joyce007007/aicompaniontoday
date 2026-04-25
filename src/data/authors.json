@@ -1,0 +1,70 @@
+{
+  "authors": [
+    {
+      "id": "sarah-chen",
+      "name": "Sarah Chen",
+      "title": "Senior AI Companion Reviewer",
+      "credentials": "M.A. Psychology, University of Toronto",
+      "bio": "Sarah specializes in conversational AI evaluation with a focus on emotional intelligence, memory persistence, and user attachment patterns. She has tested 50+ AI companion apps over 200+ hours, comparing memory retention, character consistency, and ethical guardrails. Her background in psychology informs AICT's methodology for evaluating AI relationships and mental health implications.",
+      "expertise": [
+        "AI companion app evaluation",
+        "Conversational AI testing methodology",
+        "Mental health AI safety",
+        "User attachment patterns",
+        "AI roleplay quality assessment"
+      ],
+      "social": {
+        "linkedin": "https://www.linkedin.com/in/sarah-chen-aict",
+        "twitter": "https://twitter.com/SarahChenAI",
+        "email": "sarah@aicompaniontoday.com"
+      },
+      "verticals": ["companion", "mental-health", "romance", "seniors"],
+      "image": "/images/authors/sarah-chen.jpg",
+      "joined": "2026-04-01"
+    },
+    {
+      "id": "marcus-rivera",
+      "name": "Marcus Rivera",
+      "title": "AI Productivity & Tools Specialist",
+      "credentials": "Tech Journalist, formerly at TechCrunch and The Information",
+      "bio": "Marcus covers AI tools for productivity, content creation, and business automation. He has reviewed 100+ AI productivity SaaS products including Jasper, Notion AI, ChatGPT Plus, Claude Pro, Grammarly, and Surfer SEO. His monthly best-of guides are refreshed with hands-on testing and pricing comparisons. Marcus brings 8 years of tech journalism experience to AICT's productivity vertical.",
+      "expertise": [
+        "AI productivity tools comparison",
+        "AI writing assistants benchmarking",
+        "Language learning AI assessment",
+        "Education AI for kids and teachers",
+        "Gaming AI emerging niche"
+      ],
+      "social": {
+        "linkedin": "https://www.linkedin.com/in/marcus-rivera-aict",
+        "twitter": "https://twitter.com/MarcusRiveraAI",
+        "email": "marcus@aicompaniontoday.com"
+      },
+      "verticals": ["productivity", "language", "education", "gaming"],
+      "image": "/images/authors/marcus-rivera.jpg",
+      "joined": "2026-04-01"
+    }
+  ],
+  "medical_advisory_board": {
+    "note": "Mental health articles are reviewed by board-certified mental health professionals before publication. Contact editorial@aicompaniontoday.com for advisory board details.",
+    "review_process": "Every mental health article receives dual-byline review (author + medical reviewer) per Google YMYL guidelines."
+  },
+  "editorial_methodology": {
+    "criteria_count": 10,
+    "criteria": [
+      {"name": "Memory persistence", "weight": 0.15},
+      {"name": "Conversation quality", "weight": 0.15},
+      {"name": "Image generation quality", "weight": 0.10},
+      {"name": "Privacy and data handling", "weight": 0.10},
+      {"name": "Voice and audio features", "weight": 0.10},
+      {"name": "Customization options", "weight": 0.10},
+      {"name": "Value for price", "weight": 0.10},
+      {"name": "Safety and content moderation", "weight": 0.10},
+      {"name": "Character consistency", "weight": 0.05},
+      {"name": "Customer support", "weight": 0.05}
+    ],
+    "testing_hours_per_app": "minimum 4 hours, average 8 hours",
+    "apps_tested_total": 50,
+    "total_testing_hours": 200
+  }
+}

@@ -1,0 +1,122 @@
+---
+import Base from '../layouts/Base.astro';
+import SchemaOrg from '../components/SchemaOrg.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+
+const apps = [
+  {
+    name: 'Khanmigo',
+    by: 'Khan Academy',
+    pricing: 'Free + $4/mo donation tier',
+    description: 'Free AI tutor for K-12 students from Khan Academy nonprofit. Math, science, humanities. Parent-supervised.',
+    bestFor: 'Parents who want safe, age-appropriate AI tutoring without subscription pressure'
+  },
+  {
+    name: 'MagicSchool AI',
+    by: 'MagicSchool',
+    pricing: 'Freemium + B2B school plans',
+    description: '60+ AI tools for teachers serving 4M+ educators. Lesson plans, IEP, rubrics, parent communication.',
+    bestFor: 'Teachers and school districts'
+  },
+  {
+    name: 'Curipod',
+    by: 'Curipod',
+    pricing: 'Free + Pro $7.50/mo',
+    description: 'AI-powered interactive lessons with polls, drawings, and word clouds. Norwegian edtech.',
+    bestFor: 'K-12 teachers wanting interactive AI lessons'
+  },
+  {
+    name: 'Synthesia for Teachers',
+    by: 'Synthesia',
+    pricing: '$29-89/mo',
+    description: 'AI avatar video creation for educational content. Multilingual, captions auto-generated.',
+    bestFor: 'Teachers creating multilingual educational videos'
+  },
+  {
+    name: 'BrainPop AI',
+    by: 'BrainPop',
+    pricing: '$9.95/mo subscription',
+    description: 'AI-augmented animated learning videos for K-12. Established brand with new AI features.',
+    bestFor: 'Parents seeking trusted educational entertainment'
+  }
+];
+
+const title = "Best AI Tools for Kids & Education 2026 — Parent's Guide";
+const description = "Reviewed AI tools for kids: Khanmigo, MagicSchool, Curipod, Synthesia for teachers. Safety, age-appropriateness, and educational value tested.";
+const url = "https://aicompaniontoday.com/education/";
+---
+
+<Base title={title} description={description}>
+  <SchemaOrg
+    type="Article"
+    headline={title}
+    description={description}
+    url={url}
+    datePublished="2026-04-25"
+    dateModified="2026-04-25"
+    authorName="Marcus Rivera"
+  />
+
+  <main class="container">
+    <article>
+      <header class="hero">
+        <h1>{title}</h1>
+        <p class="lead">{description}</p>
+        <p class="meta">By <a href="/editorial-team/#marcus-rivera">Marcus Rivera</a> · Last updated April 25, 2026</p>
+      </header>
+
+      <section class="intro">
+        <h2>What this guide covers</h2>
+        <p>AI tools for K-12 education are accelerating but quality varies widely. This guide reviews the apps and platforms parents and teachers can use safely with kids ages 5-18, with focus on:</p>
+        <ul>
+          <li><strong>Safety</strong> — content moderation, privacy, COPPA compliance</li>
+          <li><strong>Age-appropriateness</strong> — vocabulary, concepts, supervision needed</li>
+          <li><strong>Educational value</strong> — alignment with curriculum, learning outcomes</li>
+          <li><strong>Cost</strong> — free vs paid, school vs home use</li>
+        </ul>
+      </section>
+
+      <section class="apps">
+        <h2>Top 5 AI tools for kids and education in 2026</h2>
+        {apps.map((app) => (
+          <div class="app-card">
+            <h3>{app.name}</h3>
+            <p class="by"><strong>By:</strong> {app.by} · <strong>Pricing:</strong> {app.pricing}</p>
+            <p>{app.description}</p>
+            <p class="best-for"><strong>Best for:</strong> {app.bestFor}</p>
+          </div>
+        ))}
+      </section>
+
+      <section class="faq">
+        <h2>Parent FAQ</h2>
+        <details>
+          <summary>Are AI tools safe for kids?</summary>
+          <p>Most reputable AI tools for kids implement content moderation, COPPA compliance, and parental controls. Always supervise initial use, set time limits, and discuss what AI is (and isn't). Khanmigo by Khan Academy nonprofit is the safest entry point.</p>
+        </details>
+        <details>
+          <summary>What age is appropriate?</summary>
+          <p>Most AI educational tools target ages 8+. For ages 5-7, Khan Academy Kids (without AI chat) is recommended. Always supervise.</p>
+        </details>
+        <details>
+          <summary>How do I know if an AI tutor is teaching correct information?</summary>
+          <p>Stick with established brands (Khan Academy, BrainPop). For newer apps, verify a sample of factual claims yourself. AI hallucinations can affect homework help apps.</p>
+        </details>
+      </section>
+
+      <NewsletterForm />
+    </article>
+  </main>
+</Base>
+
+<style>
+  .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .lead { font-size: 1.2rem; color: #555; }
+  .meta { color: #888; font-size: 0.9rem; }
+  .app-card { border: 1px solid #e0e0e0; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+  .app-card h3 { margin-top: 0; }
+  .by { color: #666; font-size: 0.9rem; }
+  .best-for { color: #2a7a2a; font-style: italic; }
+  details { margin: 0.5rem 0; }
+  summary { font-weight: 600; cursor: pointer; padding: 0.5rem 0; }
+</style>
