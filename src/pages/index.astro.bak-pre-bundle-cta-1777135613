@@ -75,18 +75,6 @@ const itemListData = {
     </div>
   </section>
 
-  <section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="bg-gradient-to-br from-accent to-accent-dark text-white rounded-2xl p-10 text-center">
-        <span class="text-xs bg-white text-accent px-3 py-1 rounded-full font-sans font-semibold uppercase tracking-wider">Premium · 40 pages PDF</span>
-        <h2 class="text-3xl font-bold mt-4 mb-3 font-sans">Want the deeper version? AI Girlfriend Setup Guide 2026</h2>
-        <p class="text-lg opacity-95 mb-6 font-sans max-w-2xl mx-auto">Choose the right app, optimize memory and tone, lock down your privacy, avoid the common pitfalls. Written after testing 25+ apps.</p>
-        <a href="/premium-guide/" class="inline-block bg-white text-accent px-8 py-3 rounded-lg font-semibold hover:bg-surface-alt font-sans text-lg">Get the guide — €19 →</a>
-        <p class="text-xs opacity-80 mt-4 font-sans">One-time · 14-day refund · Instant download via Gumroad</p>
-      </div>
-    </div>
-  </section>
-
   {news.length > 0 && (
     <section class="py-16">
       <div class="max-w-6xl mx-auto px-6">
