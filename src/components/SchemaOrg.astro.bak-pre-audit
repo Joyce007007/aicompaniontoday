@@ -1,0 +1,62 @@
+---
+export interface Props { type?: 'Organization' | 'WebSite' | 'Article' | 'ItemList' | 'BreadcrumbList'; data?: any; }
+const { type = 'Organization', data = {} } = Astro.props;
+
+const ORG = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AI Companion Today",
+  "url": "https://aicompaniontoday.com",
+  "logo": "https://aicompaniontoday.com/favicon.svg",
+  "description": "Independent editorial publication reviewing AI companion apps across seven verticals.",
+  "sameAs": []
+};
+
+const WEBSITE = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AI Companion Today",
+  "url": "https://aicompaniontoday.com",
+  "publisher": { "@type": "Organization", "name": "AI Companion Today" },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://aicompaniontoday.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
+let json;
+if (type === 'Organization') json = ORG;
+else if (type === 'WebSite') json = WEBSITE;
+else if (type === 'Article') json = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": data.headline,
+  "datePublished": data.datePublished,
+  "dateModified": data.dateModified || data.datePublished,
+  "author": { "@type": "Organization", "name": "AI Companion Today Editorial Team" },
+  "publisher": ORG,
+  "mainEntityOfPage": data.url
+};
+else if (type === 'ItemList') json = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": data.name,
+  "itemListElement": (data.items || []).map((it, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": { "@type": "Product", "name": it.name, "url": it.url }
+  }))
+};
+else if (type === 'BreadcrumbList') json = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": (data.items || []).map((it, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": it.name,
+    "item": it.url
+  }))
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(json)}></script>
