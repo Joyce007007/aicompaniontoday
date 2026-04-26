@@ -45,10 +45,12 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
     <a href="/" class="text-xl font-bold text-primary tracking-tight">AI Companion Today</a>
     <div class="hidden md:flex gap-5 text-sm font-sans">
       <a href="/companion/" class="text-ink hover:text-accent">Companion</a>
-      <a href="/language/" class="text-ink hover:text-accent">Language</a>
       <a href="/mental-health/" class="text-ink hover:text-accent">Mental Health</a>
-      <a href="/seniors/" class="text-ink hover:text-accent">Seniors</a>
       <a href="/productivity/" class="text-ink hover:text-accent">Productivity</a>
+      <a href="/language/" class="text-ink hover:text-accent">Language</a>
+      <a href="/seniors/" class="text-ink hover:text-accent">Seniors</a>
+      <a href="/education/" class="text-ink hover:text-accent">Education</a>
+      <a href="/gaming/" class="text-ink hover:text-accent">Gaming</a>
       <a href="/tools/matcher/" class="text-accent font-semibold">Matcher</a>
       <a href="/methodology/" class="text-ink-muted hover:text-accent">Methodology</a>
     </div>
@@ -73,7 +75,9 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
   </div>
 </footer>
 
-<!-- EVADAV push notifications (campaign 2110085 monetization) -->
-<script async src="https://esquelbqu.com/ntfc.php?p=3093462" data-site-id="3093462" data-init="auto" id="evadav_push_init"></script>
+<!-- EVADAV push: ONLY on /romance/ (NSFW) — coupé du reste pour ne pas cannibaliser /go affiliate -->
+{Astro.url.pathname.startsWith("/romance") && (
+  <script async src="https://esquelbqu.com/ntfc.php?p=3093462" data-site-id="3093462" data-init="auto" id="evadav_push_init"></script>
+)}
 </body>
 </html>

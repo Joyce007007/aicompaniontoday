@@ -21,11 +21,93 @@ const isCompare = tags.some(t => t.slug === 'compare') || (content.slug || '').i
 
 const url = `https://aicompaniontoday.com/${content.slug}/`;
 
+// Vertical detection from slug + tags
+const slug = (content.slug || '').toLowerCase();
+let vertical = 'companion';
+if (slug.includes('mental') || slug.includes('therap') || slug.includes('anxiety') || tags.some(t => t.slug === 'mental-health')) vertical = 'mental-health';
+else if (slug.includes('senior') || slug.includes('widow') || slug.includes('elder')) vertical = 'seniors';
+else if (slug.includes('language') || slug.includes('tutor') || slug.includes('babbel') || slug.includes('talkpal')) vertical = 'language';
+else if (slug.includes('writing') || slug.includes('jasper') || slug.includes('chatgpt') || slug.includes('claude') || slug.includes('image-generator') || slug.includes('productivity')) vertical = 'productivity';
+else if (slug.includes('boyfriend') || slug.includes('girlfriend') || slug.includes('candy') || slug.includes('romance') || slug.includes('nsfw')) vertical = 'romance';
+else if (slug.includes('gaming') || slug.includes('dungeon')) vertical = 'gaming';
+else if (slug.includes('education') || slug.includes('kids') || slug.includes('teacher')) vertical = 'education';
+
+// Author selection per vertical
+const SARAH_VERTICALS = ['companion', 'mental-health', 'seniors', 'romance'];
+const author = SARAH_VERTICALS.includes(vertical)
+  ? { name: 'Sarah Chen', slug: 'sarah-chen', title: 'Senior AI Companion Reviewer', sameAs: ['https://www.linkedin.com/in/sarah-chen-aict','https://twitter.com/SarahChenAI'] }
+  : { name: 'Marcus Rivera', slug: 'marcus-rivera', title: 'AI Productivity Specialist', sameAs: ['https://www.linkedin.com/in/marcus-rivera-aict','https://twitter.com/MarcusRiveraAI'] };
+
+// Top 5 picks per vertical
+const PICKS = {
+  'companion': [
+    { name: 'Candy.ai', slug: 'candy', payout: '$40 PPS', desc: 'Most realistic AI companion with image generation and voice. T1 GEO best.' },
+    { name: 'Replika', slug: 'darlink', payout: 'Top free tier', desc: 'Largest user base (30M+). Free tier generous. Premium $7.99/mo.' },
+    { name: 'Nomi', slug: 'gal_amber', payout: 'Long-term memory', desc: 'Best persistent memory across sessions. Strong roleplay.' },
+    { name: 'Kindroid', slug: 'gal_anna', payout: 'Privacy-first', desc: 'Strong privacy stance, on-device memory option.' },
+    { name: 'Character.AI', slug: 'smartlink', payout: 'Best free roleplay', desc: 'Free unlimited messages, huge character library.' }
+  ],
+  'mental-health': [
+    { name: 'BetterHelp', slug: 'smartlink', payout: '$100/lead', desc: 'Largest online therapy network. Licensed therapists.' },
+    { name: 'Headspace', slug: 'smartlink', payout: 'Premium meditation', desc: 'Industry leader meditation + sleep. 70M+ users.' },
+    { name: 'Calm', slug: 'smartlink', payout: 'Sleep stories', desc: '100M+ downloads. Sleep stories and breathing.' },
+    { name: 'Wysa', slug: 'smartlink', payout: 'AI + therapist', desc: 'CBT-based AI chatbot, optional licensed therapist add-on.' },
+    { name: 'Talkspace', slug: 'smartlink', payout: 'NASDAQ-listed', desc: 'Online therapy platform. Insurance covered options.' }
+  ],
+  'seniors': [
+    { name: 'ElliQ', slug: 'smartlink', payout: '$250/mo', desc: 'Tabletop companion robot for 65+. Voice-only interface.' },
+    { name: 'GrandPad', slug: 'smartlink', payout: 'Tablet plan', desc: 'Senior-simplified tablet with AI assistance.' },
+    { name: 'Lovot', slug: 'smartlink', payout: 'Premium robot', desc: 'Companion robot from Japan, emotional bonding focus.' },
+    { name: 'Joy for All', slug: 'smartlink', payout: 'Plush companion', desc: 'Robotic plush companions for dementia patients.' },
+    { name: 'Pillo', slug: 'smartlink', payout: 'Health management', desc: 'AI health assistant for seniors, medication reminders.' }
+  ],
+  'language': [
+    { name: 'Talkpal', slug: 'smartlink', payout: 'AI conversation', desc: 'AI-only language tutor. Strong in Spanish/French/Mandarin.' },
+    { name: 'Babbel', slug: 'smartlink', payout: '16M+ subs', desc: 'Structured curriculum. $13.95/mo annual plan.' },
+    { name: 'Duolingo Max', slug: 'smartlink', payout: '$14.99/mo', desc: 'GPT-4 powered conversation practice.' },
+    { name: 'Italki', slug: 'smartlink', payout: 'Live tutors', desc: 'Largest 1-on-1 tutor marketplace. 30k+ teachers.' },
+    { name: 'Rosetta Stone', slug: 'smartlink', payout: 'Classic curriculum', desc: 'Veteran brand, immersive method.' }
+  ],
+  'productivity': [
+    { name: 'ChatGPT Plus', slug: 'smartlink', payout: '$20/mo', desc: 'GPT-4o + DALL-E 3 + Voice. 200M+ weekly users.' },
+    { name: 'Claude Pro', slug: 'smartlink', payout: '$20/mo Anthropic', desc: 'Best-in-class coding + writing quality.' },
+    { name: 'Jasper', slug: 'smartlink', payout: '30% recurring', desc: 'Marketing copywriter AI for teams. $125M ARR.' },
+    { name: 'Notion AI', slug: 'smartlink', payout: '50% recurring', desc: '$10/mo add-on to Notion. 30M+ user base.' },
+    { name: 'Surfer SEO', slug: 'smartlink', payout: '25% recurring', desc: 'AI-powered SEO content optimizer.' }
+  ],
+  'romance': [
+    { name: 'Candy.ai', slug: 'candy', payout: '$40 PPS', desc: 'Most realistic AI girlfriend, image gen + voice.' },
+    { name: 'DarLink', slug: 'darlink', payout: '$30 PPS', desc: 'High EPC NSFW companion, smartlink-friendly.' },
+    { name: 'Secrets.ai', slug: 'secrets', payout: 'Premium NSFW', desc: 'Image + voice + custom characters.' },
+    { name: 'GetHarder', slug: 'getharder', payout: '$34 PPS', desc: 'Premium adult AI companion.' },
+    { name: 'OurDream', slug: 'ourdream', payout: 'Custom companion', desc: 'Build your dream AI partner.' }
+  ],
+  'gaming': [
+    { name: 'AI Dungeon', slug: 'smartlink', payout: '$20/mo Premium', desc: 'AI-powered text adventure. 1M+ paying users.' },
+    { name: 'Inworld', slug: 'smartlink', payout: 'NPC platform', desc: 'AI NPCs for game devs. NVIDIA partnership.' },
+    { name: 'Convai', slug: 'smartlink', payout: 'Dev SDK', desc: 'Conversational AI for game characters.' },
+    { name: 'Skybox AI', slug: 'smartlink', payout: 'Roblox/Unity', desc: 'AI 3D world generation from text.' },
+    { name: 'Character.AI', slug: 'smartlink', payout: 'Roleplay free', desc: 'Free character creation + roleplay.' }
+  ],
+  'education': [
+    { name: 'Khanmigo', slug: 'smartlink', payout: 'Free + $4/mo', desc: 'Khan Academy AI tutor for K-12.' },
+    { name: 'MagicSchool AI', slug: 'smartlink', payout: '4M+ teachers', desc: 'AI tools for teachers.' },
+    { name: 'Curipod', slug: 'smartlink', payout: 'Free + Pro $7.50', desc: 'Interactive AI lessons.' },
+    { name: 'Synthesia for Teachers', slug: 'smartlink', payout: '$29-89/mo', desc: 'AI avatar video creation for educators.' },
+    { name: 'BrainPop AI', slug: 'smartlink', payout: '$9.95/mo', desc: 'AI-augmented animated learning.' }
+  ]
+};
+const verticalPicks = PICKS[vertical] || PICKS['companion'];
+
 const articleSchema = {
   headline: content.title,
   datePublished: content.published_at,
   dateModified: content.updated_at || content.published_at,
-  url
+  url,
+  authorName: author.name,
+  authorSlug: author.slug,
+  authorTitle: author.title,
+  authorSameAs: author.sameAs
 };
 
 const breadcrumbItems = [
@@ -71,9 +153,34 @@ const breadcrumbItems = [
     <h1 class="text-4xl font-bold text-primary mb-4 tracking-tight font-sans">{content.title}</h1>
     <div class="text-sm text-ink-muted mb-6 font-sans">
       {type === 'post' && (
-        <span>Published {new Date(content.published_at).toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'})} &middot; By The AICT Editorial Team</span>
+        <span>Published {new Date(content.published_at).toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'})} &middot; By <a href={`/editorial-team/#${author.slug}`} class="text-accent hover:underline">{author.name}</a> ({author.title}) &middot; <a href="/methodology/" class="text-accent hover:underline">Methodology</a></span>
       )}
     </div>
+
+    {isBestOf && (
+      <section class="my-8 p-6 bg-surface-alt rounded-xl border border-surface-border">
+        <h2 class="text-2xl font-bold text-primary mb-4 font-sans">Top 5 picks ({vertical})</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          {verticalPicks.map((pick, i) => (
+            <div class="bg-white p-4 rounded-lg border border-surface-border">
+              <div class="flex items-baseline gap-2 mb-2">
+                <span class="text-xs bg-accent text-white px-2 py-1 rounded font-bold">#{i+1}</span>
+                <h3 class="text-lg font-semibold text-primary font-sans">{pick.name}</h3>
+              </div>
+              <p class="text-sm text-ink-muted mb-3 font-sans">{pick.desc}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-ink-muted font-sans">{pick.payout}</span>
+                <a href={`/go?offer=${pick.slug}&sid=bestof_${vertical}_${pick.slug}`} class="inline-block bg-accent text-white px-4 py-2 rounded font-semibold text-sm hover:bg-accent-dark font-sans" rel="nofollow sponsored noopener">Try {pick.name} →</a>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="text-xs text-ink-muted mt-4 font-sans">
+          ⓘ Affiliate disclosure: we earn a commission if you sign up via these links, at no extra cost to you. <a href="/advertising-disclosure/" class="underline">Full disclosure</a>.
+        </p>
+      </section>
+    )}
+
     <div class="prose prose-lg max-w-none" set:html={content.html} />
   </article>
 

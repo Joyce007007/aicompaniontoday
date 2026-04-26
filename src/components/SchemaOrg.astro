@@ -9,7 +9,7 @@ const ORG = {
   "url": "https://aicompaniontoday.com",
   "logo": "https://aicompaniontoday.com/favicon.svg",
   "description": "Independent editorial publication reviewing AI companion apps across seven verticals.",
-  "sameAs": []
+  "sameAs": ["https://www.linkedin.com/company/aicompaniontoday", "https://twitter.com/AICompanion2026"]
 };
 
 const WEBSITE = {
@@ -34,7 +34,13 @@ else if (type === 'Article') json = {
   "headline": data.headline,
   "datePublished": data.datePublished,
   "dateModified": data.dateModified || data.datePublished,
-  "author": { "@type": "Organization", "name": "AI Companion Today Editorial Team" },
+  "author": data.authorName ? {
+    "@type": "Person",
+    "name": data.authorName,
+    "url": "https://aicompaniontoday.com/editorial-team/#" + (data.authorSlug || (data.authorName.toLowerCase().replace(/\s+/g, "-"))),
+    "jobTitle": data.authorTitle || "Senior AI Reviewer",
+    "sameAs": data.authorSameAs || []
+  } : { "@type": "Organization", "name": "AI Companion Today Editorial Team" },
   "publisher": ORG,
   "mainEntityOfPage": data.url
 };
