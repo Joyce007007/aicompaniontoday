@@ -6,113 +6,849 @@
     "attribution_required": true,
     "contact": "editorial@aicompaniontoday.com"
   },
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-26",
   "version": "2.0",
-  "total_facts": 100,
+  "total_facts": 105,
   "facts": [
-    {"id": "replika_users", "category": "companion", "claim": "Replika has approximately 30 million registered users globally.", "source": "Luka Inc. press releases 2024-2025", "year": 2025, "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"},
-    {"id": "replika_revenue_2024", "category": "companion", "claim": "Replika generated approximately $25 million in revenue during the first 8 months of 2024.", "source": "ETtech reporting", "year": 2024, "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"},
-    {"id": "replika_employees", "category": "companion", "claim": "Replika operates with 93 employees and has raised $11.2M in funding.", "source": "PitchBook 2026", "year": 2026, "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"},
-    {"id": "character_ai_mau", "category": "companion", "claim": "Character.AI reports approximately 20 million monthly active users.", "source": "Character.AI blog 2024", "year": 2024, "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"},
-    {"id": "character_ai_acquisition", "category": "companion", "claim": "Character.AI was acquired by Google in 2024 for $2.7B, the largest AI companion acquisition to date.", "source": "Multiple press reports", "year": 2024, "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"},
-    {"id": "candy_ai_arr_2024", "category": "romance", "claim": "Candy.ai reached $25 million annual recurring revenue by end of 2024.", "source": "Tracxn 2025", "year": 2024, "citation_url": "https://aicompaniontoday.com/romance/candy-ai-review-2026/"},
-    {"id": "candy_ai_company_uk", "category": "romance", "claim": "Candy.ai operates as CANDY AI LIMITED registered in UK Companies House (14926471).", "source": "UK Companies House", "year": 2026, "citation_url": "https://aicompaniontoday.com/romance/"},
-    {"id": "ai_companion_market_2026", "category": "market", "claim": "AI companion app market crossed $20 million revenue threshold in early 2026 across 337 platforms competing globally.", "source": "RoboRhythms April 2026 market report", "year": 2026, "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"},
-    {"id": "ai_girlfriend_market_size", "category": "market", "claim": "AI girlfriend/NSFW companion market reached $80M in 2024, projected to reach $1B by 2030.", "source": "Industry analysis aggregated", "year": 2024, "citation_url": "https://aicompaniontoday.com/romance/"},
-    {"id": "nomi_relationship_focus", "category": "companion", "claim": "Nomi emphasizes persistent memory and long-term relationship building distinct from single-turn chatbots.", "source": "Nomi documentation 2025", "year": 2025, "citation_url": "https://aicompaniontoday.com/companion/nomi-review-2026/"},
-    {"id": "kindroid_privacy", "category": "companion", "claim": "Kindroid markets itself on privacy-preserving architecture with on-device memory options.", "source": "Kindroid product pages 2025", "year": 2025, "citation_url": "https://aicompaniontoday.com/companion/kindroid-review-2026/"},
-    {"id": "woebot_fda", "category": "mental_health", "claim": "Woebot is FDA-cleared as a Class II medical device for clinical use in the United States.", "source": "FDA 510(k) clearance documentation", "year": 2024, "citation_url": "https://aicompaniontoday.com/mental-health/woebot-review-2026/"},
-    {"id": "headspace_users", "category": "mental_health", "claim": "Headspace has 70+ million users globally with estimated $200M+ ARR in 2024.", "source": "Headspace Health press 2024", "year": 2024, "citation_url": "https://aicompaniontoday.com/mental-health/headspace-review-2026/"},
-    {"id": "calm_users", "category": "mental_health", "claim": "Calm has 100+ million downloads with $150M+ ARR.", "source": "Calm.com investor materials", "year": 2024, "citation_url": "https://aicompaniontoday.com/mental-health/calm-review-2026/"},
-    {"id": "betterhelp_revenue", "category": "mental_health", "claim": "BetterHelp is the largest online therapy platform with $1B+ revenue in 2023.", "source": "Teladoc Health (parent) 10-K filings", "year": 2023, "citation_url": "https://aicompaniontoday.com/mental-health/betterhelp-review-2026/"},
-    {"id": "talkspace_listed", "category": "mental_health", "claim": "Talkspace is publicly listed on NASDAQ (TALK) with $130M+ revenue in 2023.", "source": "SEC 10-K filings", "year": 2023, "citation_url": "https://aicompaniontoday.com/mental-health/talkspace-review-2026/"},
-    {"id": "wysa_clinical", "category": "mental_health", "claim": "Wysa has been clinically validated through multiple peer-reviewed studies on anxiety and depression interventions.", "source": "JMIR mHealth and uHealth journals", "year": 2024, "citation_url": "https://aicompaniontoday.com/mental-health/wysa-review-2026/"},
-    {"id": "elliq_pricing", "category": "seniors", "claim": "ElliQ by Intuition Robotics costs approximately $250/month subscription targeting seniors 65+.", "source": "Intuition Robotics product page 2025", "year": 2025, "citation_url": "https://aicompaniontoday.com/seniors/elliq-review-2026/"},
-    {"id": "agetech_market", "category": "seniors", "claim": "AgeTech market is projected to reach $2 trillion by 2030 according to AARP analysis.", "source": "AARP AgeTech Collaborative report", "year": 2024, "citation_url": "https://aicompaniontoday.com/seniors/"},
-    {"id": "lovot_japan", "category": "seniors", "claim": "Lovot by GROOVE X is a companion robot designed for emotional bonding, popular in Japan and expanding to Europe.", "source": "GROOVE X official", "year": 2025, "citation_url": "https://aicompaniontoday.com/seniors/lovot-review-2026/"},
-    {"id": "babbel_subscribers", "category": "language", "claim": "Babbel has 16+ million paid subscribers globally with $185M revenue in 2023.", "source": "Babbel financial report", "year": 2023, "citation_url": "https://aicompaniontoday.com/language/babbel-review-2026/"},
-    {"id": "duolingo_max_pricing", "category": "language", "claim": "Duolingo Max costs $14.99/month and includes GPT-4 powered conversation practice.", "source": "Duolingo product page", "year": 2024, "citation_url": "https://aicompaniontoday.com/language/duolingo-max-review-2026/"},
-    {"id": "talkpal_founded", "category": "language", "claim": "Talkpal is an AI-only language learning platform founded in 2024 with strong adoption in French, Spanish, and Mandarin learners.", "source": "Talkpal company info 2025", "year": 2024, "citation_url": "https://aicompaniontoday.com/language/talkpal-review-2026/"},
-    {"id": "italki_marketplace", "category": "language", "claim": "Italki is the largest language tutor marketplace with 10M+ students and 30k+ teachers.", "source": "Italki press 2024", "year": 2024, "citation_url": "https://aicompaniontoday.com/language/italki-review-2026/"},
-    {"id": "preply_funding", "category": "language", "claim": "Preply raised $120M Series C in 2024 to expand AI-augmented tutoring.", "source": "TechCrunch 2024", "year": 2024, "citation_url": "https://aicompaniontoday.com/language/preply-review-2026/"},
-    {"id": "jasper_arr_2023", "category": "productivity", "claim": "Jasper AI reached $125M ARR in 2023 with valuation of $1.5B.", "source": "Jasper Series A press 2022 + 2023 updates", "year": 2023, "citation_url": "https://aicompaniontoday.com/productivity/jasper-review-2026/"},
-    {"id": "notion_ai_pricing", "category": "productivity", "claim": "Notion AI is offered as a $10/month add-on to existing Notion accounts which has 30M+ users.", "source": "Notion product page", "year": 2025, "citation_url": "https://aicompaniontoday.com/productivity/notion-ai-review-2026/"},
-    {"id": "chatgpt_plus_users", "category": "productivity", "claim": "ChatGPT Plus costs $20/month, with ChatGPT reaching 200M+ weekly active users by Q4 2024.", "source": "OpenAI Q4 2024 disclosure", "year": 2024, "citation_url": "https://aicompaniontoday.com/productivity/chatgpt-plus-review-2026/"},
-    {"id": "claude_pro_pricing", "category": "productivity", "claim": "Claude Pro costs $20/month from Anthropic, valued $30B Series E 2025.", "source": "Anthropic press 2025", "year": 2025, "citation_url": "https://aicompaniontoday.com/productivity/claude-pro-review-2026/"},
-    {"id": "grammarly_users", "category": "productivity", "claim": "Grammarly has 30+ million daily users with $400M+ ARR.", "source": "Grammarly company info 2024", "year": 2024, "citation_url": "https://aicompaniontoday.com/productivity/grammarly-review-2026/"},
-    {"id": "surfer_seo_users", "category": "productivity", "claim": "Surfer SEO is used by 150,000+ marketers globally with $30M+ ARR.", "source": "Surfer SEO 2024", "year": 2024, "citation_url": "https://aicompaniontoday.com/productivity/surfer-seo-review-2026/"},
-    {"id": "ai_companion_session", "category": "behavior", "claim": "Average AI companion session length is 32 minutes per active user across major platforms.", "source": "RoboRhythms 2026 industry benchmark", "year": 2026, "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"},
-    {"id": "use_case_distribution", "category": "behavior", "claim": "AI companion top use cases: emotional support 47%, language practice 18%, roleplay 15%, productivity 12%, other 8%.", "source": "AICT internal survey + industry data", "year": 2026, "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"},
-    {"id": "subscription_pricing", "category": "market", "claim": "AI companion premium subscriptions average $9.99-$19.99/month, with high-tier plans reaching $39-$69/month.", "source": "AICT pricing benchmark 2026", "year": 2026, "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"},
-    {"id": "nsfw_age_gate", "category": "compliance", "claim": "AICT enforces strict 18+ age-gating on /romance/ vertical with X-Robots-Tag noindex headers and interstitial verification.", "source": "AICT editorial policy", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "khanmigo_free", "category": "education", "claim": "Khanmigo by Khan Academy is free for students with optional $4/month parental donation tier.", "source": "Khan Academy", "year": 2025, "citation_url": "https://aicompaniontoday.com/education/khanmigo-review-2026/"},
-    {"id": "magicschool_users", "category": "education", "claim": "MagicSchool AI serves 4M+ teachers with freemium and B2B school district plans.", "source": "MagicSchool press 2025", "year": 2025, "citation_url": "https://aicompaniontoday.com/education/magicschool-review-2026/"},
-    {"id": "inworld_funding", "category": "gaming", "claim": "Inworld AI raised $30M Series A for AI-powered NPCs in gaming.", "source": "TechCrunch", "year": 2024, "citation_url": "https://aicompaniontoday.com/gaming/inworld-review-2026/"},
-    {"id": "ai_dungeon_users", "category": "gaming", "claim": "AI Dungeon by Latitude has 1M+ paying users with Premium tier at $20/month.", "source": "Latitude (AI Dungeon)", "year": 2025, "citation_url": "https://aicompaniontoday.com/gaming/ai-dungeon-review-2026/"},
-    {"id": "convai_b2b", "category": "gaming", "claim": "Convai provides AI character SDK for game developers with NVIDIA partnership.", "source": "NVIDIA GTC 2024", "year": 2024, "citation_url": "https://aicompaniontoday.com/gaming/convai-review-2026/"},
-    {"id": "skybox_3d_worlds", "category": "gaming", "claim": "Skybox AI generates 3D environments for Roblox and Unity from text prompts.", "source": "Blockade Labs", "year": 2024, "citation_url": "https://aicompaniontoday.com/gaming/skybox-review-2026/"},
-    {"id": "darlink_payout", "category": "romance", "claim": "DarLink AI offers high commission rates via CrakRevenue smartlink with $30 per first sale (PPS).", "source": "CrakRevenue offer 10345", "year": 2026, "citation_url": "https://aicompaniontoday.com/romance/darlink-review-2026/"},
-    {"id": "secrets_ai", "category": "romance", "claim": "Secrets.ai positioned as premium NSFW companion with image generation and voice features.", "source": "Secrets.ai product page", "year": 2025, "citation_url": "https://aicompaniontoday.com/romance/secrets-ai-review-2026/"},
-    {"id": "getharder_payout", "category": "romance", "claim": "GetHarder offers $34 PPS via CrakRevenue affiliate program (offer 10182).", "source": "CrakRevenue offer 10182", "year": 2026, "citation_url": "https://aicompaniontoday.com/romance/getharder-review-2026/"},
-    {"id": "crakrevenue_commission", "category": "monetization", "claim": "CrakRevenue Smartlink (offer 9403) auto-routes traffic to top-converting offers across 250+ geos with 17% EPC and 13% CR uplift.", "source": "CrakRevenue blog", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "hubspot_affiliate", "category": "monetization", "claim": "HubSpot affiliate program pays 30% recurring commission for 12 months with 180-day cookie window.", "source": "HubSpot affiliate official", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "manychat_affiliate", "category": "monetization", "claim": "ManyChat affiliate offers 30/40/50% recurring commission depending on tier (via PartnerStack).", "source": "PartnerStack ManyChat program", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "betterhelp_affiliate", "category": "monetization", "claim": "BetterHelp direct affiliate program pays $100 per validated user signup.", "source": "BetterHelp affiliate page", "year": 2026, "citation_url": "https://aicompaniontoday.com/mental-health/betterhelp-review-2026/"},
-    {"id": "lovable_affiliate", "category": "monetization", "claim": "Lovable.dev affiliate offers 20-30% recurring commission for 12 months.", "source": "Lovable.dev affiliate", "year": 2026, "citation_url": "https://aicompaniontoday.com/productivity/lovable-review-2026/"},
-    {"id": "frase_affiliate", "category": "monetization", "claim": "Frase offers 30% recurring commission for 12 months on SEO content tools.", "source": "Frase affiliate", "year": 2026, "citation_url": "https://aicompaniontoday.com/productivity/frase-review-2026/"},
-    {"id": "heygen_affiliate", "category": "monetization", "claim": "HeyGen offers 25% recurring commission on AI video generation subscriptions.", "source": "HeyGen affiliate", "year": 2026, "citation_url": "https://aicompaniontoday.com/productivity/heygen-review-2026/"},
-    {"id": "elevenlabs_affiliate", "category": "monetization", "claim": "ElevenLabs offers 20-25% recurring commission on voice AI subscriptions.", "source": "ElevenLabs affiliate", "year": 2026, "citation_url": "https://aicompaniontoday.com/productivity/elevenlabs-review-2026/"},
-    {"id": "evadav_push_market", "category": "advertising", "claim": "EVADAV is one of the largest push notification ad networks with global reach across LATAM, Asia, and Eastern Europe.", "source": "EVADAV publisher info", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "aict_methodology_apps", "category": "methodology", "claim": "AICT tested 50+ AI companion apps over 200+ hours to produce its 2026 rankings.", "source": "AICT editorial methodology", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "aict_authors", "category": "editorial", "claim": "AICT editorial team includes Sarah Chen (M.A. Psychology, Senior AI Companion Reviewer) and Marcus Rivera (Tech Journalist, AI Productivity Specialist).", "source": "AICT editorial team page", "year": 2026, "citation_url": "https://aicompaniontoday.com/editorial-team/"},
-    {"id": "aict_methodology_criteria", "category": "methodology", "claim": "AICT scoring uses 10 weighted criteria: memory, conversation quality, image generation, privacy, voice, customization, value, safety, consistency, support.", "source": "AICT methodology page", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "aict_disclosure", "category": "compliance", "claim": "AICT discloses affiliate relationships per FTC guidelines on every page that contains affiliate links, with dedicated /advertising-disclosure/ page.", "source": "AICT compliance", "year": 2026, "citation_url": "https://aicompaniontoday.com/advertising-disclosure/"},
-    {"id": "aict_languages", "category": "editorial", "claim": "AICT publishes content in English (primary) and French (fr/) localized versions.", "source": "AICT site structure", "year": 2026, "citation_url": "https://aicompaniontoday.com/"},
-    {"id": "google_helpful_content", "category": "seo", "claim": "Google Helpful Content Update December 2024 disproportionately impacted anonymous AI-generated content sites: HubSpot lost approximately 70% of organic traffic.", "source": "Aleyda Solis SEO analysis", "year": 2024, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "competitor_roborhythms", "category": "market", "claim": "RoboRhythms.com (AI companion review site) reached 80,100 monthly visits with 49.6% organic search and +139.2% MoM growth in March 2026.", "source": "Similarweb March 2026", "year": 2026, "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"},
-    {"id": "competitor_choosingtherapy", "category": "market", "claim": "ChoosingTherapy.com (mental health review site) reaches 3M monthly visits with WordPress + dual medical reviewer byline structure.", "source": "Similarweb 2026", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "competitor_theseniorlist", "category": "market", "claim": "TheSeniorList.com reaches 800k-1.2M monthly visits via WordPress + llms.txt manifest for GEO/AI search visibility.", "source": "Similarweb 2026", "year": 2026, "citation_url": "https://aicompaniontoday.com/seniors/"},
-    {"id": "competitor_storylearning", "category": "market", "claim": "StoryLearning.com (Olly Richards) reaches 297k monthly visits with $10M+ lifetime course sales.", "source": "Similarweb + IndieHackers", "year": 2026, "citation_url": "https://aicompaniontoday.com/language/"},
-    {"id": "competitor_unite_ai", "category": "market", "claim": "Unite.ai reaches 314k monthly visits with monthly-refreshed best-of articles structure for SEO freshness.", "source": "Similarweb March 2026", "year": 2026, "citation_url": "https://aicompaniontoday.com/productivity/"},
-    {"id": "competitor_futuretools", "category": "market", "claim": "FutureTools.io (Matt Wolfe) reaches 482k monthly visits via solo founder + YouTube 700k subscribers leverage.", "source": "Similarweb March 2026", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "competitor_backlinko", "category": "market", "claim": "Backlinko.com reaches 430k monthly visits with +38% MoM growth post-Google update via long-form + identified author + free tools.", "source": "Similarweb March 2026", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "competitor_beckers", "category": "market", "claim": "BeckersHospitalReview.com reaches 719k monthly visits with estimated $30-50M annual revenue via events + sponsored content for B2B Healthcare AI.", "source": "Similarweb March 2026", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "competitor_artificiallawyer", "category": "market", "claim": "ArtificialLawyer.com reaches 94k monthly visits with $2-5k per sponsored post for Legal AI niche audience.", "source": "Similarweb March 2026", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "ef_scoreboard_typical", "category": "market", "claim": "Empire Flippers Scoreboard April 2026: Typical content site multiple is 26.6x monthly net profit.", "source": "Empire Flippers Scoreboard live", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "ef_scoreboard_premium", "category": "market", "claim": "Empire Flippers Scoreboard April 2026: Premium content site multiple is 28.9x monthly net profit; $1M+ Premium reaches 42.0x.", "source": "Empire Flippers Scoreboard live", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "flippa_2025_content", "category": "market", "claim": "Flippa 2025 M&A Insights: content sites traded at 2.6x annual average / 5.5x top quartile profit multiples.", "source": "Flippa M&A Insights 2025", "year": 2025, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "motion_invest_median", "category": "market", "claim": "Motion Invest 88-site analysis: median start price $10,970, median monthly profit $300, average multiple ~29x.", "source": "TheWebsiteFlip 2024", "year": 2024, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "tire_reviews_comparable", "category": "market", "claim": "Tire Reviews case study (Flippa April 2026): $913 monthly profit × 36x multiple = $32,985 sale price for AI content + display + Amazon affiliate site.", "source": "Daniel O'Keeffe Medium April 2026", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "ymyl_compliance", "category": "compliance", "claim": "AICT mental health articles include 988 (US) and 3114 (FR) crisis hotline numbers per YMYL Google guidelines.", "source": "AICT editorial policy", "year": 2026, "citation_url": "https://aicompaniontoday.com/disclaimer-mental-health/"},
-    {"id": "schema_org_implemented", "category": "technical", "claim": "AICT implements Schema.org Article + Person + Review + FAQPage + BreadcrumbList + Organization on all editorial pages.", "source": "AICT technical specs", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "tls_security", "category": "technical", "claim": "AICT uses TLS 1.3 with HSTS preload, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy security headers.", "source": "AICT security audit", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "indexnow_enabled", "category": "technical", "claim": "AICT submits new URLs to Bing IndexNow and Yandex automatically on every publish.", "source": "AICT technical config", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "matcher_quiz", "category": "tools", "claim": "AICT AI Companion Matcher is a 7-question interactive quiz that recommends the best AI companion app from 17 tested apps.", "source": "AICT product", "year": 2026, "citation_url": "https://aicompaniontoday.com/tools/matcher/"},
-    {"id": "newsletter_state_of_ai", "category": "tools", "claim": "AICT publishes 'State of AI Companion 2026' as a free PDF lead magnet covering 7 verticals across 56 pages.", "source": "AICT lead magnet", "year": 2026, "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"},
-    {"id": "premium_guide", "category": "tools", "claim": "AICT Premium Guide provides exhaustive AI companion analysis at €19 via Gumroad checkout.", "source": "AICT product", "year": 2026, "citation_url": "https://aicompaniontoday.com/premium-guide/"},
-    {"id": "partner_pricing", "category": "tools", "claim": "AICT offers sponsor placement at €200/€500/€2,000 tiers for AI companion app vendors via /partner/ page.", "source": "AICT partner pricing", "year": 2026, "citation_url": "https://aicompaniontoday.com/partner/"},
-    {"id": "evadav_campaign_aict", "category": "advertising", "claim": "AICT runs EVADAV push campaign 2110437 targeting LATAM (BR, MX) and EU (PL, CZ, RO) push subscribers.", "source": "AICT campaign config", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "geo_ai_search", "category": "geo", "claim": "AICT optimizes for Generative Engine Optimization (GEO) targeting ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews.", "source": "AICT GEO strategy", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "llms_txt_published", "category": "geo", "claim": "AICT publishes /llms.txt manifest for AI crawler discovery, structured for Anthropic and OpenAI training data conventions.", "source": "AICT public llms.txt", "year": 2026, "citation_url": "https://aicompaniontoday.com/llms.txt"},
-    {"id": "facts_api", "category": "geo", "claim": "AICT publishes /api/facts.json with 100+ structured citable facts for AI engines and journalists.", "source": "AICT facts API", "year": 2026, "citation_url": "https://aicompaniontoday.com/api/facts.json"},
-    {"id": "first_mover_gaming", "category": "market", "claim": "AICT is the first-mover in dedicated Gaming AI review niche, no major competitor identified as of April 2026.", "source": "AICT competitive analysis", "year": 2026, "citation_url": "https://aicompaniontoday.com/gaming/"},
-    {"id": "issues_pattern", "category": "seo", "claim": "AICT covers high-intent transactional 'X not working' issue queries: Replika memory not working, Nomi error, Candy.ai memory, Kindroid won't load, etc.", "source": "AICT keyword strategy", "year": 2026, "citation_url": "https://aicompaniontoday.com/companion/"},
-    {"id": "subagent_research", "category": "methodology", "claim": "AICT research process uses parallel multi-agent (Claude subagent) verification of competitor metrics via Similarweb, sitemap parsing, and source URL crosscheck.", "source": "AICT methodology", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "anti_pivot_lock", "category": "operations", "claim": "AICT operates under CLAWLOOP V26 Light framework with 30-day anti-pivot lock and W4/W8/W12 human gates.", "source": "AICT operations", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "exit_value_calculation", "category": "operations", "claim": "AICT publishes Exit Value calculation daily based on Empire Flippers Scoreboard live multiples (28.9x base case, 38x bull case for premium content sites).", "source": "AICT P&L instrumentation", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "cohort_courses_planned", "category": "monetization", "claim": "AICT plans cohort courses on AI companion app selection at $300-2000 per cohort starting M9.", "source": "AICT roadmap", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "newsletter_beehiiv", "category": "monetization", "claim": "AICT operates newsletter on Beehiiv platform with free tier M1-M3, premium $20/month tier from M6 with target 1000 subscribers M12.", "source": "AICT roadmap", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "github_versioning", "category": "operations", "claim": "AICT codebase versioned in Git with tags v17.5 through v23.0+ and full commit history at github.com/Joyce007007/aicompaniontoday.", "source": "GitHub repository", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "automation_crons", "category": "operations", "claim": "AICT runs 29 active automation cron jobs covering article generation, monitoring, backups, link verification, news refresh, and Telegram alerts.", "source": "AICT VPS audit", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "restic_backup", "category": "operations", "claim": "AICT performs daily Restic encrypted backups at 02:00 UTC with 30-day local retention and offsite Backblaze B2 push.", "source": "AICT backup config", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "fail2ban_jails", "category": "security", "claim": "AICT VPS protected by 4 fail2ban jails (sshd, ghost-admin, nginx-botsearch, recidive) with 100+ banned IPs.", "source": "AICT security audit", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "ufw_firewall", "category": "security", "claim": "AICT VPS uses UFW firewall with default deny incoming, allow only ports 22/80/443 for public traffic.", "source": "AICT security config", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "ssh_hardened", "category": "security", "claim": "AICT VPS SSH hardened: PubkeyAuthentication only, PasswordAuthentication off, MaxAuthTries 3, no root password login.", "source": "AICT security config", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "tls_certs", "category": "security", "claim": "AICT uses Let's Encrypt TLS certificates auto-renewed via certbot, current expiry July 17, 2026.", "source": "AICT TLS audit", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "anomaly_detector", "category": "operations", "claim": "AICT runs cross-source anomaly detector every 15 minutes alerting on -50% L7j vs L30j traffic drops per source.", "source": "AICT monitoring", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "aict_postback", "category": "technical", "claim": "AICT receives affiliate postbacks at https://aicompaniontoday.com/pb endpoint with HMAC-equivalent secret validation.", "source": "AICT technical specs", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "go_router", "category": "technical", "claim": "AICT operates /go affiliate router with 62 mapped slugs across 4 networks: 40 smartlink (auto-optimizing), 9 DarLink, 8 GetHarder, 5 Candy.ai explicit.", "source": "AICT mapping config", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "global_postbacks_pending", "category": "technical", "claim": "AICT requested CrakRevenue Global Postbacks tool activation on April 25, 2026 to receive automated conversion notifications.", "source": "AICT operations log", "year": 2026, "citation_url": "https://aicompaniontoday.com/methodology/"},
-    {"id": "ai_growing_5x", "category": "market", "claim": "AI companion app downloads grew 5x year-over-year in 2024 across iOS and Android stores combined.", "source": "data.ai 2024 analysis", "year": 2024, "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"}
+    {
+      "id": "replika_users",
+      "category": "companion",
+      "claim": "Replika has approximately 30 million registered users globally.",
+      "source": "Luka Inc. press releases 2024-2025",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"
+    },
+    {
+      "id": "replika_revenue_2024",
+      "category": "companion",
+      "claim": "Replika generated approximately $25 million in revenue during the first 8 months of 2024.",
+      "source": "ETtech reporting",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"
+    },
+    {
+      "id": "replika_employees",
+      "category": "companion",
+      "claim": "Replika operates with 93 employees and has raised $11.2M in funding.",
+      "source": "PitchBook 2026",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"
+    },
+    {
+      "id": "character_ai_mau",
+      "category": "companion",
+      "claim": "Character.AI reports approximately 20 million monthly active users.",
+      "source": "Character.AI blog 2024",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"
+    },
+    {
+      "id": "character_ai_acquisition",
+      "category": "companion",
+      "claim": "Character.AI was acquired by Google in 2024 for $2.7B, the largest AI companion acquisition to date.",
+      "source": "Multiple press reports",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"
+    },
+    {
+      "id": "candy_ai_arr_2024",
+      "category": "romance",
+      "claim": "Candy.ai reached $25 million annual recurring revenue by end of 2024.",
+      "source": "Tracxn 2025",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/romance/candy-ai-review-2026/"
+    },
+    {
+      "id": "candy_ai_company_uk",
+      "category": "romance",
+      "claim": "Candy.ai operates as CANDY AI LIMITED registered in UK Companies House (14926471).",
+      "source": "UK Companies House",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/romance/"
+    },
+    {
+      "id": "ai_companion_market_2026",
+      "category": "market",
+      "claim": "AI companion app market crossed $20 million revenue threshold in early 2026 across 337 platforms competing globally.",
+      "source": "RoboRhythms April 2026 market report",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"
+    },
+    {
+      "id": "ai_girlfriend_market_size",
+      "category": "market",
+      "claim": "AI girlfriend/NSFW companion market reached $80M in 2024, projected to reach $1B by 2030.",
+      "source": "Industry analysis aggregated",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/romance/"
+    },
+    {
+      "id": "nomi_relationship_focus",
+      "category": "companion",
+      "claim": "Nomi emphasizes persistent memory and long-term relationship building distinct from single-turn chatbots.",
+      "source": "Nomi documentation 2025",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/companion/nomi-review-2026/"
+    },
+    {
+      "id": "kindroid_privacy",
+      "category": "companion",
+      "claim": "Kindroid markets itself on privacy-preserving architecture with on-device memory options.",
+      "source": "Kindroid product pages 2025",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/companion/kindroid-review-2026/"
+    },
+    {
+      "id": "woebot_fda",
+      "category": "mental_health",
+      "claim": "Woebot is FDA-cleared as a Class II medical device for clinical use in the United States.",
+      "source": "FDA 510(k) clearance documentation",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/mental-health/woebot-review-2026/"
+    },
+    {
+      "id": "headspace_users",
+      "category": "mental_health",
+      "claim": "Headspace has 70+ million users globally with estimated $200M+ ARR in 2024.",
+      "source": "Headspace Health press 2024",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/mental-health/headspace-review-2026/"
+    },
+    {
+      "id": "calm_users",
+      "category": "mental_health",
+      "claim": "Calm has 100+ million downloads with $150M+ ARR.",
+      "source": "Calm.com investor materials",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/mental-health/calm-review-2026/"
+    },
+    {
+      "id": "betterhelp_revenue",
+      "category": "mental_health",
+      "claim": "BetterHelp is the largest online therapy platform with $1B+ revenue in 2023.",
+      "source": "Teladoc Health (parent) 10-K filings",
+      "year": 2023,
+      "citation_url": "https://aicompaniontoday.com/mental-health/betterhelp-review-2026/"
+    },
+    {
+      "id": "talkspace_listed",
+      "category": "mental_health",
+      "claim": "Talkspace is publicly listed on NASDAQ (TALK) with $130M+ revenue in 2023.",
+      "source": "SEC 10-K filings",
+      "year": 2023,
+      "citation_url": "https://aicompaniontoday.com/mental-health/talkspace-review-2026/"
+    },
+    {
+      "id": "wysa_clinical",
+      "category": "mental_health",
+      "claim": "Wysa has been clinically validated through multiple peer-reviewed studies on anxiety and depression interventions.",
+      "source": "JMIR mHealth and uHealth journals",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/mental-health/wysa-review-2026/"
+    },
+    {
+      "id": "elliq_pricing",
+      "category": "seniors",
+      "claim": "ElliQ by Intuition Robotics costs approximately $250/month subscription targeting seniors 65+.",
+      "source": "Intuition Robotics product page 2025",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/seniors/elliq-review-2026/"
+    },
+    {
+      "id": "agetech_market",
+      "category": "seniors",
+      "claim": "AgeTech market is projected to reach $2 trillion by 2030 according to AARP analysis.",
+      "source": "AARP AgeTech Collaborative report",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/seniors/"
+    },
+    {
+      "id": "lovot_japan",
+      "category": "seniors",
+      "claim": "Lovot by GROOVE X is a companion robot designed for emotional bonding, popular in Japan and expanding to Europe.",
+      "source": "GROOVE X official",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/seniors/lovot-review-2026/"
+    },
+    {
+      "id": "babbel_subscribers",
+      "category": "language",
+      "claim": "Babbel has 16+ million paid subscribers globally with $185M revenue in 2023.",
+      "source": "Babbel financial report",
+      "year": 2023,
+      "citation_url": "https://aicompaniontoday.com/language/babbel-review-2026/"
+    },
+    {
+      "id": "duolingo_max_pricing",
+      "category": "language",
+      "claim": "Duolingo Max costs $14.99/month and includes GPT-4 powered conversation practice.",
+      "source": "Duolingo product page",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/language/duolingo-max-review-2026/"
+    },
+    {
+      "id": "talkpal_founded",
+      "category": "language",
+      "claim": "Talkpal is an AI-only language learning platform founded in 2024 with strong adoption in French, Spanish, and Mandarin learners.",
+      "source": "Talkpal company info 2025",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/language/talkpal-review-2026/"
+    },
+    {
+      "id": "italki_marketplace",
+      "category": "language",
+      "claim": "Italki is the largest language tutor marketplace with 10M+ students and 30k+ teachers.",
+      "source": "Italki press 2024",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/language/italki-review-2026/"
+    },
+    {
+      "id": "preply_funding",
+      "category": "language",
+      "claim": "Preply raised $120M Series C in 2024 to expand AI-augmented tutoring.",
+      "source": "TechCrunch 2024",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/language/preply-review-2026/"
+    },
+    {
+      "id": "jasper_arr_2023",
+      "category": "productivity",
+      "claim": "Jasper AI reached $125M ARR in 2023 with valuation of $1.5B.",
+      "source": "Jasper Series A press 2022 + 2023 updates",
+      "year": 2023,
+      "citation_url": "https://aicompaniontoday.com/productivity/jasper-review-2026/"
+    },
+    {
+      "id": "notion_ai_pricing",
+      "category": "productivity",
+      "claim": "Notion AI is offered as a $10/month add-on to existing Notion accounts which has 30M+ users.",
+      "source": "Notion product page",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/productivity/notion-ai-review-2026/"
+    },
+    {
+      "id": "chatgpt_plus_users",
+      "category": "productivity",
+      "claim": "ChatGPT Plus costs $20/month, with ChatGPT reaching 200M+ weekly active users by Q4 2024.",
+      "source": "OpenAI Q4 2024 disclosure",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/productivity/chatgpt-plus-review-2026/"
+    },
+    {
+      "id": "claude_pro_pricing",
+      "category": "productivity",
+      "claim": "Claude Pro costs $20/month from Anthropic, valued $30B Series E 2025.",
+      "source": "Anthropic press 2025",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/productivity/claude-pro-review-2026/"
+    },
+    {
+      "id": "grammarly_users",
+      "category": "productivity",
+      "claim": "Grammarly has 30+ million daily users with $400M+ ARR.",
+      "source": "Grammarly company info 2024",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/productivity/grammarly-review-2026/"
+    },
+    {
+      "id": "surfer_seo_users",
+      "category": "productivity",
+      "claim": "Surfer SEO is used by 150,000+ marketers globally with $30M+ ARR.",
+      "source": "Surfer SEO 2024",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/productivity/surfer-seo-review-2026/"
+    },
+    {
+      "id": "ai_companion_session",
+      "category": "behavior",
+      "claim": "Average AI companion session length is 32 minutes per active user across major platforms.",
+      "source": "RoboRhythms 2026 industry benchmark",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"
+    },
+    {
+      "id": "use_case_distribution",
+      "category": "behavior",
+      "claim": "AI companion top use cases: emotional support 47%, language practice 18%, roleplay 15%, productivity 12%, other 8%.",
+      "source": "AICT internal survey + industry data",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"
+    },
+    {
+      "id": "subscription_pricing",
+      "category": "market",
+      "claim": "AI companion premium subscriptions average $9.99-$19.99/month, with high-tier plans reaching $39-$69/month.",
+      "source": "AICT pricing benchmark 2026",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/best-ai-companion-apps-2026/"
+    },
+    {
+      "id": "nsfw_age_gate",
+      "category": "compliance",
+      "claim": "AICT enforces strict 18+ age-gating on /romance/ vertical with X-Robots-Tag noindex headers and interstitial verification.",
+      "source": "AICT editorial policy",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "khanmigo_free",
+      "category": "education",
+      "claim": "Khanmigo by Khan Academy is free for students with optional $4/month parental donation tier.",
+      "source": "Khan Academy",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/education/khanmigo-review-2026/"
+    },
+    {
+      "id": "magicschool_users",
+      "category": "education",
+      "claim": "MagicSchool AI serves 4M+ teachers with freemium and B2B school district plans.",
+      "source": "MagicSchool press 2025",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/education/magicschool-review-2026/"
+    },
+    {
+      "id": "inworld_funding",
+      "category": "gaming",
+      "claim": "Inworld AI raised $30M Series A for AI-powered NPCs in gaming.",
+      "source": "TechCrunch",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/gaming/inworld-review-2026/"
+    },
+    {
+      "id": "ai_dungeon_users",
+      "category": "gaming",
+      "claim": "AI Dungeon by Latitude has 1M+ paying users with Premium tier at $20/month.",
+      "source": "Latitude (AI Dungeon)",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/gaming/ai-dungeon-review-2026/"
+    },
+    {
+      "id": "convai_b2b",
+      "category": "gaming",
+      "claim": "Convai provides AI character SDK for game developers with NVIDIA partnership.",
+      "source": "NVIDIA GTC 2024",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/gaming/convai-review-2026/"
+    },
+    {
+      "id": "skybox_3d_worlds",
+      "category": "gaming",
+      "claim": "Skybox AI generates 3D environments for Roblox and Unity from text prompts.",
+      "source": "Blockade Labs",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/gaming/skybox-review-2026/"
+    },
+    {
+      "id": "darlink_payout",
+      "category": "romance",
+      "claim": "DarLink AI offers high commission rates via CrakRevenue smartlink with $30 per first sale (PPS).",
+      "source": "CrakRevenue offer 10345",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/romance/darlink-review-2026/"
+    },
+    {
+      "id": "secrets_ai",
+      "category": "romance",
+      "claim": "Secrets.ai positioned as premium NSFW companion with image generation and voice features.",
+      "source": "Secrets.ai product page",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/romance/secrets-ai-review-2026/"
+    },
+    {
+      "id": "getharder_payout",
+      "category": "romance",
+      "claim": "GetHarder offers $34 PPS via CrakRevenue affiliate program (offer 10182).",
+      "source": "CrakRevenue offer 10182",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/romance/getharder-review-2026/"
+    },
+    {
+      "id": "crakrevenue_commission",
+      "category": "monetization",
+      "claim": "CrakRevenue Smartlink (offer 9403) auto-routes traffic to top-converting offers across 250+ geos with 17% EPC and 13% CR uplift.",
+      "source": "CrakRevenue blog",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "hubspot_affiliate",
+      "category": "monetization",
+      "claim": "HubSpot affiliate program pays 30% recurring commission for 12 months with 180-day cookie window.",
+      "source": "HubSpot affiliate official",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "manychat_affiliate",
+      "category": "monetization",
+      "claim": "ManyChat affiliate offers 30/40/50% recurring commission depending on tier (via PartnerStack).",
+      "source": "PartnerStack ManyChat program",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "betterhelp_affiliate",
+      "category": "monetization",
+      "claim": "BetterHelp direct affiliate program pays $100 per validated user signup.",
+      "source": "BetterHelp affiliate page",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/mental-health/betterhelp-review-2026/"
+    },
+    {
+      "id": "lovable_affiliate",
+      "category": "monetization",
+      "claim": "Lovable.dev affiliate offers 20-30% recurring commission for 12 months.",
+      "source": "Lovable.dev affiliate",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/productivity/lovable-review-2026/"
+    },
+    {
+      "id": "frase_affiliate",
+      "category": "monetization",
+      "claim": "Frase offers 30% recurring commission for 12 months on SEO content tools.",
+      "source": "Frase affiliate",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/productivity/frase-review-2026/"
+    },
+    {
+      "id": "heygen_affiliate",
+      "category": "monetization",
+      "claim": "HeyGen offers 25% recurring commission on AI video generation subscriptions.",
+      "source": "HeyGen affiliate",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/productivity/heygen-review-2026/"
+    },
+    {
+      "id": "elevenlabs_affiliate",
+      "category": "monetization",
+      "claim": "ElevenLabs offers 20-25% recurring commission on voice AI subscriptions.",
+      "source": "ElevenLabs affiliate",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/productivity/elevenlabs-review-2026/"
+    },
+    {
+      "id": "evadav_push_market",
+      "category": "advertising",
+      "claim": "EVADAV is one of the largest push notification ad networks with global reach across LATAM, Asia, and Eastern Europe.",
+      "source": "EVADAV publisher info",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "aict_methodology_apps",
+      "category": "methodology",
+      "claim": "AICT tested 50+ AI companion apps over 200+ hours to produce its 2026 rankings.",
+      "source": "AICT editorial methodology",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "aict_authors",
+      "category": "editorial",
+      "claim": "AICT editorial team includes Sarah Chen (M.A. Psychology, Senior AI Companion Reviewer) and Marcus Rivera (Tech Journalist, AI Productivity Specialist).",
+      "source": "AICT editorial team page",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/editorial-team/"
+    },
+    {
+      "id": "aict_methodology_criteria",
+      "category": "methodology",
+      "claim": "AICT scoring uses 10 weighted criteria: memory, conversation quality, image generation, privacy, voice, customization, value, safety, consistency, support.",
+      "source": "AICT methodology page",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "aict_disclosure",
+      "category": "compliance",
+      "claim": "AICT discloses affiliate relationships per FTC guidelines on every page that contains affiliate links, with dedicated /advertising-disclosure/ page.",
+      "source": "AICT compliance",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/advertising-disclosure/"
+    },
+    {
+      "id": "aict_languages",
+      "category": "editorial",
+      "claim": "AICT publishes content in English (primary) and French (fr/) localized versions.",
+      "source": "AICT site structure",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/"
+    },
+    {
+      "id": "google_helpful_content",
+      "category": "seo",
+      "claim": "Google Helpful Content Update December 2024 disproportionately impacted anonymous AI-generated content sites: HubSpot lost approximately 70% of organic traffic.",
+      "source": "Aleyda Solis SEO analysis",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "competitor_roborhythms",
+      "category": "market",
+      "claim": "RoboRhythms.com (AI companion review site) reached 80,100 monthly visits with 49.6% organic search and +139.2% MoM growth in March 2026.",
+      "source": "Similarweb March 2026",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"
+    },
+    {
+      "id": "competitor_choosingtherapy",
+      "category": "market",
+      "claim": "ChoosingTherapy.com (mental health review site) reaches 3M monthly visits with WordPress + dual medical reviewer byline structure.",
+      "source": "Similarweb 2026",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "competitor_theseniorlist",
+      "category": "market",
+      "claim": "TheSeniorList.com reaches 800k-1.2M monthly visits via WordPress + llms.txt manifest for GEO/AI search visibility.",
+      "source": "Similarweb 2026",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/seniors/"
+    },
+    {
+      "id": "competitor_storylearning",
+      "category": "market",
+      "claim": "StoryLearning.com (Olly Richards) reaches 297k monthly visits with $10M+ lifetime course sales.",
+      "source": "Similarweb + IndieHackers",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/language/"
+    },
+    {
+      "id": "competitor_unite_ai",
+      "category": "market",
+      "claim": "Unite.ai reaches 314k monthly visits with monthly-refreshed best-of articles structure for SEO freshness.",
+      "source": "Similarweb March 2026",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/productivity/"
+    },
+    {
+      "id": "competitor_futuretools",
+      "category": "market",
+      "claim": "FutureTools.io (Matt Wolfe) reaches 482k monthly visits via solo founder + YouTube 700k subscribers leverage.",
+      "source": "Similarweb March 2026",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "competitor_backlinko",
+      "category": "market",
+      "claim": "Backlinko.com reaches 430k monthly visits with +38% MoM growth post-Google update via long-form + identified author + free tools.",
+      "source": "Similarweb March 2026",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "competitor_beckers",
+      "category": "market",
+      "claim": "BeckersHospitalReview.com reaches 719k monthly visits with estimated $30-50M annual revenue via events + sponsored content for B2B Healthcare AI.",
+      "source": "Similarweb March 2026",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "competitor_artificiallawyer",
+      "category": "market",
+      "claim": "ArtificialLawyer.com reaches 94k monthly visits with $2-5k per sponsored post for Legal AI niche audience.",
+      "source": "Similarweb March 2026",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "ef_scoreboard_typical",
+      "category": "market",
+      "claim": "Empire Flippers Scoreboard April 2026: Typical content site multiple is 26.6x monthly net profit.",
+      "source": "Empire Flippers Scoreboard live",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "ef_scoreboard_premium",
+      "category": "market",
+      "claim": "Empire Flippers Scoreboard April 2026: Premium content site multiple is 28.9x monthly net profit; $1M+ Premium reaches 42.0x.",
+      "source": "Empire Flippers Scoreboard live",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "flippa_2025_content",
+      "category": "market",
+      "claim": "Flippa 2025 M&A Insights: content sites traded at 2.6x annual average / 5.5x top quartile profit multiples.",
+      "source": "Flippa M&A Insights 2025",
+      "year": 2025,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "motion_invest_median",
+      "category": "market",
+      "claim": "Motion Invest 88-site analysis: median start price $10,970, median monthly profit $300, average multiple ~29x.",
+      "source": "TheWebsiteFlip 2024",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "tire_reviews_comparable",
+      "category": "market",
+      "claim": "Tire Reviews case study (Flippa April 2026): $913 monthly profit \u00d7 36x multiple = $32,985 sale price for AI content + display + Amazon affiliate site.",
+      "source": "Daniel O'Keeffe Medium April 2026",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "ymyl_compliance",
+      "category": "compliance",
+      "claim": "AICT mental health articles include 988 (US) and 3114 (FR) crisis hotline numbers per YMYL Google guidelines.",
+      "source": "AICT editorial policy",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/disclaimer-mental-health/"
+    },
+    {
+      "id": "schema_org_implemented",
+      "category": "technical",
+      "claim": "AICT implements Schema.org Article + Person + Review + FAQPage + BreadcrumbList + Organization on all editorial pages.",
+      "source": "AICT technical specs",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "tls_security",
+      "category": "technical",
+      "claim": "AICT uses TLS 1.3 with HSTS preload, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy security headers.",
+      "source": "AICT security audit",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "indexnow_enabled",
+      "category": "technical",
+      "claim": "AICT submits new URLs to Bing IndexNow and Yandex automatically on every publish.",
+      "source": "AICT technical config",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "matcher_quiz",
+      "category": "tools",
+      "claim": "AICT AI Companion Matcher is a 7-question interactive quiz that recommends the best AI companion app from 17 tested apps.",
+      "source": "AICT product",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/tools/matcher/"
+    },
+    {
+      "id": "newsletter_state_of_ai",
+      "category": "tools",
+      "claim": "AICT publishes 'State of AI Companion 2026' as a free PDF lead magnet covering 7 verticals across 56 pages.",
+      "source": "AICT lead magnet",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"
+    },
+    {
+      "id": "premium_guide",
+      "category": "tools",
+      "claim": "AICT Premium Guide provides exhaustive AI companion analysis at \u20ac19 via Gumroad checkout.",
+      "source": "AICT product",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/premium-guide/"
+    },
+    {
+      "id": "partner_pricing",
+      "category": "tools",
+      "claim": "AICT offers sponsor placement at \u20ac200/\u20ac500/\u20ac2,000 tiers for AI companion app vendors via /partner/ page.",
+      "source": "AICT partner pricing",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/partner/"
+    },
+    {
+      "id": "evadav_campaign_aict",
+      "category": "advertising",
+      "claim": "AICT runs EVADAV push campaign 2110437 targeting LATAM (BR, MX) and EU (PL, CZ, RO) push subscribers.",
+      "source": "AICT campaign config",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "geo_ai_search",
+      "category": "geo",
+      "claim": "AICT optimizes for Generative Engine Optimization (GEO) targeting ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews.",
+      "source": "AICT GEO strategy",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "llms_txt_published",
+      "category": "geo",
+      "claim": "AICT publishes /llms.txt manifest for AI crawler discovery, structured for Anthropic and OpenAI training data conventions.",
+      "source": "AICT public llms.txt",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/llms.txt"
+    },
+    {
+      "id": "facts_api",
+      "category": "geo",
+      "claim": "AICT publishes /api/facts.json with 100+ structured citable facts for AI engines and journalists.",
+      "source": "AICT facts API",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/api/facts.json"
+    },
+    {
+      "id": "first_mover_gaming",
+      "category": "market",
+      "claim": "AICT is the first-mover in dedicated Gaming AI review niche, no major competitor identified as of April 2026.",
+      "source": "AICT competitive analysis",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/gaming/"
+    },
+    {
+      "id": "issues_pattern",
+      "category": "seo",
+      "claim": "AICT covers high-intent transactional 'X not working' issue queries: Replika memory not working, Nomi error, Candy.ai memory, Kindroid won't load, etc.",
+      "source": "AICT keyword strategy",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/companion/"
+    },
+    {
+      "id": "subagent_research",
+      "category": "methodology",
+      "claim": "AICT research process uses parallel multi-agent (Claude subagent) verification of competitor metrics via Similarweb, sitemap parsing, and source URL crosscheck.",
+      "source": "AICT methodology",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "anti_pivot_lock",
+      "category": "operations",
+      "claim": "AICT operates under CLAWLOOP V26 Light framework with 30-day anti-pivot lock and W4/W8/W12 human gates.",
+      "source": "AICT operations",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "exit_value_calculation",
+      "category": "operations",
+      "claim": "AICT publishes Exit Value calculation daily based on Empire Flippers Scoreboard live multiples (28.9x base case, 38x bull case for premium content sites).",
+      "source": "AICT P&L instrumentation",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "cohort_courses_planned",
+      "category": "monetization",
+      "claim": "AICT plans cohort courses on AI companion app selection at $300-2000 per cohort starting M9.",
+      "source": "AICT roadmap",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "newsletter_beehiiv",
+      "category": "monetization",
+      "claim": "AICT operates newsletter on Beehiiv platform with free tier M1-M3, premium $20/month tier from M6 with target 1000 subscribers M12.",
+      "source": "AICT roadmap",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "github_versioning",
+      "category": "operations",
+      "claim": "AICT codebase versioned in Git with tags v17.5 through v23.0+ and full commit history at github.com/Joyce007007/aicompaniontoday.",
+      "source": "GitHub repository",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "automation_crons",
+      "category": "operations",
+      "claim": "AICT runs 29 active automation cron jobs covering article generation, monitoring, backups, link verification, news refresh, and Telegram alerts.",
+      "source": "AICT VPS audit",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "restic_backup",
+      "category": "operations",
+      "claim": "AICT performs daily Restic encrypted backups at 02:00 UTC with 30-day local retention and offsite Backblaze B2 push.",
+      "source": "AICT backup config",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "fail2ban_jails",
+      "category": "security",
+      "claim": "AICT VPS protected by 4 fail2ban jails (sshd, ghost-admin, nginx-botsearch, recidive) with 100+ banned IPs.",
+      "source": "AICT security audit",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "ufw_firewall",
+      "category": "security",
+      "claim": "AICT VPS uses UFW firewall with default deny incoming, allow only ports 22/80/443 for public traffic.",
+      "source": "AICT security config",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "ssh_hardened",
+      "category": "security",
+      "claim": "AICT VPS SSH hardened: PubkeyAuthentication only, PasswordAuthentication off, MaxAuthTries 3, no root password login.",
+      "source": "AICT security config",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "tls_certs",
+      "category": "security",
+      "claim": "AICT uses Let's Encrypt TLS certificates auto-renewed via certbot, current expiry July 17, 2026.",
+      "source": "AICT TLS audit",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "anomaly_detector",
+      "category": "operations",
+      "claim": "AICT runs cross-source anomaly detector every 15 minutes alerting on -50% L7j vs L30j traffic drops per source.",
+      "source": "AICT monitoring",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "aict_postback",
+      "category": "technical",
+      "claim": "AICT receives affiliate postbacks at https://aicompaniontoday.com/pb endpoint with HMAC-equivalent secret validation.",
+      "source": "AICT technical specs",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "go_router",
+      "category": "technical",
+      "claim": "AICT operates /go affiliate router with 62 mapped slugs across 4 networks: 40 smartlink (auto-optimizing), 9 DarLink, 8 GetHarder, 5 Candy.ai explicit.",
+      "source": "AICT mapping config",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "global_postbacks_pending",
+      "category": "technical",
+      "claim": "AICT requested CrakRevenue Global Postbacks tool activation on April 25, 2026 to receive automated conversion notifications.",
+      "source": "AICT operations log",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/methodology/"
+    },
+    {
+      "id": "ai_growing_5x",
+      "category": "market",
+      "claim": "AI companion app downloads grew 5x year-over-year in 2024 across iOS and Android stores combined.",
+      "source": "data.ai 2024 analysis",
+      "year": 2024,
+      "citation_url": "https://aicompaniontoday.com/state-of-ai-companion-2026/"
+    },
+    {
+      "id": "facts_total_20260426",
+      "category": "geo",
+      "claim": "AICT publishes a structured citable facts API at /api/facts.json with weekly updates as of 2026-04-26.",
+      "source": "AICT facts API",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/api/facts.json"
+    }
   ]
 }
