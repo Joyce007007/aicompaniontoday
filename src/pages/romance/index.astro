@@ -51,7 +51,7 @@ const img = (n, key) => `/creatives_ai/banner_${String(n).padStart(2,'0')}_${key
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/_astro/ghost.BzncRHLH.css">
 <style>
-.card-img{aspect-ratio:492/328;background:#f1f5f9;object-fit:cover;width:100%;display:block}
+.avatar-tile{aspect-ratio:492/328;background:linear-gradient(135deg,#fff7ed 0%,#f97316 45%,#1e293b 100%);width:100%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:Inter,sans-serif;font-size:2.5rem;font-weight:800;letter-spacing:.04em;text-shadow:0 2px 14px rgba(15,23,42,.35)}
 .persona-card{position:relative;overflow:hidden;border-radius:12px;border:1px solid #e2e8f0;background:#fff;transition:transform .15s ease,box-shadow .15s ease}
 .persona-card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(15,23,42,.12);border-color:#c2410c}
 .persona-meta{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(to top,rgba(15,23,42,.92) 0%,rgba(15,23,42,.4) 70%,transparent 100%);color:#fff}
@@ -152,7 +152,7 @@ const img = (n, key) => `/creatives_ai/banner_${String(n).padStart(2,'0')}_${key
          rel="nofollow sponsored noopener"
          class="persona-card block"
          data-tab={p.tab}>
-        <img class="card-img" src={img(p.n, p.key)} alt={`${p.name} — ${p.origin} AI companion`} loading="lazy" />
+        <div class="avatar-tile" role="img" aria-label={`${p.name} — ${p.origin} AI companion`}>{p.name.slice(0,1)}</div>
         <span class="persona-badge">Chat now →</span>
         <div class="persona-meta">
           <div class="persona-name">{p.name}, {p.age}</div>

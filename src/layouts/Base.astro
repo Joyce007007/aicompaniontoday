@@ -72,5 +72,65 @@ const GSC_VERIFY = import.meta.env.GSC_VERIFY || '';
 {Astro.url.pathname.startsWith("/romance") && (
   <script async src="https://esquelbqu.com/ntfc.php?p=3093462" data-site-id="3093462" data-init="auto" id="evadav_push_init"></script>
 )}
+
+<script is:inline>
+(function(){
+  const forced = new URLSearchParams(location.search).get('lang') || localStorage.getItem('aict_lang');
+  const navLang = (navigator.language || '').toLowerCase();
+  const langs = (navigator.languages || []).join(',').toLowerCase();
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+  const locale = forced || (navLang.startsWith('ja') || langs.includes('ja') || tz === 'Asia/Tokyo' ? 'ja' : (navLang.startsWith('pt') || langs.includes('pt-br') || tz.includes('Sao_Paulo') ? 'pt-br' : 'en'));
+  if (!['ja','pt-br'].includes(locale)) return;
+  localStorage.setItem('aict_lang', locale);
+  document.documentElement.lang = locale;
+  const dict = {
+    'ja': {
+      label: '日本語表示を自動適用しました', keep: 'English',
+      'AI Girlfriend Apps':'AI彼女アプリ','Free Trials':'無料トライアル','Candy Review':'Candyレビュー','Candy vs Secrets':'Candy vs Secrets','Replika Alternatives':'Replika代替','Privacy':'プライバシー','Matcher':'診断','Methodology':'評価方法',
+      'Find the best AI girlfriend or companion app for your style':'あなたに合うAI彼女・AIコンパニオンアプリを見つける',
+      'See best AI girlfriend apps →':'AI彼女ランキングを見る →','Free AI girlfriend apps':'無料AI彼女アプリ','Take the matcher quiz':'2分診断を始める',
+      '25+ apps reviewed':'25以上のアプリを調査','Pricing checked monthly':'価格を毎月確認','12 comparison criteria':'12項目で比較','Affiliate links disclosed':'広告リンクを明記',
+      'Top AI girlfriend apps we would check first':'最初に確認すべきAI彼女アプリ','Quick comparison':'クイック比較','Open full ranking →':'完全ランキングを見る →',
+      'Rank':'順位','App':'アプリ','Best for':'おすすめ用途','Trial':'無料枠','Price':'価格','Score':'スコア','Action':'アクション','Try →':'試す →',
+      'Already ready to try an app?':'すぐ試したいですか？','Not sure which AI companion is right for you?':'どのAIコンパニオンが合うか迷っていますか？','Take the quiz →':'診断を始める →',
+      'Best AI girlfriend apps in 2026, ranked by real buying criteria':'2026年版ベストAI彼女アプリ：購入前に見るべき基準でランキング'
+    },
+    'pt-br': {
+      label: 'Português do Brasil aplicado automaticamente', keep: 'English',
+      'AI Girlfriend Apps':'Apps de namorada IA','Free Trials':'Testes grátis','Candy Review':'Review Candy','Candy vs Secrets':'Candy vs Secrets','Replika Alternatives':'Alternativas ao Replika','Privacy':'Privacidade','Matcher':'Quiz','Methodology':'Metodologia',
+      'Find the best AI girlfriend or companion app for your style':'Encontre o melhor app de namorada IA ou companion para o seu estilo',
+      'See best AI girlfriend apps →':'Ver melhores apps de namorada IA →','Free AI girlfriend apps':'Apps grátis de namorada IA','Take the matcher quiz':'Fazer o quiz',
+      '25+ apps reviewed':'25+ apps analisados','Pricing checked monthly':'Preços verificados mensalmente','12 comparison criteria':'12 critérios de comparação','Affiliate links disclosed':'Links afiliados informados',
+      'Top AI girlfriend apps we would check first':'Apps de namorada IA que eu olharia primeiro','Quick comparison':'Comparação rápida','Open full ranking →':'Abrir ranking completo →',
+      'Rank':'Rank','App':'App','Best for':'Melhor para','Trial':'Teste','Price':'Preço','Score':'Nota','Action':'Ação','Try →':'Testar →',
+      'Already ready to try an app?':'Já quer testar um app?','Not sure which AI companion is right for you?':'Não sabe qual companion IA combina com você?','Take the quiz →':'Fazer o quiz →',
+      'Best AI girlfriend apps in 2026, ranked by real buying criteria':'Melhores apps de namorada IA em 2026, ranqueados por critérios reais de compra'
+    }
+  }[locale];
+  const replaceText = (root=document.body) => {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode(node){
+      if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      if (node.parentElement && ['SCRIPT','STYLE','NOSCRIPT'].includes(node.parentElement.tagName)) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }});
+    const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n => {
+      const raw=n.nodeValue, trimmed=raw.trim();
+      if(dict[trimmed]) n.nodeValue = raw.replace(trimmed, dict[trimmed]);
+    });
+  };
+  function addBar(){
+    const bar=document.createElement('div');
+    bar.style.cssText='background:#0f172a;color:#fff;padding:8px 14px;font:13px Inter,system-ui,sans-serif;display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap';
+    bar.innerHTML='<span>'+dict.label+'</span><a href="?lang=en" style="color:#fff;text-decoration:underline">'+dict.keep+'</a><button type="button" style="background:#c2410c;color:#fff;border:0;border-radius:6px;padding:4px 10px;cursor:pointer">OK</button>';
+    bar.querySelector('button').onclick=()=>bar.remove();
+    bar.querySelector('a').onclick=()=>{localStorage.setItem('aict_lang','en')};
+    document.body.prepend(bar);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',()=>{replaceText();addBar();});
+  else {replaceText();addBar();}
+})();
+</script>
+
 </body>
 </html>
