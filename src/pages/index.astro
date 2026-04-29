@@ -8,33 +8,42 @@ import { getCompanionNews } from '../lib/ai-news.js';
 const posts = await getAllPosts();
 const news = await getCompanionNews(8);
 
-const verticals = [
-  { slug: 'companion', name: 'Companion', tam: '$120M', apps: 'Replika, Nomi, Kindroid', url: '/companion/' },
-  { slug: 'mental-health', name: 'Mental Health', tam: '$1.5B', apps: 'Headspace Ebb, Woebot, Wysa', url: '/mental-health/', ymyl: true },
-  { slug: 'seniors', name: 'Seniors', tam: '$2T (2030)', apps: 'ElliQ, inTouch, Lovot', url: '/seniors/' },
-  { slug: 'language', name: 'Language', tam: '$500M', apps: 'Talkpal, Duolingo, Babbel', url: '/language/' },
-  { slug: 'productivity', name: 'Productivity', tam: 'Explosive', apps: 'Jasper, Copy.ai, Notion AI', url: '/productivity/' },
-  { slug: 'romance', name: 'Romance', tam: '$80M', apps: 'Candy, Secrets, GoLove', url: '/romance/' },
-  { slug: 'gaming', name: 'Gaming', tam: 'Emerging', apps: 'Questie AI, Inworld', url: '/gaming/', stub: true }
+const moneyPages = [
+  { name: 'Best AI girlfriend apps', url: '/romance/', badge: 'Start here', desc: 'Candy.ai, Secrets.ai, GoLove and privacy-first alternatives compared for real users.' },
+  { name: 'Free AI girlfriend apps', url: '/best-ai-girlfriend-free/', badge: 'Free trials', desc: 'Apps you can try before paying, with clear limits, pricing and privacy notes.' },
+  { name: 'Candy AI honest review', url: '/candy-ai-honest-review-2026/', badge: 'Review', desc: 'Where Candy is strong, where it is weak, and who should choose another app.' },
+  { name: 'Candy AI vs Secrets AI', url: '/candy-ai-vs-secrets-ai-2026/', badge: 'Comparison', desc: 'A direct choice page for users already close to paying.' },
+  { name: 'Replika alternatives', url: '/replika-alternatives-2026/', badge: 'Alternatives', desc: 'Better options for romance, memory, privacy or roleplay depending on user intent.' },
+  { name: 'AI companion privacy', url: '/ai-companion-privacy-compared-2026/', badge: 'Trust', desc: 'Privacy, data retention, billing discretion and safety criteria before subscribing.' }
+];
+
+const priorityOffers = [
+  { name: 'Candy.ai', url: '/go?offer=candy-t1&sid=home_hot_candy', note: 'popular AI girlfriend offer' },
+  { name: 'Secrets.ai', url: '/go?offer=secrets&sid=home_hot_secrets', note: 'romance chat alternative' },
+  { name: 'GoLove.ai', url: '/go?offer=golove&sid=home_hot_golove', note: 'companion-first funnel' },
+  { name: 'DreamGF', url: '/go?offer=dreamgf&sid=home_hot_dreamgf', note: 'AI girlfriend creation angle' }
 ];
 
 const featuredIn = ['TechCrunch', 'The Verge', 'VentureBeat', 'MIT Technology Review', 'AI Business', 'Wired', 'Business Insider', 'The Information'];
 
 const itemListData = {
-  name: 'AI companion verticals',
-  items: verticals.map(v => ({ name: v.name, url: 'https://aicompaniontoday.com' + v.url }))
+  name: 'AI girlfriend and companion money pages',
+  items: moneyPages.map(v => ({ name: v.name, url: 'https://aicompaniontoday.com' + v.url }))
 };
 ---
-<Base title="AI Companion Today — Independent Guide to AI Companion Apps" description="Honest, methodology-driven guides and reviews of AI companion apps across seven verticals. Updated daily with news from leading AI publications.">
+<Base title="Best AI Girlfriend Apps 2026 — AI Companion Today" description="Compare AI girlfriend and AI companion apps: Candy.ai, Secrets.ai, GoLove, DreamGF, Replika alternatives, pricing, privacy and free trials.">
   <SchemaOrg type="ItemList" data={itemListData} />
 
-  <section class="py-16 max-w-4xl mx-auto px-6 text-center">
-    <h1 class="text-5xl font-bold text-primary mb-6 tracking-tight font-sans">The honest guide to AI companion apps</h1>
-    <p class="text-xl text-ink leading-relaxed mb-8">Independent reviews, comparisons and daily news across <strong>seven verticals</strong> — companion, mental-health, seniors, language, productivity, romance and gaming. Real testing. Published methodology. No paid placements in rankings.</p>
+  <section class="py-16 max-w-5xl mx-auto px-6 text-center">
+    <span class="inline-block bg-accent text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider font-sans mb-5">2026 buyer guide · AI girlfriend apps · privacy-first comparisons</span>
+    <h1 class="text-5xl font-bold text-primary mb-6 tracking-tight font-sans">Find the best AI girlfriend or companion app for your style</h1>
+    <p class="text-xl text-ink leading-relaxed mb-8 max-w-3xl mx-auto">We compare Candy.ai, Secrets.ai, GoLove, DreamGF, Replika alternatives and privacy-focused AI companions. Start with the ranking, then choose by budget, realism, memory, privacy and free-trial options.</p>
     <div class="flex gap-4 justify-center flex-wrap">
-      <a href="/tools/matcher/" class="inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans">Find my AI companion →</a>
-      <a href="/methodology/" class="inline-block border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white font-sans">How we test</a>
+      <a href="/romance/" class="inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans">See best AI girlfriend apps →</a>
+      <a href="/best-ai-girlfriend-free/" class="inline-block border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white font-sans">Free AI girlfriend apps</a>
+      <a href="/tools/matcher/" class="inline-block border border-surface-border text-ink px-8 py-3 rounded-lg font-semibold hover:border-accent font-sans">Take the matcher quiz</a>
     </div>
+    <p class="text-xs text-ink-muted mt-5 font-sans">Affiliate disclosure: we may earn a commission when you click some app links. Rankings still use our published criteria.</p>
   </section>
 
   <section class="bg-white border-y border-surface-border py-8">
@@ -46,22 +55,41 @@ const itemListData = {
     </div>
   </section>
 
-  <section class="bg-surface-alt py-16" id="verticals">
+  <section class="bg-surface-alt py-16" id="money-pages">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-primary mb-10 text-center font-sans">Seven AI companion verticals we cover</h2>
+      <h2 class="text-3xl font-bold text-primary mb-3 text-center font-sans">Start with the pages most likely to help you choose</h2>
+      <p class="text-center text-ink-muted mb-10 font-sans">AI Companion Today is now focused on buyer-intent AI girlfriend and companion comparisons.</p>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {verticals.map(v => (
+        {moneyPages.map(v => (
           <a href={v.url} class="block p-6 bg-white border border-surface-border rounded-xl hover:border-accent hover:shadow-lg transition">
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span class="text-xs bg-primary text-white px-2 py-1 rounded font-sans">{v.name}</span>
-              {v.ymyl && <span class="text-xs bg-danger text-white px-2 py-1 rounded font-sans">YMYL</span>}
-              {v.stub && <span class="text-xs bg-ink-muted text-white px-2 py-1 rounded font-sans">coming soon</span>}
-            </div>
-            <h3 class="font-bold text-primary text-lg mb-2 font-sans">{v.name}</h3>
-            <p class="text-sm text-ink-muted mb-2 font-sans"><strong>Market:</strong> {v.tam}</p>
-            <p class="text-sm text-ink-muted leading-relaxed">{v.apps}</p>
+            <span class="text-xs bg-accent text-white px-2 py-1 rounded font-sans uppercase font-semibold">{v.badge}</span>
+            <h3 class="font-bold text-primary text-lg mt-4 mb-2 font-sans">{v.name}</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">{v.desc}</p>
           </a>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="bg-primary text-white rounded-2xl p-8 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+          <div>
+            <span class="text-xs bg-white text-primary px-3 py-1 rounded-full font-sans font-bold uppercase">Quick exits to tested offers</span>
+            <h2 class="text-3xl font-bold mt-4 font-sans">Already ready to try an app?</h2>
+            <p class="opacity-90 mt-2 font-sans">These links are tracked so we can learn which apps convert and improve the rankings.</p>
+          </div>
+          <a href="/advertising-disclosure/" class="text-sm underline opacity-90 font-sans">How affiliate links work</a>
+        </div>
+        <div class="grid md:grid-cols-4 gap-4">
+          {priorityOffers.map(o => (
+            <a href={o.url} rel="nofollow sponsored noopener" class="block bg-white text-primary rounded-xl p-5 hover:opacity-95 transition">
+              <h3 class="font-bold font-sans mb-1">{o.name} →</h3>
+              <p class="text-xs text-ink-muted font-sans">{o.note}</p>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </section>
