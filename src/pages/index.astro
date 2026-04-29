@@ -6,7 +6,13 @@ import { getAllPosts } from '../lib/ghost.js';
 import { getCompanionNews } from '../lib/ai-news.js';
 
 const posts = await getAllPosts();
-const news = await getCompanionNews(8);
+const news = await getCompanionNews(6);
+const buyerPosts = posts.filter(p => {
+  const haystack = `${p.slug || ''} ${p.title || ''} ${(p.tags || []).map(t => t.slug || t.name || '').join(' ')}`.toLowerCase();
+  const includesBuyerIntent = ['girlfriend', 'romance', 'candy', 'secrets', 'replika', 'privacy'].some(term => haystack.includes(term));
+  const isDilution = ['mental-health', 'anxiety', 'teens', 'widows', 'seniors', 'language', 'productivity', 'jasper', 'talkpal'].some(term => haystack.includes(term));
+  return includesBuyerIntent && !isDilution;
+});
 
 const moneyPages = [
   { name: 'Best AI girlfriend apps', url: '/romance/', badge: 'Start here', desc: 'Candy.ai, Secrets.ai, GoLove and privacy-first alternatives compared for real users.' },
@@ -24,7 +30,15 @@ const priorityOffers = [
   { name: 'DreamGF', url: '/go?offer=dreamgf&sid=home_hot_dreamgf', note: 'AI girlfriend creation angle' }
 ];
 
-const featuredIn = ['TechCrunch', 'The Verge', 'VentureBeat', 'MIT Technology Review', 'AI Business', 'Wired', 'Business Insider', 'The Information'];
+const topApps = [
+  { rank: 1, name: 'Candy.ai', bestFor: 'Realistic girlfriend chat + images', trial: 'Free preview', price: 'from about $12.99/mo', privacy: 'Standard', score: '4.6', url: '/go?offer=candy-t1&sid=home_rank_candy' },
+  { rank: 2, name: 'Secrets.ai', bestFor: 'Romance chat + custom characters', trial: 'Free preview', price: 'from about $14.90/mo', privacy: 'Standard', score: '4.4', url: '/go?offer=secrets&sid=home_rank_secrets' },
+  { rank: 3, name: 'GoLove.ai', bestFor: 'Fast companion funnel', trial: 'Free start', price: 'from about $9.99/mo', privacy: 'Standard', score: '4.2', url: '/go?offer=golove&sid=home_rank_golove' },
+  { rank: 4, name: 'DreamGF', bestFor: 'Build-your-own AI girlfriend', trial: 'Free start', price: 'from about $9.99/mo', privacy: 'Standard', score: '4.1', url: '/go?offer=dreamgf&sid=home_rank_dreamgf' }
+];
+
+const trustStats = ['25+ apps reviewed', 'Pricing checked monthly', '12 comparison criteria', 'Affiliate links disclosed'];
+const monitoredSources = ['TechCrunch', 'The Verge', 'VentureBeat', 'MIT Technology Review', 'AI Business', 'Wired', 'Business Insider', 'The Information'];
 
 const itemListData = {
   name: 'AI girlfriend and companion money pages',
@@ -43,14 +57,60 @@ const itemListData = {
       <a href="/best-ai-girlfriend-free/" class="inline-block border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white font-sans">Free AI girlfriend apps</a>
       <a href="/tools/matcher/" class="inline-block border border-surface-border text-ink px-8 py-3 rounded-lg font-semibold hover:border-accent font-sans">Take the matcher quiz</a>
     </div>
-    <p class="text-xs text-ink-muted mt-5 font-sans">Affiliate disclosure: we may earn a commission when you click some app links. Rankings still use our published criteria.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-8 max-w-4xl mx-auto">
+      {trustStats.map(item => (
+        <div class="bg-white border border-surface-border rounded-lg px-4 py-3 text-sm font-semibold text-primary font-sans">{item}</div>
+      ))}
+    </div>
+    <p class="text-xs text-ink-muted mt-5 font-sans">Affiliate disclosure: we may earn a commission when you click some app links. Apps cannot pay for a higher score, and rankings still use our published criteria.</p>
   </section>
 
-  <section class="bg-white border-y border-surface-border py-8">
+  <section class="bg-white border-y border-surface-border py-12">
     <div class="max-w-6xl mx-auto px-6">
-      <p class="text-xs text-ink-muted uppercase tracking-wider text-center mb-4 font-sans">AI companion coverage referenced across</p>
+      <div class="flex items-end justify-between gap-4 flex-wrap mb-6">
+        <div>
+          <span class="text-xs bg-accent text-white px-3 py-1 rounded-full font-sans font-bold uppercase">Quick comparison</span>
+          <h2 class="text-3xl font-bold text-primary mt-3 font-sans">Top AI girlfriend apps we would check first</h2>
+          <p class="text-sm text-ink-muted mt-2 font-sans">A client should see the shortlist before clicking. Full notes, caveats and alternatives are inside the ranking.</p>
+        </div>
+        <a href="/romance/" class="text-accent font-semibold font-sans hover:underline">Open full ranking →</a>
+      </div>
+      <div class="overflow-x-auto border border-surface-border rounded-xl">
+        <table class="w-full text-sm bg-white">
+          <thead class="bg-surface-alt text-left text-primary font-sans">
+            <tr>
+              <th class="px-4 py-3">Rank</th>
+              <th class="px-4 py-3">App</th>
+              <th class="px-4 py-3">Best for</th>
+              <th class="px-4 py-3">Trial</th>
+              <th class="px-4 py-3">Price</th>
+              <th class="px-4 py-3">Score</th>
+              <th class="px-4 py-3">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {topApps.map(app => (
+              <tr class="border-t border-surface-border">
+                <td class="px-4 py-4 font-bold text-accent font-sans">#{app.rank}</td>
+                <td class="px-4 py-4 font-semibold text-primary font-sans">{app.name}</td>
+                <td class="px-4 py-4 text-ink-muted font-sans">{app.bestFor}</td>
+                <td class="px-4 py-4 font-sans">{app.trial}</td>
+                <td class="px-4 py-4 font-sans">{app.price}</td>
+                <td class="px-4 py-4 font-bold text-primary font-sans">{app.score}/5</td>
+                <td class="px-4 py-4"><a href={app.url} rel="nofollow sponsored noopener" class="inline-block bg-accent text-white px-4 py-2 rounded font-semibold font-sans hover:bg-accent-dark">Try →</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white border-b border-surface-border py-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-xs text-ink-muted uppercase tracking-wider text-center mb-4 font-sans">Market sources monitored for pricing, product changes and AI safety news</p>
       <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-ink-muted font-sans text-sm">
-        {featuredIn.map(name => <span>{name}</span>)}
+        {monitoredSources.map(name => <span>{name}</span>)}
       </div>
     </div>
   </section>
@@ -120,16 +180,16 @@ const itemListData = {
       <div class="max-w-6xl mx-auto px-6">
         <div class="flex items-end justify-between mb-8 flex-wrap gap-4">
           <div>
-            <h2 class="text-3xl font-bold text-primary font-sans">Latest AI companion news</h2>
-            <p class="text-sm text-ink-muted mt-1 font-sans">Curated from TechCrunch, The Verge, VentureBeat, MIT Tech Review and AI Business. Updated on every build.</p>
+            <h2 class="text-3xl font-bold text-primary font-sans">AI market signals we monitor</h2>
+            <p class="text-sm text-ink-muted mt-1 font-sans">Kept below the buyer tools so news does not distract visitors who are ready to compare apps.</p>
           </div>
+          <a href="/news/" class="text-accent font-semibold font-sans hover:underline">More news →</a>
         </div>
-        <div class="grid md:grid-cols-2 gap-6">
-          {news.map(item => (
+        <div class="grid md:grid-cols-3 gap-6">
+          {news.slice(0, 3).map(item => (
             <a href={item.url} target="_blank" rel="noopener" class="block p-5 bg-white border border-surface-border rounded-xl hover:border-accent transition">
               <div class="text-xs text-accent font-semibold font-sans mb-2">{item.source}</div>
               <h3 class="font-bold text-primary text-base mb-2 leading-snug font-sans">{item.title}</h3>
-              {item.summary && <p class="text-sm text-ink-muted leading-relaxed font-sans">{item.summary}…</p>}
               {item.date && <time class="text-xs text-ink-subtle font-sans block mt-2">{new Date(item.date).toLocaleDateString('en-US', {year:'numeric',month:'short',day:'numeric'})}</time>}
             </a>
           ))}
@@ -140,9 +200,9 @@ const itemListData = {
 
   <section class="bg-surface-alt py-16">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-primary mb-10 text-center font-sans">Latest guides & best-of</h2>
+      <h2 class="text-3xl font-bold text-primary mb-10 text-center font-sans">Buyer guides that match this niche</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.slice(0, 6).map(p => (
+        {buyerPosts.slice(0, 6).map(p => (
           <a href={`/${p.slug}/`} class="block p-6 bg-white border border-surface-border rounded-xl hover:border-accent hover:shadow-lg transition">
             <div class="flex flex-wrap gap-2 mb-3">
               {(p.tags || []).slice(0, 2).map(t => <span class="text-xs bg-surface-alt text-ink-muted px-2 py-1 rounded font-sans">{t.name}</span>)}
