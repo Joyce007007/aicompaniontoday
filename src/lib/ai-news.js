@@ -9,17 +9,43 @@ const FEEDS = [
 
 const KEYWORDS = /companion|chatbot|girlfriend|boyfriend|virtual friend|replika|character\.ai|nomi|kindroid|woebot|wysa|talkpal|jasper|copy\.ai|claude|chatgpt|anthropic|openai|gemini|mental health ai|senior tech|elliq/i;
 
+function cleanXmlText(value = '') {
+  return value
+    .replace(/^<!\[CDATA\[/, '')
+    .replace(/\]\]>$/, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .trim();
+}
+
+function extractTag(block, tag) {
+  const match = block.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, 'i'));
+  return cleanXmlText((match || [])[1] || '');
+}
+
+function isSafeExternalUrl(url) {
+  try {
+    const u = new URL(url);
+    return u.protocol === 'https:' && !!u.hostname && !url.includes('<![CDATA[') && !url.includes(']]>');
+  } catch (_) {
+    return false;
+  }
+}
+
 function parseItems(xml, source) {
   const items = [];
   const matches = [...xml.matchAll(/<item[^>]*>([\s\S]*?)<\/item>/g)];
   for (const m of matches.slice(0, 25)) {
     const block = m[1];
-    const title = (block.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/) || [])[1] || '';
-    const link  = (block.match(/<link[^>]*>([\s\S]*?)<\/link>/) || [])[1] || '';
-    const date  = (block.match(/<pubDate>([\s\S]*?)<\/pubDate>/) || [])[1] || '';
-    const desc  = (block.match(/<description[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/description>/) || [])[1] || '';
-    const plain = desc.replace(/<[^>]+>/g, '').slice(0, 180);
-    if (title && link) items.push({ title: title.trim(), url: link.trim(), date, summary: plain, source: source.name });
+    const title = extractTag(block, 'title');
+    const link = extractTag(block, 'link');
+    const date = extractTag(block, 'pubDate');
+    const desc = extractTag(block, 'description');
+    const plain = cleanXmlText(desc.replace(/<[^>]+>/g, '')).slice(0, 180);
+    if (title && isSafeExternalUrl(link)) items.push({ title, url: link, date, summary: plain, source: source.name });
   }
   return items;
 }
