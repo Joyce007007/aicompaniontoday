@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c2410c"/>
+      <stop offset="100%" style="stop-color:#ea580c"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.05">
+    <line x1="0" y1="105" x2="1200" y2="105" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="210" x2="1200" y2="210" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="315" x2="1200" y2="315" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="420" x2="1200" y2="420" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="525" x2="1200" y2="525" stroke="#fff" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="800" y1="0" x2="800" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="1000" y1="0" x2="1000" y2="630" stroke="#fff" stroke-width="1"/>
+  </g>
+
+  <!-- Accent circle glow top right -->
+  <circle cx="1050" cy="120" r="180" fill="#c2410c" opacity="0.08"/>
+  <circle cx="1050" cy="120" r="100" fill="#c2410c" opacity="0.06"/>
+
+  <!-- Left accent bar -->
+  <rect x="80" y="180" width="6" height="120" fill="url(#accent)" rx="3"/>
+
+  <!-- Main title -->
+  <text x="112" y="240" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="64" fill="#ffffff" letter-spacing="-1">AI Companion Today</text>
+
+  <!-- Subtitle -->
+  <text x="112" y="300" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="30" fill="#94a3b8">Independent Guide to AI Companion Apps</text>
+
+  <!-- Divider -->
+  <rect x="112" y="330" width="600" height="2" fill="#334155" rx="1"/>
+
+  <!-- Stats row -->
+  <g font-family="system-ui, -apple-system, sans-serif">
+    <!-- Stat 1 -->
+    <text x="112" y="390" font-size="42" font-weight="700" fill="#c2410c">25+</text>
+    <text x="112" y="418" font-size="18" fill="#64748b">Apps Reviewed</text>
+
+    <!-- Stat 2 -->
+    <text x="300" y="390" font-size="42" font-weight="700" fill="#c2410c">12</text>
+    <text x="300" y="418" font-size="18" fill="#64748b">Criteria</text>
+
+    <!-- Stat 3 -->
+    <text x="450" y="390" font-size="42" font-weight="700" fill="#c2410c">2026</text>
+    <text x="450" y="418" font-size="18" fill="#64748b">Up to Date</text>
+  </g>
+
+  <!-- Bottom tag line -->
+  <text x="112" y="510" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#475569">Candy.ai · Secrets.ai · Replika · GoLove · DreamGF · and more</text>
+
+  <!-- URL badge -->
+  <rect x="80" y="555" width="310" height="42" rx="21" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="235" y="581" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">aicompaniontoday.com</text>
+</svg>

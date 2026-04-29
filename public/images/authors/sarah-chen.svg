@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="skin" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#f5c5a3"/>
+      <stop offset="100%" style="stop-color:#e8956d"/>
+    </radialGradient>
+    <radialGradient id="bg-grad" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" style="stop-color:#e0e8f5"/>
+      <stop offset="100%" style="stop-color:#b8c8e8"/>
+    </radialGradient>
+    <radialGradient id="hair-grad" cx="50%" cy="20%" r="70%">
+      <stop offset="0%" style="stop-color:#2d1810"/>
+      <stop offset="100%" style="stop-color:#1a0e08"/>
+    </radialGradient>
+    <clipPath id="circle-clip">
+      <circle cx="200" cy="200" r="200"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="200" cy="200" r="200" fill="url(#bg-grad)"/>
+
+  <!-- Body / blazer clipped -->
+  <g clip-path="url(#circle-clip)">
+    <!-- Blazer body - navy blue -->
+    <ellipse cx="200" cy="380" rx="130" ry="90" fill="#1e3a5f"/>
+    <rect x="70" y="320" width="260" height="160" fill="#1e3a5f"/>
+    <!-- Shirt/blouse white -->
+    <rect x="160" y="290" width="80" height="140" fill="#f0f4f8"/>
+    <!-- Blazer lapels -->
+    <path d="M160,290 L130,340 L160,360 L200,310 Z" fill="#1a3357"/>
+    <path d="M240,290 L270,340 L240,360 L200,310 Z" fill="#1a3357"/>
+
+    <!-- Neck -->
+    <rect x="178" y="255" width="44" height="50" fill="url(#skin)"/>
+
+    <!-- Head -->
+    <ellipse cx="200" cy="210" rx="72" ry="80" fill="url(#skin)"/>
+
+    <!-- Hair - long dark -->
+    <ellipse cx="200" cy="155" rx="76" ry="45" fill="url(#hair-grad)"/>
+    <!-- Hair sides -->
+    <path d="M128,185 Q115,230 125,280 Q140,255 155,240 Q140,210 130,180 Z" fill="url(#hair-grad)"/>
+    <path d="M272,185 Q285,230 275,280 Q260,255 245,240 Q260,210 270,180 Z" fill="url(#hair-grad)"/>
+    <!-- Hair top -->
+    <path d="M128,175 Q160,130 200,125 Q240,130 272,175 Q240,145 200,140 Q160,145 128,175 Z" fill="#2d1810"/>
+
+    <!-- Eyes - almond shaped (East Asian) -->
+    <g>
+      <!-- Left eye -->
+      <ellipse cx="172" cy="205" rx="16" ry="7" fill="white"/>
+      <ellipse cx="174" cy="205" rx="9" ry="7" fill="#3d2010"/>
+      <circle cx="176" cy="203" r="4.5" fill="#1a0e08"/>
+      <circle cx="178" cy="201" r="1.5" fill="white"/>
+      <!-- Left eye line -->
+      <path d="M156,205 Q163,199 172,200 Q180,199 188,205" stroke="#2d1810" stroke-width="1.5" fill="none"/>
+      <!-- Left eyebrow -->
+      <path d="M155,195 Q170,190 188,192" stroke="#2d1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </g>
+    <g>
+      <!-- Right eye -->
+      <ellipse cx="228" cy="205" rx="16" ry="7" fill="white"/>
+      <ellipse cx="226" cy="205" rx="9" ry="7" fill="#3d2010"/>
+      <circle cx="224" cy="203" r="4.5" fill="#1a0e08"/>
+      <circle cx="226" cy="201" r="1.5" fill="white"/>
+      <!-- Right eye line -->
+      <path d="M212,205 Q218,199 228,200 Q236,199 244,205" stroke="#2d1810" stroke-width="1.5" fill="none"/>
+      <!-- Right eyebrow -->
+      <path d="M212,195 Q228,190 245,192" stroke="#2d1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <!-- Nose -->
+    <path d="M196,215 Q193,232 188,238 Q196,241 204,241 Q212,238 200,232 Q200,220 204,215" stroke="#d4906a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Mouth - warm smile -->
+    <path d="M183,252 Q196,263 217,252" stroke="#c07050" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M183,252 Q196,258 217,252" fill="#e88060" opacity="0.6"/>
+
+    <!-- Subtle cheek blush -->
+    <ellipse cx="158" cy="225" rx="16" ry="8" fill="#ffb0a0" opacity="0.3"/>
+    <ellipse cx="242" cy="225" rx="16" ry="8" fill="#ffb0a0" opacity="0.3"/>
+  </g>
+
+  <!-- Ring border -->
+  <circle cx="200" cy="200" r="196" fill="none" stroke="#d0ddef" stroke-width="4"/>
+</svg>

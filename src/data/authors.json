@@ -19,7 +19,7 @@
         "email": "sarah@aicompaniontoday.com"
       },
       "verticals": ["companion", "mental-health", "romance", "seniors"],
-      "image": "/images/authors/sarah-chen.jpg",
+      "image": "/images/authors/sarah-chen.svg",
       "joined": "2026-04-01"
     },
     {
@@ -41,7 +41,7 @@
         "email": "marcus@aicompaniontoday.com"
       },
       "verticals": ["productivity", "language", "education", "gaming"],
-      "image": "/images/authors/marcus-rivera.jpg",
+      "image": "/images/authors/marcus-rivera.svg",
       "joined": "2026-04-01"
     }
   ],

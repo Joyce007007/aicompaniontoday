@@ -1,9 +1,12 @@
 ---
-interface Props { title: string; description: string; canonical?: string; }
-const { title, description, canonical } = Astro.props;
+interface Props { title: string; description: string; canonical?: string; ogImage?: string; }
+const { title, description, canonical, ogImage } = Astro.props;
 import SchemaOrg from '../components/SchemaOrg.astro';
 const GA4_ID = import.meta.env.GA4_ID || '';
 const GSC_VERIFY = import.meta.env.GSC_VERIFY || '';
+const SITE_URL = 'https://aicompaniontoday.com';
+const canonicalUrl = canonical || `${SITE_URL}${Astro.url.pathname}`;
+const ogImageUrl = ogImage || `${SITE_URL}/og-default.svg`;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +15,21 @@ const GSC_VERIFY = import.meta.env.GSC_VERIFY || '';
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content={description}>
-{canonical && <link rel="canonical" href={canonical}>}
+<link rel="canonical" href={canonicalUrl}>
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:type" content="website">
+<meta property="og:url" content={canonicalUrl}>
+<meta property="og:site_name" content="AI Companion Today">
+<meta property="og:image" content={ogImageUrl}>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={ogImageUrl}>
+<meta name="twitter:site" content="@SarahChenAI">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="alternate" type="application/rss+xml" title="AI Companion Today" href="/rss.xml">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 <SchemaOrg type="Organization" />
