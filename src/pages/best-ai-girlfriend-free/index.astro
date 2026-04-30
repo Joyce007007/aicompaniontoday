@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const freeApps = [
+  { rank: 1, name: 'Candy.ai', bestFor: 'Best overall preview', trial: 'Free preview', price: 'from about $12.99/mo', url: '/go?offer=candy-t1&sid=free_candy' },
+  { rank: 2, name: 'Secrets.ai', bestFor: 'Custom romance chat', trial: 'Free preview', price: 'from about $14.90/mo', url: '/go?offer=secrets&sid=free_secrets' },
+  { rank: 3, name: 'GoLove.ai', bestFor: 'Fast start / lower friction', trial: 'Free start', price: 'from about $9.99/mo', url: '/go?offer=golove&sid=free_golove' },
+  { rank: 4, name: 'DreamGF', bestFor: 'Build-your-own girlfriend', trial: 'Free start', price: 'from about $9.99/mo', url: '/go?offer=dreamgf&sid=free_dreamgf' }
+];
+
+const checklist = [
+  'Free trial or free preview available',
+  'Clear pricing after trial',
+  'Good memory / personality continuity',
+  'Reasonable privacy and billing discretion',
+  'Enough realism to justify the upgrade'
+];
+---
+<Base title="Free AI Girlfriend Apps 2026 — Trials, Pricing & Quick Picks" description="Compare free AI girlfriend apps and previews: Candy.ai, Secrets.ai, GoLove.ai and DreamGF. See trial limits, prices and quick links.">
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <div class="text-center mb-10">
+      <span class="inline-block bg-accent text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider font-sans mb-4">Free trials · AI girlfriend apps</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4 tracking-tight font-sans">Free AI girlfriend apps worth trying first</h1>
+      <p class="text-lg text-ink-muted max-w-3xl mx-auto font-sans">Start with free previews before you pay. This page focuses on the apps most likely to feel useful fast, with the least friction.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="bg-white border border-surface-border rounded-xl p-6">
+        <h2 class="text-2xl font-bold text-primary mb-4 font-sans">What to check before paying</h2>
+        <ul class="space-y-3 text-ink font-sans">
+          {checklist.map(item => <li>• {item}</li>)}
+        </ul>
+      </div>
+      <div class="bg-primary text-white rounded-xl p-6">
+        <h2 class="text-2xl font-bold mb-4 font-sans">Quick recommendation</h2>
+        <p class="opacity-95 font-sans mb-4">If you want the easiest first test, start with Candy.ai. If you want custom romance chat, try Secrets.ai. If price and speed matter most, start with GoLove.ai.</p>
+        <a href="/romance/" class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans">Open the full ranking →</a>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto bg-white border border-surface-border rounded-xl mb-10">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-alt text-left">
+          <tr>
+            <th class="py-3 px-4 font-sans">Rank</th>
+            <th class="py-3 px-4 font-sans">App</th>
+            <th class="py-3 px-4 font-sans">Best for</th>
+            <th class="py-3 px-4 font-sans">Trial</th>
+            <th class="py-3 px-4 font-sans">Price</th>
+            <th class="py-3 px-4 font-sans">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {freeApps.map(app => (
+            <tr class="border-t border-surface-border">
+              <td class="py-3 px-4 font-bold text-accent">#{app.rank}</td>
+              <td class="py-3 px-4 font-sans font-semibold">{app.name}</td>
+              <td class="py-3 px-4 text-ink-muted font-sans">{app.bestFor}</td>
+              <td class="py-3 px-4 font-sans">{app.trial}</td>
+              <td class="py-3 px-4 font-sans">{app.price}</td>
+              <td class="py-3 px-4"><a class="text-accent font-sans hover:underline" rel="nofollow sponsored noopener" href={app.url}>Try →</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="/go?offer=candy-t1&sid=free_cta_candy" rel="nofollow sponsored noopener" class="block bg-white border border-surface-border rounded-xl p-6 hover:border-accent hover:shadow-lg transition">
+        <h3 class="font-bold text-primary text-lg mb-2 font-sans">Candy.ai free preview →</h3>
+        <p class="text-sm text-ink-muted font-sans">Best first check if you want the most realistic all-round experience.</p>
+      </a>
+      <a href="/go?offer=secrets&sid=free_cta_secrets" rel="nofollow sponsored noopener" class="block bg-white border border-surface-border rounded-xl p-6 hover:border-accent hover:shadow-lg transition">
+        <h3 class="font-bold text-primary text-lg mb-2 font-sans">Secrets.ai free preview →</h3>
+        <p class="text-sm text-ink-muted font-sans">Good if you want custom characters and romance-first chat.</p>
+      </a>
+      <a href="/go?offer=golove&sid=free_cta_golove" rel="nofollow sponsored noopener" class="block bg-white border border-surface-border rounded-xl p-6 hover:border-accent hover:shadow-lg transition">
+        <h3 class="font-bold text-primary text-lg mb-2 font-sans">GoLove.ai free start →</h3>
+        <p class="text-sm text-ink-muted font-sans">Useful when speed and lower friction matter more than customization.</p>
+      </a>
+    </div>
+  </section>
+</Base>
