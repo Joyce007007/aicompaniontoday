@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import SchemaOrg from '../components/SchemaOrg.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import StickyAffiliateCTA from '../components/StickyAffiliateCTA.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
 import { getAllPosts, getAllPages } from '../lib/ghost.js';
 
 export async function getStaticPaths() {
@@ -158,6 +160,30 @@ const breadcrumbItems = [
     </div>
 
     {isBestOf && (
+      <section class="my-6 p-5 bg-gradient-to-br from-accent/10 to-yellow-50 rounded-xl border-2 border-accent shadow-md">
+        <div class="flex items-start gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-red-600 text-white px-2 py-0.5 rounded">Editor's Choice</span>
+              <span class="text-[10px] text-ink-muted">Updated {new Date().toLocaleDateString('en-US', {month:'short', year:'numeric'})}</span>
+            </div>
+            <h2 class="text-xl md:text-2xl font-bold text-primary font-sans">#1 pick: {verticalPicks[0].name}</h2>
+            <p class="text-sm text-ink-muted mt-1 font-sans">{verticalPicks[0].desc}</p>
+            <div class="mt-3 flex items-center gap-3 flex-wrap">
+              <a href={`/go?offer=${verticalPicks[0].slug}&sid=hero_${vertical}_${verticalPicks[0].slug}`} rel="nofollow sponsored noopener"
+                 class="inline-block bg-accent text-white px-5 py-2.5 rounded-lg font-bold hover:bg-accent-dark font-sans shadow">
+                Try {verticalPicks[0].name} Free →
+              </a>
+              <span class="text-xs text-ink-muted font-sans">{verticalPicks[0].payout}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    {isBestOf && <ComparisonTable picks={verticalPicks} vertical={vertical} />}
+
+    {isBestOf && (
       <section class="my-8 p-6 bg-surface-alt rounded-xl border border-surface-border">
         <h2 class="text-2xl font-bold text-primary mb-4 font-sans">Top 5 picks ({vertical})</h2>
         <div class="grid md:grid-cols-2 gap-4">
@@ -195,4 +221,6 @@ const breadcrumbItems = [
   )}
 
   <NewsletterForm compact />
+
+  {isBestOf && <StickyAffiliateCTA pick={verticalPicks[0]} vertical={vertical} />}
 </Base>

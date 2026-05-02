@@ -1,0 +1,91 @@
+---
+const { picks, vertical } = Astro.props;
+
+const ATTRS = {
+  'companion':    { c1: 'Pricing',     c2: 'Memory',      c3: 'NSFW',          c4: 'Voice',         c5: 'Best for' },
+  'romance':      { c1: 'Pricing',     c2: 'NSFW',        c3: 'Image gen',     c4: 'Voice',         c5: 'Best for' },
+  'mental-health':{ c1: 'Pricing',     c2: 'Licensed',    c3: 'Crisis line',   c4: 'Insurance',     c5: 'Best for' },
+  'language':     { c1: 'Pricing',     c2: 'Languages',   c3: 'Live tutor',    c4: 'AI conv.',      c5: 'Best for' },
+  'productivity': { c1: 'Pricing',     c2: 'Models',      c3: 'Team plan',     c4: 'API',           c5: 'Best for' },
+  'seniors':      { c1: 'Pricing',     c2: 'Voice-only',  c3: 'Med reminders', c4: 'Family app',    c5: 'Best for' },
+  'gaming':       { c1: 'Pricing',     c2: 'NPCs',        c3: 'Roleplay',      c4: 'Multiplayer',   c5: 'Best for' },
+  'education':    { c1: 'Pricing',     c2: 'K-12',        c3: 'Teacher tools', c4: 'Parent ctrl',   c5: 'Best for' }
+};
+
+const APP_DATA = {
+  'Candy.ai':       { c1: 'Free + $13/mo', c2: 'Yes',     c3: 'Yes',  c4: 'Yes',     c5: 'Realistic AI gf' },
+  'Replika':        { c1: 'Free + $20/mo', c2: 'Strong',  c3: 'Pro',  c4: 'Pro',     c5: 'Emotional support' },
+  'Nomi':           { c1: 'Free + $15/mo', c2: 'Best',    c3: 'Yes',  c4: 'Yes',     c5: 'Persistent memory' },
+  'Kindroid':       { c1: 'Free + $15/mo', c2: 'Strong',  c3: 'Yes',  c4: 'Yes',     c5: 'Privacy lovers' },
+  'Character.AI':   { c1: 'Free + $10/mo', c2: 'Med',     c3: 'No',   c4: 'Pro',     c5: 'Free roleplay' },
+  'Secrets.ai':     { c1: 'Free + $15/mo', c2: 'Yes',     c3: 'Yes',  c4: 'Yes',     c5: 'Discreet onboarding' },
+  'GoLove.ai':      { c1: 'Free + $10/mo', c2: 'Med',     c3: 'Yes',  c4: 'No',      c5: 'Fast start' },
+  'DreamGF':        { c1: 'Free + $10/mo', c2: 'Yes',     c3: 'Yes',  c4: 'Yes',     c5: 'Custom builder' },
+  'OurDream':       { c1: 'Free + $12/mo', c2: 'Yes',     c3: 'Yes',  c4: 'No',      c5: 'Alt comparison' },
+  'BetterHelp':     { c1: '$60-90/wk',     c2: 'LMHC',    c3: 'No',   c4: 'No',      c5: 'Online therapy' },
+  'Headspace':      { c1: '$12.99/mo',     c2: '—',       c3: 'No',   c4: 'Some',    c5: 'Meditation' },
+  'Calm':           { c1: '$14.99/mo',     c2: '—',       c3: 'No',   c4: 'No',      c5: 'Sleep stories' },
+  'Wysa':           { c1: 'Free + $74/yr', c2: 'CBT AI',  c3: 'Add-on',c4: 'No',     c5: 'Self-guided CBT' },
+  'Talkspace':      { c1: '$70-90/wk',     c2: 'Licensed',c4: 'Yes',  c3: 'No',      c5: 'Insurance OK' },
+  'Talkpal':        { c1: '$15/mo',        c2: '50+',     c3: 'No',   c4: 'Yes',     c5: 'AI-only practice' },
+  'Babbel':         { c1: '$13.95/mo',     c2: '14',      c3: 'No',   c4: 'Limited', c5: 'Structured' },
+  'Duolingo Max':   { c1: '$14.99/mo',     c2: '40+',     c3: 'No',   c4: 'Yes',     c5: 'Gamified' },
+  'Italki':         { c1: '$8-30/lesson',  c2: '150+',    c3: 'Yes',  c4: 'Yes',     c5: '1-on-1 tutors' },
+  'Rosetta Stone':  { c1: '$11.99/mo',     c2: '25',      c3: 'No',   c4: 'Yes',     c5: 'Veteran brand' },
+  'ChatGPT Plus':   { c1: '$20/mo',        c2: 'GPT-4o',  c3: 'Yes',  c4: 'Yes',     c5: 'All-rounder' },
+  'Claude Pro':     { c1: '$20/mo',        c2: 'Opus 4.7',c3: 'Yes',  c4: 'Yes',     c5: 'Coding+writing' },
+  'Jasper':         { c1: '$49/mo',        c2: 'Multi',   c3: 'Yes',  c4: 'No',      c5: 'Marketers' },
+  'Notion AI':      { c1: '$10/mo addon',  c2: 'GPT-4',   c3: 'Yes',  c4: 'No',      c5: 'Notion users' },
+  'Surfer SEO':     { c1: '$89-219/mo',    c2: 'GPT-4',   c3: 'Team', c4: 'Yes',     c5: 'SEO pros' }
+};
+
+const cols = ATTRS[vertical] || ATTRS['companion'];
+---
+<section class="my-8 -mx-6 md:mx-0 px-6 md:px-0">
+  <h2 class="text-2xl font-bold text-primary mb-3 font-sans">Quick comparison</h2>
+  <div class="overflow-x-auto rounded-xl border border-surface-border shadow-sm">
+    <table class="w-full text-sm font-sans bg-white">
+      <thead class="bg-surface-alt">
+        <tr>
+          <th class="text-left p-3 font-semibold text-primary sticky left-0 bg-surface-alt z-10">App</th>
+          <th class="text-left p-3 font-semibold text-primary whitespace-nowrap">{cols.c1}</th>
+          <th class="text-left p-3 font-semibold text-primary whitespace-nowrap">{cols.c2}</th>
+          <th class="text-left p-3 font-semibold text-primary whitespace-nowrap">{cols.c3}</th>
+          <th class="text-left p-3 font-semibold text-primary whitespace-nowrap">{cols.c4}</th>
+          <th class="text-left p-3 font-semibold text-primary whitespace-nowrap">{cols.c5}</th>
+          <th class="p-3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {picks.map((pick, i) => {
+          const data = APP_DATA[pick.name] || { c1: '—', c2: '—', c3: '—', c4: '—', c5: pick.payout || '—' };
+          const goUrl = `/go?offer=${pick.slug}&sid=table_${vertical}_${pick.slug}`;
+          return (
+            <tr class={i === 0 ? 'bg-yellow-50/40 border-t border-surface-border' : 'border-t border-surface-border'}>
+              <td class="p-3 sticky left-0 bg-inherit z-10">
+                <div class="flex items-center gap-2">
+                  {i === 0 && <span class="text-[10px] font-bold bg-yellow-300 text-yellow-900 px-1.5 py-0.5 rounded">★ TOP</span>}
+                  <span class="font-semibold text-primary whitespace-nowrap">{pick.name}</span>
+                </div>
+              </td>
+              <td class="p-3 text-ink-muted whitespace-nowrap">{data.c1}</td>
+              <td class="p-3 text-ink-muted whitespace-nowrap">{data.c2}</td>
+              <td class="p-3 text-ink-muted whitespace-nowrap">{data.c3}</td>
+              <td class="p-3 text-ink-muted whitespace-nowrap">{data.c4}</td>
+              <td class="p-3 text-ink-muted whitespace-nowrap">{data.c5}</td>
+              <td class="p-3">
+                <a href={goUrl} rel="nofollow sponsored noopener"
+                   class="inline-block bg-accent text-white px-3 py-1.5 rounded font-semibold text-xs hover:bg-accent-dark whitespace-nowrap">
+                  Try →
+                </a>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+  <p class="text-xs text-ink-muted mt-2 font-sans">
+    ⓘ Pricing as of {new Date().toLocaleDateString('en-US', {year:'numeric', month:'short'})}. Affiliate disclosure: we earn a commission if you sign up via these links. <a href="/advertising-disclosure/" class="underline">Full disclosure</a>.
+  </p>
+</section>
