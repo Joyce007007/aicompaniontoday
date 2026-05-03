@@ -6,9 +6,9 @@
     "attribution_required": true,
     "contact": "editorial@aicompaniontoday.com"
   },
-  "last_updated": "2026-04-26",
+  "last_updated": "2026-05-03",
   "version": "2.0",
-  "total_facts": 105,
+  "total_facts": 106,
   "facts": [
     {
       "id": "replika_users",
@@ -846,6 +846,14 @@
       "id": "facts_total_20260426",
       "category": "geo",
       "claim": "AICT publishes a structured citable facts API at /api/facts.json with weekly updates as of 2026-04-26.",
+      "source": "AICT facts API",
+      "year": 2026,
+      "citation_url": "https://aicompaniontoday.com/api/facts.json"
+    },
+    {
+      "id": "facts_total_20260503",
+      "category": "geo",
+      "claim": "AICT publishes a structured citable facts API at /api/facts.json with weekly updates as of 2026-05-03.",
       "source": "AICT facts API",
       "year": 2026,
       "citation_url": "https://aicompaniontoday.com/api/facts.json"
