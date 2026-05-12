@@ -109,11 +109,6 @@ const ogImageUrl = ogImage || `${SITE_URL}/og-default.png`;
   </div>
 </footer>
 
-<!-- EVADAV push: ONLY on /romance/ (NSFW) — coupé du reste pour ne pas cannibaliser /go affiliate -->
-{Astro.url.pathname.startsWith("/romance") && (
-  <script async src="https://esquelbqu.com/ntfc.php?p=3093462" data-site-id="3093462" data-init="auto" id="evadav_push_init"></script>
-)}
-
 <script is:inline>
 (function(){
   const forced = new URLSearchParams(location.search).get('lang') || localStorage.getItem('aict_lang');
