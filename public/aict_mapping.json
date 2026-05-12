@@ -299,9 +299,8 @@
     "offer_id": "10228"
   },
   "evadav_push": {
-    "affiliate_url": "https://t.mbjms.com/408600/10335/0?aff_sub5=aict-evadav",
-    "network": "CrakRevenue",
-    "offer_id": "10335"
+    "url": "https://aicompaniontoday.com/romance/push/?utm_source=evadav&utm_medium=push&utm_campaign=evadav_push_alias",
+    "note": "EVADAV/old push alias routed to internal prelander instead of homepage fallback. Added 2026-05-12 after traffic quality audit."
   },
   "evadav": {
     "affiliate_url": "https://t.mbjms.com/408600/10335/0?aff_sub5=aict-evadav",
