@@ -1,23 +1,122 @@
 ---
 import Base from '../../layouts/Base.astro';
-const title = "Best AI Girlfriend Apps \u2014 AI Companion Today";
-const description = "Compare AI girlfriend apps for adult chat, images, voice, privacy, pricing and signup friction. Full rankings are being expanded with tested recommendations.";
----
 
-<Base title={title} description={description}>
-  <main class="container" style="max-width:860px;padding:3rem 1rem;">
-    <article>
-      <h1>Best AI Girlfriend Apps</h1>
-      <p class="lead">Compare AI girlfriend apps for adult chat, images, voice, privacy, pricing and signup friction. Full rankings are being expanded with tested recommendations.</p>
-      <section>
-        <h2>Current recommendation</h2>
-        <p>AI Companion Today is consolidating this page into the monetization and review system. For the strongest adult romance comparison, start with the romance guide.</p>
-        <p><a href="/romance/">Read the AI girlfriend comparison guide →</a></p>
-      </section>
-      <section>
-        <h2>Affiliate disclosure</h2>
-        <p>We may earn a commission when you click partner links. Partner prices, offers and policies can change outside our control.</p>
-      </section>
-    </article>
-  </main>
+const apps = [
+  {
+    rank: 1,
+    name: 'Candy AI',
+    bestFor: 'Best first paid test',
+    nsfw: 'Yes, adult 18+',
+    media: 'Images + fantasy chat',
+    pricing: 'Free preview, paid plans vary',
+    verdict: 'Most useful first test because AICT already has a tracked CrakRevenue Candy route and public affiliate terms show PPS/RevShare availability.',
+    cta: '/go?offer=candy-t1&sid=best_gf_candy_main',
+    review: '/candy-ai-honest-review-2026/'
+  },
+  {
+    rank: 2,
+    name: 'OurDream',
+    bestFor: 'CPA/RevShare candidate',
+    nsfw: 'Adult-oriented',
+    media: 'Fantasy + image generation',
+    pricing: 'Partner pricing varies',
+    verdict: 'Strong cash-test candidate because public affiliate pages mention CPA/RevShare style payout. Needs direct approval before scaling.',
+    cta: '/go?offer=ourdream&sid=best_gf_ourdream_main',
+    review: '/reviews/ourdream-ai/'
+  },
+  {
+    rank: 3,
+    name: 'Secrets AI',
+    bestFor: 'Custom romance chat',
+    nsfw: 'Adult-oriented',
+    media: 'Characters + images',
+    pricing: 'Free preview, paid plans vary',
+    verdict: 'Good alternative route when Candy clicks do not become paid conversions. Keep as backup, not main traffic sink until paid proof.',
+    cta: '/go?offer=secrets&sid=best_gf_secrets_main',
+    review: '/candy-ai-vs-secrets-ai-2026/'
+  },
+  {
+    rank: 4,
+    name: 'Kupid AI',
+    bestFor: 'Direct recurring affiliate candidate',
+    nsfw: 'Spicy/adult positioning',
+    media: 'Chat + romantic companion flow',
+    pricing: 'Partner pricing varies',
+    verdict: 'Public affiliate program advertises lifetime recurring commission. Needs approval/direct link before paid scaling.',
+    cta: '/reviews/kupid-ai/',
+    review: '/reviews/kupid-ai/'
+  },
+  {
+    rank: 5,
+    name: 'Nomi AI',
+    bestFor: 'Emotional companion / memory',
+    nsfw: 'Less adult-first',
+    media: 'Companion chat + memory',
+    pricing: 'Subscription plans vary',
+    verdict: 'Important for authority and non-porn positioning. Direct affiliate program exists publicly; approval needed before monetized routing.',
+    cta: '/reviews/nomi-ai/',
+    review: '/reviews/nomi-ai/'
+  }
+];
+
+const criteria = ['Paid-conversion potential', 'Signup friction', 'Adult/NSFW clarity', 'Privacy and billing clarity', 'Media features', 'Offer availability', 'Fit with AICT traffic'];
+---
+<Base title="Best AI Girlfriend Apps 2026 — Ranked for Chat, Images, NSFW & Privacy" description="Compare the best AI girlfriend apps for adult chat, images, privacy and signup friction. AICT ranks Candy AI, OurDream, Secrets AI, Kupid and Nomi by buying intent and payout testability.">
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-8 items-center mb-10">
+      <div>
+        <span class="inline-block bg-accent text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider font-sans mb-4">18+ comparison · affiliate disclosure</span>
+        <h1 class="text-4xl md:text-6xl font-bold text-primary mb-5 tracking-tight font-sans">Best AI girlfriend apps to try first in 2026</h1>
+        <p class="text-lg text-ink-muted font-sans leading-relaxed">We compare adult AI companion apps by ease of use, features, pricing transparency, privacy signals and overall experience — so you can choose faster without guessing.</p>
+        <p class="text-sm text-ink-muted mt-3 font-sans">Updated May 2026 · Independent comparison · Affiliate links clearly marked</p>
+      </div>
+      <div class="bg-primary text-white rounded-2xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold mb-3 font-sans">Quick pick</h2>
+        <p class="opacity-95 mb-3 font-sans">Start with Candy AI if you want a simple first choice for adult AI companion chat.</p>
+        <a href="/go?offer=candy-t1&sid=best_gf_quick_candy" rel="nofollow sponsored noopener" class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-bold font-sans mb-4">Try Candy AI →</a>
+        <ul class="text-sm opacity-90 mb-3 space-y-1 font-sans"><li>• Fast setup and mobile-friendly flow</li><li>• Strong fit for chat + fantasy/image intent</li><li>• Compare OurDream and Secrets below if it is not the right fit</li></ul>
+        <p class="text-xs opacity-75 mt-3">Affiliate link. Opens partner site. 18+ only.</p>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto bg-white border border-surface-border rounded-xl mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-alt text-left">
+          <tr><th class="p-4">Rank</th><th class="p-4">App</th><th class="p-4">Best for</th><th class="p-4">NSFW</th><th class="p-4">Media</th><th class="p-4">Action</th></tr>
+        </thead>
+        <tbody>
+          {apps.map(app => (
+            <tr class="border-t border-surface-border align-top">
+              <td class="p-4 font-bold text-accent">#{app.rank}</td>
+              <td class="p-4"><a href={app.review} class="font-bold text-primary hover:text-accent">{app.name}</a><p class="text-xs text-ink-muted mt-1">{app.pricing}</p></td>
+              <td class="p-4 text-ink-muted">{app.bestFor}</td>
+              <td class="p-4">{app.nsfw}</td>
+              <td class="p-4">{app.media}</td>
+              <td class="p-4"><a href={app.cta} rel="nofollow sponsored noopener" class="inline-block bg-accent text-white px-4 py-2 rounded-lg font-semibold">Visit →</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      {apps.map(app => (
+        <article class="bg-white border border-surface-border rounded-xl p-6">
+          <div class="text-sm text-accent font-bold mb-2">#{app.rank} · {app.bestFor}</div>
+          <h2 class="text-2xl font-bold text-primary mb-2 font-sans">{app.name}</h2>
+          <p class="text-ink-muted mb-4 font-sans">{app.verdict}</p>
+          <div class="flex flex-wrap gap-2 mb-4 text-xs"><span class="bg-surface-alt px-3 py-1 rounded-full">{app.nsfw}</span><span class="bg-surface-alt px-3 py-1 rounded-full">{app.media}</span><span class="bg-surface-alt px-3 py-1 rounded-full">{app.pricing}</span></div>
+          <a href={app.cta} rel="nofollow sponsored noopener" class="text-accent font-bold">Open partner / review →</a>
+        </article>
+      ))}
+    </div>
+
+    <section class="bg-white border border-surface-border rounded-xl p-6 mb-8">
+      <h2 class="text-2xl font-bold text-primary mb-4 font-sans">How we rank these apps</h2>
+      <ul class="grid md:grid-cols-2 gap-3 font-sans text-ink-muted">
+        {criteria.map(c => <li>• {c}</li>)}
+      </ul>
+      <p class="text-sm text-ink-muted mt-5">AICT may earn commissions. Rankings are not proof that a partner will convert for every traffic source. We measure clicks, paid conversions and payout before scaling.</p>
+    </section>
+  </section>
 </Base>
