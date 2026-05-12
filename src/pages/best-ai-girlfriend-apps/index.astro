@@ -10,6 +10,8 @@ const apps = [
     media: 'Images + fantasy chat',
     pricing: 'Free preview, paid plans vary',
     verdict: 'Most useful first test because AICT already has a tracked CrakRevenue Candy route and public affiliate terms show PPS/RevShare availability.',
+    score: '4.7/5',
+    image: '/assets/candy-ai-card.svg',
     cta: '/go?offer=candy-t1&sid=best_gf_candy_main',
     review: '/candy-ai-honest-review-2026/'
   },
@@ -21,6 +23,8 @@ const apps = [
     media: 'Fantasy + image generation',
     pricing: 'Partner pricing varies',
     verdict: 'Strong cash-test candidate because public affiliate pages mention CPA/RevShare style payout. Needs direct approval before scaling.',
+    score: '4.5/5',
+    image: '/assets/ourdream-ai-card.svg',
     cta: '/go?offer=ourdream&sid=best_gf_ourdream_main',
     review: '/reviews/ourdream-ai/'
   },
@@ -32,6 +36,8 @@ const apps = [
     media: 'Characters + images',
     pricing: 'Free preview, paid plans vary',
     verdict: 'Good alternative route when Candy clicks do not become paid conversions. Keep as backup, not main traffic sink until paid proof.',
+    score: '4.3/5',
+    image: '/assets/secrets-ai-card.svg',
     cta: '/go?offer=secrets&sid=best_gf_secrets_main',
     review: '/candy-ai-vs-secrets-ai-2026/'
   },
@@ -43,6 +49,8 @@ const apps = [
     media: 'Chat + romantic companion flow',
     pricing: 'Partner pricing varies',
     verdict: 'Public affiliate program advertises lifetime recurring commission. Needs approval/direct link before paid scaling.',
+    score: '4.1/5',
+    image: '/assets/kupid-ai-card.svg',
     cta: '/reviews/kupid-ai/',
     review: '/reviews/kupid-ai/'
   },
@@ -54,6 +62,8 @@ const apps = [
     media: 'Companion chat + memory',
     pricing: 'Subscription plans vary',
     verdict: 'Important for authority and non-porn positioning. Direct affiliate program exists publicly; approval needed before monetized routing.',
+    score: '4.0/5',
+    image: '/assets/nomi-ai-card.svg',
     cta: '/reviews/nomi-ai/',
     review: '/reviews/nomi-ai/'
   }
@@ -69,14 +79,34 @@ const criteria = ['Paid-conversion potential', 'Signup friction', 'Adult/NSFW cl
         <h1 class="text-4xl md:text-6xl font-bold text-primary mb-5 tracking-tight font-sans">Best AI girlfriend apps to try first in 2026</h1>
         <p class="text-lg text-ink-muted font-sans leading-relaxed">We compare adult AI companion apps by ease of use, features, pricing transparency, privacy signals and overall experience — so you can choose faster without guessing.</p>
         <p class="text-sm text-ink-muted mt-3 font-sans">Updated May 2026 · Independent comparison · Affiliate links clearly marked</p>
+        <div class="flex flex-col sm:flex-row gap-3 mt-5">
+          <a href="/go?offer=candy-t1&sid=best_gf_hero_candy" rel="nofollow sponsored noopener" class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-bold text-center font-sans">Start chatting with Candy AI →</a>
+          <a href="#ranking" class="inline-block border border-surface-border text-primary px-6 py-3 rounded-lg font-bold text-center font-sans">See full ranking ↓</a>
+        </div>
       </div>
-      <div class="bg-primary text-white rounded-2xl p-6 shadow-lg">
+      <div class="bg-primary text-white rounded-2xl p-6 shadow-lg overflow-hidden">
+        <img src="/assets/candy-ai-card.svg" alt="Candy AI visual comparison card" class="w-full rounded-xl mb-5 border border-white/10" loading="eager" />
         <h2 class="text-2xl font-bold mb-3 font-sans">Quick pick</h2>
         <p class="opacity-95 mb-3 font-sans">Start with Candy AI if you want a simple first choice for adult AI companion chat.</p>
         <a href="/go?offer=candy-t1&sid=best_gf_quick_candy" rel="nofollow sponsored noopener" class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-bold font-sans mb-4">Try Candy AI →</a>
         <ul class="text-sm opacity-90 mb-3 space-y-1 font-sans"><li>• Fast setup and mobile-friendly flow</li><li>• Strong fit for chat + fantasy/image intent</li><li>• Compare OurDream and Secrets below if it is not the right fit</li></ul>
         <p class="text-xs opacity-75 mt-3">Affiliate link. Opens partner site. 18+ only.</p>
       </div>
+    </div>
+
+    <div id="ranking" class="grid md:grid-cols-3 gap-5 mb-8">
+      {apps.slice(0,3).map(app => (
+        <article class="bg-white border border-surface-border rounded-xl overflow-hidden shadow-sm">
+          <img src={app.image} alt={`${app.name} visual card`} class="w-full aspect-[16/10] object-cover" loading="lazy" />
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-accent">#{app.rank} · {app.bestFor}</span><span class="text-xs bg-surface-alt rounded-full px-2 py-1">★ {app.score}</span></div>
+            <h2 class="text-xl font-bold text-primary mb-2 font-sans">{app.name}</h2>
+            <p class="text-sm text-ink-muted mb-4 font-sans">{app.media} · {app.pricing}</p>
+            <a href={app.cta} rel="nofollow sponsored noopener" class="block text-center bg-accent text-white px-4 py-3 rounded-lg font-bold">Start chatting →</a>
+            <p class="text-xs text-ink-muted mt-2 text-center">18+ · affiliate link · mobile friendly</p>
+          </div>
+        </article>
+      ))}
     </div>
 
     <div class="overflow-x-auto bg-white border border-surface-border rounded-xl mb-8">
@@ -101,15 +131,28 @@ const criteria = ['Paid-conversion potential', 'Signup friction', 'Adult/NSFW cl
 
     <div class="grid md:grid-cols-2 gap-6 mb-10">
       {apps.map(app => (
-        <article class="bg-white border border-surface-border rounded-xl p-6">
-          <div class="text-sm text-accent font-bold mb-2">#{app.rank} · {app.bestFor}</div>
-          <h2 class="text-2xl font-bold text-primary mb-2 font-sans">{app.name}</h2>
-          <p class="text-ink-muted mb-4 font-sans">{app.verdict}</p>
-          <div class="flex flex-wrap gap-2 mb-4 text-xs"><span class="bg-surface-alt px-3 py-1 rounded-full">{app.nsfw}</span><span class="bg-surface-alt px-3 py-1 rounded-full">{app.media}</span><span class="bg-surface-alt px-3 py-1 rounded-full">{app.pricing}</span></div>
-          <a href={app.cta} rel="nofollow sponsored noopener" class="text-accent font-bold">Open partner / review →</a>
+        <article class="bg-white border border-surface-border rounded-xl overflow-hidden">
+          <img src={app.image} alt={`${app.name} comparison visual`} class="w-full aspect-[16/9] object-cover" loading="lazy" />
+          <div class="p-6">
+            <div class="text-sm text-accent font-bold mb-2">#{app.rank} · {app.bestFor} · ★ {app.score}</div>
+            <h2 class="text-2xl font-bold text-primary mb-2 font-sans">{app.name}</h2>
+            <p class="text-ink-muted mb-4 font-sans">{app.verdict}</p>
+            <div class="flex flex-wrap gap-2 mb-4 text-xs"><span class="bg-surface-alt px-3 py-1 rounded-full">{app.nsfw}</span><span class="bg-surface-alt px-3 py-1 rounded-full">{app.media}</span><span class="bg-surface-alt px-3 py-1 rounded-full">{app.pricing}</span></div>
+            <a href={app.cta} rel="nofollow sponsored noopener" class="text-accent font-bold">Open partner / review →</a>
+          </div>
         </article>
       ))}
     </div>
+
+    <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white rounded-2xl p-6 mb-8">
+      <div class="grid md:grid-cols-[1fr_auto] gap-5 items-center">
+        <div>
+          <h2 class="text-2xl font-bold mb-2 font-sans">For AI companion brands</h2>
+          <p class="opacity-90 font-sans">Want to be considered for this ranking, a sponsored review, or a CPA/RevShare test? AICT accepts clearly labeled sponsored placements and tracked affiliate partnerships only.</p>
+        </div>
+        <a href="/partner/" class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-bold text-center">Request placement →</a>
+      </div>
+    </section>
 
     <section class="bg-white border border-surface-border rounded-xl p-6 mb-8">
       <h2 class="text-2xl font-bold text-primary mb-4 font-sans">How we rank these apps</h2>
