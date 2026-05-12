@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+const title = 'Affiliate Disclosure';
+const description = 'AI Companion Today may earn commissions when users click partner links.';
+---
+
+<Base title={title} description={description}>
+  <main class="container legal-page">
+    <article>
+      <h1>Affiliate Disclosure</h1>
+      <p class="lead">AI Companion Today is an independent affiliate guide. We may earn a commission when you click a partner link or buy through a listed provider. This does not change the price you pay. Rankings should be based on usefulness, fit, pricing, privacy and product quality, not hidden sponsorship.</p>
+      <section>
+        <h2>What this means for visitors</h2>
+        <ul>
+          <li>AICT can earn affiliate commissions from partner links.</li>
+          <li>Partner destinations, prices and policies can change outside our control.</li>
+          <li>Adult-oriented pages are intended for 18+ visitors only.</li>
+          <li>If a link destination looks wrong, contact us so we can fix it.</li>
+        </ul>
+      </section>
+      <p><a href="/">← Back to AI Companion Today</a></p>
+    </article>
+  </main>
+</Base>
+
+<style>
+  .legal-page { max-width: 820px; padding: 3rem 1rem; }
+  .lead { font-size: 1.12rem; line-height: 1.7; color: #333; }
+  li { margin: .5rem 0; }
+</style>

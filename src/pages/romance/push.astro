@@ -46,5 +46,17 @@ const offers = [
     </section>
     <p class="footer">This page is an independent affiliate pre-lander. It does not host adult content. <a href="/romance/">Read the full AI girlfriend comparison guide</a>.</p>
   </main>
+<script>
+(function(){
+  try {
+    const sid = sessionStorage.getItem('aict_sid') || (Math.random().toString(36).slice(2,10) + Date.now().toString(36));
+    sessionStorage.setItem('aict_sid', sid);
+    const params = new URLSearchParams(location.search);
+    const payload = JSON.stringify({sid, path: location.pathname + location.search, referrer: document.referrer || '', utm_source: params.get('utm_source') || '', utm_medium: params.get('utm_medium') || '', utm_campaign: params.get('utm_campaign') || ''});
+    if (navigator.sendBeacon) navigator.sendBeacon('/pv', new Blob([payload], {type:'application/json'}));
+    else fetch('/pv', {method:'POST', headers:{'Content-Type':'application/json'}, body: payload, keepalive:true}).catch(()=>{});
+  } catch(e) {}
+})();
+</script>
 </body>
 </html>

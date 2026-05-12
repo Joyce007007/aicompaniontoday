@@ -1,7 +1,6 @@
 # AI Companion Today — https://aicompaniontoday.com/
 User-agent: *
 Allow: /
-Disallow: /romance/
 Disallow: /api/
 Disallow: /go
 Disallow: /go/
@@ -12,19 +11,15 @@ Disallow: /admin/
 # AI crawlers welcome (aligned with /llms.txt)
 User-agent: GPTBot
 Allow: /
-Disallow: /romance/
 
 User-agent: ClaudeBot
 Allow: /
-Disallow: /romance/
 
 User-agent: PerplexityBot
 Allow: /
-Disallow: /romance/
 
 User-agent: Google-Extended
 Allow: /
-Disallow: /romance/
 
 # No bad bots
 User-agent: MJ12bot
