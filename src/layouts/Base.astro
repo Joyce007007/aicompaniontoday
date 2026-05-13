@@ -2,6 +2,7 @@
 interface Props { title: string; description: string; canonical?: string; ogImage?: string; }
 const { title, description, canonical, ogImage } = Astro.props;
 import SchemaOrg from '../components/SchemaOrg.astro';
+import '../styles/globals.css';
 const GA4_ID = import.meta.env.GA4_ID || '';
 const GSC_VERIFY = import.meta.env.GSC_VERIFY || '';
 const SITE_URL = 'https://aicompaniontoday.com';

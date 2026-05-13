@@ -3,3 +3,17 @@
 @tailwind utilities;
 body { font-family: 'Source Serif Pro', Georgia, serif; color: #1a1a2e; background: #fafafa; line-height: 1.65; }
 h1, h2, h3, h4, nav, header, footer, button { font-family: Inter, system-ui, sans-serif; }
+
+/* Mobile conversion safety: no clipped right edge on money pages. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: clip; }
+img, video, canvas, svg { max-width: 100%; height: auto; }
+a, button { overflow-wrap: anywhere; }
+p, li, h1, h2, h3, h4, td, th, span { overflow-wrap: anywhere; }
+table { max-width: 100%; }
+@media (max-width: 640px) {
+  body { min-width: 0; }
+  main, section, article, header, footer, nav, div { min-width: 0; }
+  h1 { line-height: 1.05; }
+  .overflow-x-auto { max-width: calc(100vw - 2rem); }
+}
