@@ -1,0 +1,7 @@
+---
+import Base from '../../layouts/Base.astro';
+import apps from '../../data/apps.json';
+---
+<Base title="AI Companion App Database: Reviews, Pricing, Privacy & Alternatives" description="Structured AI companion and AI girlfriend app database with reviews, alternatives, free trials, pricing and privacy checks.">
+<section class="max-w-6xl mx-auto px-6 py-12"><h1 class="text-4xl font-bold text-primary">AI companion app database</h1><p class="text-xl text-ink-muted mt-4">10 priority apps tracked now. This database powers 50 SEO pages: review, alternatives, pricing, privacy and free trial for each app.</p><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">{apps.map((app)=><article class="bg-white border border-surface-border rounded-2xl p-6"><h2 class="text-2xl font-bold">{app.name}</h2><p class="text-ink-muted mt-2">{app.bestFor}</p><div class="mt-5 flex gap-2 flex-wrap text-sm"><a href={`/apps/${app.slug}/`} class="border px-3 py-2 rounded-lg">Review</a><a href={`/alternatives/${app.slug}/`} class="border px-3 py-2 rounded-lg">Alternatives</a><a href={`/pricing/${app.slug}/`} class="border px-3 py-2 rounded-lg">Pricing</a><a href={`/privacy/${app.slug}/`} class="border px-3 py-2 rounded-lg">Privacy</a><a href={`/free-trials/${app.slug}/`} class="border px-3 py-2 rounded-lg">Free trial</a></div></article>)}</div></section>
+</Base>

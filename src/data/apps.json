@@ -1,0 +1,317 @@
+[
+  {
+    "name": "Candy AI",
+    "slug": "candy-ai",
+    "url": "https://candy.ai/",
+    "category": "AI girlfriend",
+    "bestFor": "Visual AI girlfriend with chat/images",
+    "pricing": "Premium subscription + tokens; public sources mention around $12.99/mo but verify before publishing exact claims.",
+    "freeTrial": "Free signup/free tier varies by geo and campaign.",
+    "affiliateOffer": "candy",
+    "affiliateNetwork": "CrakRevenue/MyLead reported publicly",
+    "commission": "MyLead snippet reported 28%; other sources mention recurring/revshare. Treat as network-dependent.",
+    "trafficProof": "Similarweb Apr 2026: global rank #1177 and category rank #3; Semrush Mar 2026: ~34.75M visits.",
+    "revenueProof": "No primary audited revenue found; third-party blogs mention ARR but unverified.",
+    "topCountries": "Semrush Mar 2026: US 32.06% / 11.14M, Germany 6.21% / 2.16M, India 5.92% / 2.06M, Brazil 4.82% / 1.67M.",
+    "features": [
+      "AI girlfriend chat",
+      "character creation",
+      "image generation",
+      "voice/calls on premium",
+      "adult/romance positioning"
+    ],
+    "risks": [
+      "adult payment/policy risk",
+      "pricing varies by campaign",
+      "privacy questions"
+    ],
+    "alternatives": [
+      "ourdream-ai",
+      "kupid-ai",
+      "dreamgf-ai",
+      "nomi-ai"
+    ]
+  },
+  {
+    "name": "OurDream AI",
+    "slug": "ourdream-ai",
+    "url": "https://ourdream.ai/",
+    "category": "AI girlfriend",
+    "bestFor": "AI girlfriend with chat, image and video positioning",
+    "pricing": "Help/comparison pages mention around $19.99/mo plus DreamCoins.",
+    "freeTrial": "Free signup/trial varies.",
+    "affiliateOffer": "ourdream",
+    "affiliateNetwork": "OurDream/Everflow + CrakRevenue mapping on AICT",
+    "commission": "Official affiliate page reports up to 40% revshare or $60 CPA.",
+    "trafficProof": "Similarweb snippet for ouraidream.com reported ~49.8M visits Apr 2026; Semrush snippet for ourdream.ai reported ~40.76M visits Mar 2026.",
+    "revenueProof": "No audited revenue found.",
+    "topCountries": "Similarweb public result for ouraidream.com shows global rank #1305 but no country split in snippet; exact countries not verified.",
+    "features": [
+      "chat",
+      "image generation",
+      "video generation",
+      "custom characters",
+      "DreamCoins"
+    ],
+    "risks": [
+      "adult content claims require disclosure",
+      "competitor-provided pricing pages may be biased"
+    ],
+    "alternatives": [
+      "candy-ai",
+      "crushon-ai",
+      "dreamgf-ai",
+      "kupid-ai"
+    ]
+  },
+  {
+    "name": "Nomi AI",
+    "slug": "nomi-ai",
+    "url": "https://nomi.ai/",
+    "category": "AI companion",
+    "bestFor": "Long-term memory and relationship-style companion",
+    "pricing": "Subscription; public Reddit mentions ~$99/year but not primary proof.",
+    "freeTrial": "Free tier/limited access likely; verify before exact claim.",
+    "affiliateOffer": "",
+    "affiliateNetwork": "Rewardful official affiliate page",
+    "commission": "Official page reports 30% recurring lifetime commissions.",
+    "trafficProof": "Similarweb page exists for beta.nomi.ai but public snippet did not expose visits.",
+    "revenueProof": "No audited revenue found.",
+    "topCountries": "Similarweb beta.nomi.ai page exists but public snippet shows rank #0/no country split; country distribution not verified publicly.",
+    "features": [
+      "memory",
+      "multiple companions",
+      "voice/selfie features depending plan",
+      "wiki/knowledge base"
+    ],
+    "risks": [
+      "less adult/direct than Candy",
+      "pricing behind app/login"
+    ],
+    "alternatives": [
+      "kindroid-ai",
+      "replika",
+      "character-ai",
+      "candy-ai"
+    ]
+  },
+  {
+    "name": "Kupid AI",
+    "slug": "kupid-ai",
+    "url": "https://www.kupid.ai/",
+    "category": "AI girlfriend",
+    "bestFor": "Conversational AI girlfriend and romance funnel",
+    "pricing": "Official subscription page shows weekly/yearly/lifetime options; one page showed Pro promo $3.44/week from $12.99.",
+    "freeTrial": "Free signup/trial varies.",
+    "affiliateOffer": "darlink",
+    "affiliateNetwork": "Dub/official affiliate; AICT currently routes similar romance offers via CrakRevenue DarLink",
+    "commission": "Public affiliate pages mention 30% recurring or 45% lifetime depending source; verify active terms.",
+    "trafficProof": "Similarweb reported ~563.1K visits Mar 2026.",
+    "revenueProof": "StartupHub reported ~$1M raised and 500k+ users via partner page; revenue unknown.",
+    "topCountries": "Similarweb Mar 2026 page available but public snippet did not expose country split; exact country distribution not verified.",
+    "features": [
+      "romance chat",
+      "AI photos",
+      "blog alternatives",
+      "affiliate program"
+    ],
+    "risks": [
+      "lower traffic than top products",
+      "terms inconsistent across sources"
+    ],
+    "alternatives": [
+      "candy-ai",
+      "ourdream-ai",
+      "dreamgf-ai",
+      "nomi-ai"
+    ]
+  },
+  {
+    "name": "DreamGF AI",
+    "slug": "dreamgf-ai",
+    "url": "https://dreamgf.ai/",
+    "category": "AI girlfriend",
+    "bestFor": "AI girlfriend subscriptions with broad pricing ladder",
+    "pricing": "Official affiliate/alternative pages mention $9.99-$99.99/mo.",
+    "freeTrial": "Free signup/trial varies.",
+    "affiliateOffer": "dreamgf",
+    "affiliateNetwork": "DreamGF official / MyLead / CrakRevenue mapping",
+    "commission": "AVN reported 30% revenue share; MyLead snippet reported 24.5%.",
+    "trafficProof": "Semrush snippet reported ~450K visits Mar 2026.",
+    "revenueProof": "No audited revenue found.",
+    "topCountries": "No reliable public country split found in this pass; Semrush traffic estimate exists but country snippet did not expose useful split.",
+    "features": [
+      "AI girlfriend",
+      "image/chat",
+      "pricing ladder",
+      "affiliate program"
+    ],
+    "risks": [
+      "exact traffic from Similarweb not found",
+      "adult policy/payment risk"
+    ],
+    "alternatives": [
+      "candy-ai",
+      "ourdream-ai",
+      "kupid-ai",
+      "crushon-ai"
+    ]
+  },
+  {
+    "name": "Kindroid",
+    "slug": "kindroid-ai",
+    "url": "https://kindroid.ai/",
+    "category": "AI companion",
+    "bestFor": "Memory-heavy AI companion / roleplay",
+    "pricing": "Community sources mention around $12/mo; official in-app purchases docs confirm paid features, exact price should be verified.",
+    "freeTrial": "Free tier/limited messages likely.",
+    "affiliateOffer": "",
+    "affiliateNetwork": "No public affiliate verified",
+    "commission": "Unknown.",
+    "trafficProof": "Similarweb showed global rank improving ~29,579 to ~21,098; Semrush snippet reported ~2.19M visits Mar 2026.",
+    "revenueProof": "StartupHub/Dealroom reported ~$1M raised; revenue unknown.",
+    "topCountries": "Similarweb Apr 2026: US 50.48%, Germany 7.33%, Canada 6.99%, UK 3.62%, Netherlands 2.71%. Semrush also says core audience US, Germany, Czechia.",
+    "features": [
+      "long-term memory",
+      "custom characters",
+      "voice/images depending plan",
+      "blog/community"
+    ],
+    "risks": [
+      "no verified affiliate path",
+      "pricing behind app"
+    ],
+    "alternatives": [
+      "nomi-ai",
+      "replika",
+      "character-ai",
+      "janitorai"
+    ]
+  },
+  {
+    "name": "Replika",
+    "slug": "replika",
+    "url": "https://replika.com/",
+    "category": "AI companion",
+    "bestFor": "Mainstream emotional companion with app-store recognition",
+    "pricing": "Freemium + Pro subscription; exact current price varies by platform/geo.",
+    "freeTrial": "Free app/freemium.",
+    "affiliateOffer": "",
+    "affiliateNetwork": "No public affiliate verified",
+    "commission": "Unknown.",
+    "trafficProof": "Similarweb comparison pages available; exact public visits not captured in current extract.",
+    "revenueProof": "Public company revenue not audited in this pass.",
+    "topCountries": "Not verified publicly.",
+    "features": [
+      "emotional chat",
+      "avatar",
+      "voice/video features",
+      "mobile apps"
+    ],
+    "risks": [
+      "safety/mental health scrutiny",
+      "less direct affiliate monetization"
+    ],
+    "alternatives": [
+      "nomi-ai",
+      "kindroid-ai",
+      "character-ai",
+      "candy-ai"
+    ]
+  },
+  {
+    "name": "Character.AI",
+    "slug": "character-ai",
+    "url": "https://character.ai/",
+    "category": "AI companion / UGC characters",
+    "bestFor": "Massive UGC character discovery and roleplay",
+    "pricing": "c.ai+ around $9.99/mo or yearly plan per official pricing page.",
+    "freeTrial": "Large free tier.",
+    "affiliateOffer": "",
+    "affiliateNetwork": "No public affiliate verified",
+    "commission": "Unknown.",
+    "trafficProof": "Similarweb reported ~180.7M visits Apr 2026.",
+    "revenueProof": "Sacra estimated ~$30M ARR Jul 2025; $150M Series A at $1B valuation; The Information reported Google $2.7B licensing/hiring deal.",
+    "topCountries": "Similarweb Apr 2026: US 29.68%, India 6.35%, Philippines 4.36%, UK 4.29%, Russia 4.25%.",
+    "features": [
+      "UGC character pages",
+      "community",
+      "long sessions",
+      "mobile apps",
+      "subscription"
+    ],
+    "risks": [
+      "no affiliate path",
+      "not adult-first",
+      "huge incumbent"
+    ],
+    "alternatives": [
+      "janitorai",
+      "nomi-ai",
+      "kindroid-ai",
+      "replika"
+    ]
+  },
+  {
+    "name": "JanitorAI",
+    "slug": "janitorai",
+    "url": "https://janitorai.com/",
+    "category": "AI roleplay / UGC characters",
+    "bestFor": "High-session roleplay and character pages",
+    "pricing": "Terms mention subscription-based services; exact pricing not verified.",
+    "freeTrial": "Free access + premium likely.",
+    "affiliateOffer": "",
+    "affiliateNetwork": "No public affiliate verified",
+    "commission": "Unknown.",
+    "trafficProof": "Similarweb reported ~99.1M visits Apr 2026.",
+    "revenueProof": "No audited revenue found; Terms confirm subscription-based services.",
+    "topCountries": "Similarweb Apr 2026: US 36.72%, India 3.91%, Philippines 3.57%, Russia 3.55%, UK 3.35%. Semrush Apr 2026: US 35.63% / 50.33M, Brazil 6.83% / 9.64M, India 4.09% / 5.77M, Indonesia 3.86% / 5.45M.",
+    "features": [
+      "UGC character pages",
+      "roleplay",
+      "high pages/session",
+      "community"
+    ],
+    "risks": [
+      "no affiliate path",
+      "content moderation/adult risk"
+    ],
+    "alternatives": [
+      "character-ai",
+      "crushon-ai",
+      "kindroid-ai",
+      "candy-ai"
+    ]
+  },
+  {
+    "name": "CrushOn AI",
+    "slug": "crushon-ai",
+    "url": "https://crushon.ai/",
+    "category": "AI roleplay / NSFW chat",
+    "bestFor": "Direct/community-driven roleplay and uncensored positioning",
+    "pricing": "Official pricing page uses message credits and tiers.",
+    "freeTrial": "Free tier + paid credits/tier.",
+    "affiliateOffer": "smartlink",
+    "affiliateNetwork": "Tapfiliate public signup; AICT fallback smartlink available",
+    "commission": "Commission details not verified publicly.",
+    "trafficProof": "Similarweb showed global rank around #1585; StartupHub claimed 3M MAU and ~$18M ARR but third-party.",
+    "revenueProof": "StartupHub claimed ~$18M ARR, 5M registered users, 3M MAU and ~$15M raised; third-party, not audited.",
+    "topCountries": "Semrush Mar 2026: core audience US followed by Brazil and India; traffic journey Direct 79.4%, Google 11.74%.",
+    "features": [
+      "roleplay",
+      "credits",
+      "community",
+      "direct traffic"
+    ],
+    "risks": [
+      "affiliate terms unclear",
+      "adult policy risk"
+    ],
+    "alternatives": [
+      "janitorai",
+      "ourdream-ai",
+      "candy-ai",
+      "dreamgf-ai"
+    ]
+  }
+]

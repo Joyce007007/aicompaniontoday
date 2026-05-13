@@ -1,0 +1,9 @@
+---
+import Base from '../../layouts/Base.astro';
+import apps from '../../data/apps.json';
+export function getStaticPaths(){ return apps.map((app)=>({params:{slug:app.slug}, props:{app}})); }
+const { app } = Astro.props;
+---
+<Base title={`${app.name} Privacy: Data, Billing and Discretion Checklist`} description={`Privacy checklist for ${app.name}: data retention, billing discretion, adult content policy and safer alternatives.`}>
+<section class="max-w-4xl mx-auto px-6 py-12"><nav class="text-sm text-ink-muted mb-6"><a href="/" class="hover:text-accent">Home</a> › Privacy › {app.name}</nav><h1 class="text-4xl font-bold text-primary">{app.name} privacy checklist</h1><p class="text-xl text-ink-muted mt-4">AI companion apps can process intimate conversations. Treat privacy as a buying criterion, not a footer link.</p><div class="mt-8 space-y-4">{['Read data retention policy','Check if conversations train models','Check billing descriptor/discretion','Check account deletion flow','Avoid crisis/medical dependence on companion apps'].map((x,i)=><div class="bg-white border rounded-2xl p-5"><strong>{i+1}. {x}</strong><p class="text-sm text-ink-muted mt-2">AICT flags this as a manual verification item before recommending {app.name} as privacy-safe.</p></div>)}</div><p class="mt-8 text-ink-muted"><strong>Current risk notes:</strong> {app.risks.join(' ')}</p></section>
+</Base>

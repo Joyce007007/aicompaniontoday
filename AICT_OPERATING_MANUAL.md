@@ -53,7 +53,12 @@ git add . && git commit -m "update AICT" && git push
 
 Important: news are **not continuously dynamic on every page view**. They refresh when the Astro site is rebuilt/deployed. If you publish a Ghost post or want fresher RSS news, rebuild and deploy.
 
-Current cron found: root cron only contains `/root/scripts/aict_heal_mapping.sh` every 5 minutes. I did **not** find a live cron that rebuilds news automatically.
+Current cron found:
+
+- `/root/scripts/aict_heal_mapping.sh` every 5 minutes keeps offer mapping healthy.
+- `/root/scripts/aict_rebuild_news.sh` every 6 hours rebuilds/deploys Astro so RSS/Ghost-driven news refresh automatically.
+
+Ghost content changes also trigger rebuild through `aict-ghost-webhook.service` on `POST /hooks/ghost-rebuild` with a secret stored in `/root/.joyce-vault.json`.
 
 ### Ghost
 
