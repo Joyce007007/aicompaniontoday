@@ -311,5 +311,25 @@
     "affiliate_url": "https://t.mbjms.com/408600/9403/0?aff_sub5=aict-default",
     "network": "CrakRevenue",
     "offer_id": "9403"
+  },
+  "gal_amara": {
+    "affiliate_url": "https://t.mbjms.com/408600/10335/0?aff_sub5=aict-rom-gal-amara",
+    "network": "CrakRevenue",
+    "offer_id": "10335"
+  },
+  "gal_erin": {
+    "affiliate_url": "https://t.mbjms.com/408600/10335/0?aff_sub5=aict-rom-gal-erin",
+    "network": "CrakRevenue",
+    "offer_id": "10335"
+  },
+  "gal_isabela": {
+    "affiliate_url": "https://t.mbjms.com/408600/10345/0?aff_sub5=aict-rom-gal-isabela",
+    "network": "CrakRevenue",
+    "offer_id": "10345"
+  },
+  "gal_valeria": {
+    "affiliate_url": "https://t.mbjms.com/408600/10182/0?aff_sub5=aict-rom-gal-valeria",
+    "network": "CrakRevenue",
+    "offer_id": "10182"
   }
 }

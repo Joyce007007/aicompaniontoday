@@ -1,33 +1,15 @@
 ---
+import '../../styles/globals.css';
 const personas = [
-  { n: 1, key: 'sofia',    name: 'Sofia',    age: 24, origin: 'Latina',       tab: 'latina' },
-  { n: 2, key: 'anna',     name: 'Anna',     age: 26, origin: 'Slavic',       tab: 'european' },
-  { n: 3, key: 'kat',      name: 'Kat',      age: 23, origin: 'German',       tab: 'european' },
-  { n: 4, key: 'lea',      name: 'Léa',      age: 25, origin: 'French',       tab: 'european' },
-  { n: 5, key: 'maria',    name: 'Maria',    age: 28, origin: 'Spanish',      tab: 'latina' },
-  { n: 6, key: 'emma',     name: 'Emma',     age: 27, origin: 'Australian',   tab: 'english' },
-  { n: 7, key: 'nina',     name: 'Nina',     age: 26, origin: 'Ukrainian',    tab: 'european' },
-  { n: 8, key: 'julia',    name: 'Julia',    age: 26, origin: 'Brazilian',    tab: 'latina' },
-  { n: 9, key: 'vera',     name: 'Vera',     age: 23, origin: 'Czech',        tab: 'european' },
-  { n: 10, key: 'tara',    name: 'Tara',     age: 28, origin: 'Persian',      tab: 'middle-east' },
-  { n: 11, key: 'mei',     name: 'Mei',      age: 24, origin: 'Chinese',      tab: 'asian' },
-  { n: 12, key: 'yuki',    name: 'Yuki',     age: 22, origin: 'Japanese',     tab: 'asian' },
-  { n: 13, key: 'priya',   name: 'Priya',    age: 23, origin: 'Indian',       tab: 'asian' },
-  { n: 14, key: 'kavya',   name: 'Kavya',    age: 24, origin: 'Indian',       tab: 'asian' },
-  { n: 15, key: 'yasmina', name: 'Yasmina',  age: 25, origin: 'Moroccan',     tab: 'middle-east' },
-  { n: 16, key: 'layla',   name: 'Layla',    age: 24, origin: 'Arabic',       tab: 'middle-east' },
-  { n: 17, key: 'chloe',   name: 'Chloé',    age: 21, origin: 'British',      tab: 'english' },
-  { n: 18, key: 'isla',    name: 'Isla',     age: 24, origin: 'Scottish',     tab: 'english' },
-  { n: 19, key: 'hanna',   name: 'Hanna',    age: 23, origin: 'Finnish',      tab: 'european' },
-  { n: 20, key: 'astrid',  name: 'Astrid',   age: 25, origin: 'Swedish',      tab: 'european' },
-  { n: 21, key: 'amber',   name: 'Amber',    age: 24, origin: 'American',     tab: 'english' },
-  { n: 22, key: 'scarlett',name: 'Scarlett', age: 27, origin: 'Irish',        tab: 'english' },
-  { n: 23, key: 'jade',    name: 'Jade',     age: 22, origin: 'Asian-American', tab: 'asian' },
-  { n: 24, key: 'camille', name: 'Camille',  age: 23, origin: 'French',       tab: 'european' },
-  { n: 25, key: 'zara',    name: 'Zara',     age: 26, origin: 'Pakistani',    tab: 'middle-east' },
-  { n: 26, key: 'aria',    name: 'Aria',     age: 22, origin: 'Italian',      tab: 'european' },
-  { n: 27, key: 'raven',   name: 'Raven',    age: 25, origin: 'American',     tab: 'english' },
-  { n: 28, key: 'selene',  name: 'Selene',   age: 22, origin: 'Greek',        tab: 'european' }
+  { n: 1, key: 'sofia',   name: 'Sofia',   age: 24, origin: 'Latina',          tab: 'latina' },
+  { n: 2, key: 'amara',   name: 'Amara',   age: 31, origin: 'Black American',  tab: 'english' },
+  { n: 3, key: 'erin',    name: 'Erin',    age: 29, origin: 'Irish',           tab: 'european' },
+  { n: 4, key: 'priya',   name: 'Priya',   age: 28, origin: 'Indian',          tab: 'asian' },
+  { n: 5, key: 'mei',     name: 'Mei',     age: 31, origin: 'East Asian',      tab: 'asian' },
+  { n: 6, key: 'isabela', name: 'Isabela', age: 30, origin: 'Brazilian',       tab: 'latina' },
+  { n: 7, key: 'layla',   name: 'Layla',   age: 29, origin: 'Middle Eastern',  tab: 'middle-east' },
+  { n: 8, key: 'astrid',  name: 'Astrid',  age: 32, origin: 'Scandinavian',    tab: 'european' },
+  { n: 9, key: 'valeria', name: 'Valeria', age: 38, origin: 'Italian',         tab: 'european' }
 ];
 
 const tabs = [
@@ -49,7 +31,6 @@ const img = (n, key) => `/creatives_ai/banner_${String(n).padStart(2,'0')}_${key
 <title>Best AI Girlfriend Apps 2026 — Ranked & Compared | AI Companion Today</title>
 <meta name="description" content="Compare AI girlfriend apps by free trial, price, realism, privacy, memory and customization. Start with Candy.ai, Secrets.ai, GoLove, DreamGF and alternatives.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/_astro/ghost.BzncRHLH.css">
 <style>
 .avatar-tile{aspect-ratio:492/328;background:#111827;width:100%;display:block;overflow:hidden;position:relative}
 .avatar-tile img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.08) contrast(1.03)}
@@ -181,7 +162,7 @@ const img = (n, key) => `/creatives_ai/banner_${String(n).padStart(2,'0')}_${key
       <li><strong>Private image generation</strong> — request custom scenes and outfits. All generated content stays private to your conversation.</li>
       <li><strong>Persistent memory</strong> — your AI partner remembers previous chats, pet names, inside jokes, and emotional context across sessions.</li>
       <li><strong>Roleplay and scenarios</strong> — guided roleplay packs cover date night, travel, storytelling and thousands of community-shared prompts.</li>
-      <li><strong>Safe and private</strong> — conversations are end-to-end encrypted; no data is shared with advertisers.</li>
+      <li><strong>Privacy varies by platform</strong> — compare each app's data retention, billing discretion and adult-content policy before signing up.</li>
     </ul>
     <div class="mt-6 flex flex-wrap gap-3">
       <a href="/go?offer=candy-t1&sid=romance_cta_candy" rel="nofollow sponsored noopener" class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-dark font-sans">Try Candy.ai free →</a>
