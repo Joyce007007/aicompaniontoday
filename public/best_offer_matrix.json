@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "updated_at": "2026-05-13T18:34:00Z",
+    "reason": "Route dirty/non-T1 paid traffic away from Candy/Xtease dead routes; test smartlink/Multi-CPA/PPS candidates. Cash truth remains paid conversions only.",
+    "source": "CrakRevenue dashboard/API 30d: 20k+ clicks, 0 paid conversions; candidate offers from approved AI/dating list with higher EPC or smartlink behavior."
+  },
+  "_global": {
+    "default": "smartlink"
+  },
+  "romance": {
+    "default": "smartlink",
+    "by_country": {
+      "BR": "dating-smartlink",
+      "TR": "dating-smartlink",
+      "MX": "spicier-multicpa",
+      "PL": "dating-smartlink",
+      "RO": "dating-smartlink",
+      "PH": "spicier-multicpa",
+      "US": "joi-t1",
+      "CA": "joi-t1",
+      "AU": "joi-t1",
+      "GB": "darlink-pps",
+      "UK": "darlink-pps",
+      "DE": "candy-t1",
+      "FR": "smartlink",
+      "IN": "spicier-multicpa"
+    },
+    "by_device": {
+      "mobile": "smartlink",
+      "desktop": "lovescape"
+    }
+  }
+}

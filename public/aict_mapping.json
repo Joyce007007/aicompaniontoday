@@ -331,5 +331,85 @@
     "affiliate_url": "https://t.mbjms.com/408600/10182/0?aff_sub5=aict-rom-gal-valeria",
     "network": "CrakRevenue",
     "offer_id": "10182"
+  },
+  "joi-t1": {
+    "affiliate_url": "https://t.mbjms.com/408600/10358/0?aff_sub5=aict-joi-t1",
+    "network": "CrakRevenue",
+    "offer_id": "10358",
+    "name": "Joi",
+    "label": "Joi",
+    "note": "High EPC T1 PPS candidate; use for US/CA/AU/UK test."
+  },
+  "joi-t2": {
+    "affiliate_url": "https://t.mbjms.com/408600/10280/0?aff_sub5=aict-joi-t2",
+    "network": "CrakRevenue",
+    "offer_id": "10280",
+    "name": "Joi",
+    "label": "Joi",
+    "note": "Tier 2 PPS candidate."
+  },
+  "lovescape": {
+    "affiliate_url": "https://t.mbjms.com/408600/10223/0?aff_sub5=aict-lovescape",
+    "network": "CrakRevenue",
+    "offer_id": "10223",
+    "name": "Lovescape",
+    "label": "Lovescape",
+    "note": "PPS candidate; historically stronger EPC than current dead routes."
+  },
+  "swipey": {
+    "affiliate_url": "https://t.mbjms.com/408600/10100/0?aff_sub5=aict-swipey",
+    "network": "CrakRevenue",
+    "offer_id": "10100",
+    "name": "Swipey",
+    "label": "Swipey",
+    "note": "PPS candidate for rotation."
+  },
+  "spicier-multicpa": {
+    "affiliate_url": "https://t.mbjms.com/408600/10257/0?aff_sub5=aict-spicier-multicpa",
+    "network": "CrakRevenue",
+    "offer_id": "10257",
+    "name": "Spicier",
+    "label": "Spicier",
+    "note": "Multi-CPA candidate; test on non-T1 / dirty paid traffic."
+  },
+  "dating-smartlink": {
+    "affiliate_url": "https://t.mbjms.com/408600/3785/0?aff_sub5=aict-dating-smartlink",
+    "network": "CrakRevenue",
+    "offer_id": "3785",
+    "name": "Dating Smartlink",
+    "label": "Dating Smartlink",
+    "note": "Generic CrakRevenue dating smartlink candidate for BR/TR/MX fallback."
+  },
+  "xtease-multicpa": {
+    "affiliate_url": "https://t.mbjms.com/408600/10341/0?aff_sub5=aict-xtease-multicpa",
+    "network": "CrakRevenue",
+    "offer_id": "10341",
+    "name": "Xtease",
+    "label": "Xtease",
+    "note": "Multi-CPA candidate; keep separated from old xtease stats."
+  },
+  "ourdream-pps": {
+    "affiliate_url": "https://t.mbjms.com/408600/10138/0?aff_sub5=aict-ourdream-pps",
+    "network": "CrakRevenue",
+    "offer_id": "10138",
+    "name": "OurDream",
+    "label": "OurDream",
+    "note": "OurDream PPS candidate."
+  },
+  "secrets-pps": {
+    "affiliate_url": "https://t.mbjms.com/408600/10381/0?aff_sub5=aict-secrets-pps",
+    "network": "CrakRevenue",
+    "offer_id": "10381",
+    "name": "Secrets AI",
+    "label": "Secrets AI",
+    "note": "Secrets PPS candidate."
+  },
+  "darlink-pps": {
+    "affiliate_url": "https://t.mbjms.com/408600/10345/0?aff_sub5=aict-darlink-pps",
+    "network": "CrakRevenue",
+    "offer_id": "10345",
+    "name": "DarLink AI",
+    "label": "DarLink AI",
+    "note": "DarLink PPS candidate."
   }
 }
