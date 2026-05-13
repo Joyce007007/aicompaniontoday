@@ -77,11 +77,12 @@ CTA links generally go through `/go?offer=...&sid=...`.
 Backend:
 
 - `/go` records click then redirects to affiliate URL from `public/aict_mapping.json` deployed as `/var/www/aicompaniontoday.com/aict_mapping.json`.
+- `/best` is a backend smart router for paid/prelander traffic. It reads `/var/www/aicompaniontoday.com/best_offer_matrix.json`, chooses an offer by vertical/country/device, then redirects to `/go`.
 - `/pv` records pageviews.
 - `/pb` receives affiliate postbacks.
 - `/admin` gives a basic stats dashboard if credentials are available.
 
-Do not test `/go` repeatedly from monitors: it pollutes click stats.
+Do not test `/go` repeatedly from monitors: it pollutes click stats. If `/best` is used publicly, nginx must proxy `location = /best` to the FastAPI backend.
 
 ## Header tabs / menu status
 
