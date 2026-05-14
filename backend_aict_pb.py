@@ -152,6 +152,10 @@ async def best_redirect(request: Request,
     country = (request.headers.get("cf-ipcountry") or "").upper()[:2]
     ua = request.headers.get("user-agent", "")
     is_mobile = any(m in ua for m in ("Android", "iPhone", "iPad", "Mobile"))
+    # V8 guardrail: do not monetize French traffic. Route it back to editorial content,
+    # not to an affiliate offer, so /best?vertical=romance never becomes a France funnel.
+    if country == "FR":
+        return RedirectResponse("/best-ai-girlfriend-apps/?geo=global", status_code=302, headers={"X-Robots-Tag": "noindex, nofollow"})
     offer = pick_best_offer(vertical, country, is_mobile)
     sid_parts = ["best", vertical or "all", country or "XX", utm_source or "org"]
     sid = "_".join(p for p in sid_parts if p)[:200]
